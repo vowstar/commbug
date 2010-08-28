@@ -1,8 +1,8 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Release|x86" ctype="Workspace" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="CommBug/MainWindow.cs" ctype="Workbench">
+  <MonoDevelop.Ide.Workbench ActiveDocument="CommBug/SerialPortEX.cs" ctype="Workbench">
     <Files>
-      <File FileName="CommBug/MainWindow.cs" Line="1" Column="1" />
+      <File FileName="CommBug/MainWindow.cs" Line="238" Column="5" />
       <File FileName="CommBug/SerialPortEX.cs" Line="106" Column="23" />
     </Files>
     <Pads>
@@ -10,7 +10,7 @@
         <State expanded="True">
           <Node name="CommBug" expanded="True">
             <Node name="References" expanded="True" />
-            <Node name="MainWindow.cs" selected="True" />
+            <Node name="SerialPortEX.cs" selected="True" />
           </Node>
           <Node name="Packages" expanded="True" />
         </State>
