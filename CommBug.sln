@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommBug", "CommBug\CommBug.csproj", "{D6D60EAB-139F-4B3C-A306-A6C9D92D180A}"
+EndProject
+Project("{9344bdbb-3e7f-41fc-a0dd-8665d75ee146}") = "Packages", "Packages.mdproj", "{45A1ABFC-3B88-4290-ABEF-6D28B80B3404}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{45A1ABFC-3B88-4290-ABEF-6D28B80B3404}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{45A1ABFC-3B88-4290-ABEF-6D28B80B3404}.Release|x86.ActiveCfg = Release|Any CPU
+		{D6D60EAB-139F-4B3C-A306-A6C9D92D180A}.Debug|x86.ActiveCfg = Debug|x86
+		{D6D60EAB-139F-4B3C-A306-A6C9D92D180A}.Debug|x86.Build.0 = Debug|x86
+		{D6D60EAB-139F-4B3C-A306-A6C9D92D180A}.Release|x86.ActiveCfg = Release|x86
+		{D6D60EAB-139F-4B3C-A306-A6C9D92D180A}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = CommBug\CommBug.csproj
+		Policies = $0
+		$0.StandardHeader = $1
+		$1.Text = 
+		$1.inheritsSet = Apache2License
+		description = @串口调试助手，用来调试串口的数据发送与接收。\n支持文本模式、16进制、10进制显示被调试串口接收和发送的内容。\n支持自动发送模式，\n是学习单片机与检测串口设备的必备工具。
+		version = 0.9
+	EndGlobalSection
+EndGlobal
