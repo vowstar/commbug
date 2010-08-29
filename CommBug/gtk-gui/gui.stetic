@@ -1022,7 +1022,7 @@ vowstar@gmail.com
                               <widget class="Gtk.Notebook" id="notebookReceiveArea">
                                 <property name="MemberName" />
                                 <property name="CanFocus">True</property>
-                                <property name="CurrentPage">0</property>
+                                <property name="CurrentPage">2</property>
                                 <child>
                                   <widget class="Gtk.ScrolledWindow" id="GtkScrolledWindowText">
                                     <property name="MemberName" />
@@ -1040,7 +1040,7 @@ vowstar@gmail.com
                                   </widget>
                                 </child>
                                 <child>
-                                  <widget class="Gtk.Label" id="label10">
+                                  <widget class="Gtk.Label" id="labelRText">
                                     <property name="MemberName" />
                                     <property name="LabelProp" translatable="yes">文本</property>
                                   </widget>
@@ -1068,7 +1068,7 @@ vowstar@gmail.com
                                   </packing>
                                 </child>
                                 <child>
-                                  <widget class="Gtk.Label" id="label11">
+                                  <widget class="Gtk.Label" id="labelRHex">
                                     <property name="MemberName" />
                                     <property name="LabelProp" translatable="yes">十六进制</property>
                                   </widget>
@@ -1096,7 +1096,7 @@ vowstar@gmail.com
                                   </packing>
                                 </child>
                                 <child>
-                                  <widget class="Gtk.Label" id="label12">
+                                  <widget class="Gtk.Label" id="labelRDec">
                                     <property name="MemberName" />
                                     <property name="LabelProp" translatable="yes">十进制</property>
                                   </widget>
@@ -1109,7 +1109,7 @@ vowstar@gmail.com
                           </widget>
                         </child>
                         <child>
-                          <widget class="Gtk.Label" id="GtkLabel15">
+                          <widget class="Gtk.Label" id="GtkLabelR">
                             <property name="MemberName" />
                             <property name="LabelProp" translatable="yes">&lt;b&gt;接收到的数据&lt;/b&gt;</property>
                             <property name="UseMarkup">True</property>
@@ -1356,7 +1356,7 @@ vowstar@gmail.com
                           <widget class="Gtk.Notebook" id="notebookSendArea">
                             <property name="MemberName" />
                             <property name="CanFocus">True</property>
-                            <property name="CurrentPage">0</property>
+                            <property name="CurrentPage">2</property>
                             <child>
                               <widget class="Gtk.ScrolledWindow" id="GtkScrolledWindowTextS">
                                 <property name="MemberName" />
@@ -1374,7 +1374,7 @@ vowstar@gmail.com
                               </widget>
                             </child>
                             <child>
-                              <widget class="Gtk.Label" id="label13">
+                              <widget class="Gtk.Label" id="labelSText">
                                 <property name="MemberName" />
                                 <property name="LabelProp" translatable="yes">文本</property>
                               </widget>
@@ -1402,7 +1402,7 @@ vowstar@gmail.com
                               </packing>
                             </child>
                             <child>
-                              <widget class="Gtk.Label" id="label14">
+                              <widget class="Gtk.Label" id="labelSHex">
                                 <property name="MemberName" />
                                 <property name="LabelProp" translatable="yes">十六进制</property>
                               </widget>
@@ -1430,7 +1430,7 @@ vowstar@gmail.com
                               </packing>
                             </child>
                             <child>
-                              <widget class="Gtk.Label" id="label15">
+                              <widget class="Gtk.Label" id="labelSDex">
                                 <property name="MemberName" />
                                 <property name="LabelProp" translatable="yes">十进制</property>
                               </widget>
@@ -1471,9 +1471,9 @@ vowstar@gmail.com
           </packing>
         </child>
         <child>
-          <widget class="Gtk.MenuBar" id="menubar1">
+          <widget class="Gtk.MenuBar" id="menubarMain">
             <property name="MemberName" />
-            <node name="__gtksharp_82_Stetic_Editor_ActionMenuBar" type="Menubar">
+            <node name="menubarMain" type="Menubar">
               <node type="Menu" action="FAction">
                 <node type="Menuitem" action="quitAction" />
               </node>
@@ -1516,9 +1516,10 @@ vowstar@gmail.com
       </widget>
     </child>
   </widget>
-  <widget class="Gtk.Dialog" id="CommBug.AboutWindow" design-size="400 300">
+  <widget class="Gtk.Dialog" id="CommBug.AboutWindow" design-size="400 344">
     <property name="MemberName" />
-    <property name="Title" translatable="yes">关于</property>
+    <property name="Title" translatable="yes">关于本程序</property>
+    <property name="Icon">stock:gtk-about Menu</property>
     <property name="WindowPosition">CenterOnParent</property>
     <property name="Buttons">1</property>
     <property name="HelpButton">False</property>
@@ -1527,7 +1528,52 @@ vowstar@gmail.com
         <property name="MemberName" />
         <property name="BorderWidth">2</property>
         <child>
-          <placeholder />
+          <widget class="Gtk.Notebook" id="notebookAboutWindow">
+            <property name="MemberName" />
+            <property name="CanFocus">True</property>
+            <property name="CurrentPage">0</property>
+            <child>
+              <widget class="Gtk.Table" id="tableInfo">
+                <property name="MemberName" />
+                <property name="NColumns">2</property>
+                <property name="RowSpacing">6</property>
+                <property name="ColumnSpacing">6</property>
+                <child>
+                  <placeholder />
+                </child>
+                <child>
+                  <widget class="Gtk.Image" id="imageInfo">
+                    <property name="MemberName" />
+                  </widget>
+                  <packing>
+                    <property name="AutoSize">False</property>
+                    <property name="XOptions">Fill</property>
+                    <property name="XExpand">False</property>
+                    <property name="XFill">True</property>
+                    <property name="XShrink">False</property>
+                    <property name="YExpand">True</property>
+                    <property name="YFill">True</property>
+                    <property name="YShrink">False</property>
+                  </packing>
+                </child>
+              </widget>
+            </child>
+            <child>
+              <widget class="Gtk.Label" id="labelTabInfo">
+                <property name="MemberName" />
+                <property name="LabelProp" translatable="yes">page1</property>
+              </widget>
+              <packing>
+                <property name="type">tab</property>
+              </packing>
+            </child>
+          </widget>
+          <packing>
+            <property name="Position">0</property>
+            <property name="AutoSize">True</property>
+            <property name="Expand">False</property>
+            <property name="Fill">False</property>
+          </packing>
         </child>
       </widget>
     </child>
