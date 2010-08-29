@@ -1558,7 +1558,8 @@ vowstar@gmail.com
             <child>
               <widget class="Gtk.Label" id="labelTabInfo">
                 <property name="MemberName" />
-                <property name="LabelProp" translatable="yes">page1</property>
+                <property name="LabelProp" translatable="yes">信息(_I)</property>
+                <property name="UseUnderline">True</property>
               </widget>
               <packing>
                 <property name="type">tab</property>
