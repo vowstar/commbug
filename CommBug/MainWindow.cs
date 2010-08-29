@@ -21,6 +21,7 @@ public partial class MainWindow : Gtk.Window
 	private Parity parity = Parity.None;
 	private int dataBits = 0;
 	private StopBits stopBits = StopBits.One;
+	private CommBug.AboutWindow aboutWindow;
 	#endregion
 	public MainWindow () : base(Gtk.WindowType.Toplevel)
 	{
@@ -376,11 +377,22 @@ public partial class MainWindow : Gtk.Window
 			textviewSend.Buffer.Changed += HandleTextviewSendBufferChanged;
 		}
 	}
-	
+
 	protected virtual void OnQuitActionActivated (object sender, System.EventArgs e)
 	{
-		 OnDeleteEvent (this, null);
+		OnDeleteEvent (this, null);
 	}
+
+	protected virtual void OnAboutActionActivated (object sender, System.EventArgs e)
+	{
+		if (aboutWindow == null) {
+			aboutWindow = new CommBug.AboutWindow ();
+		} else {
+			if (!aboutWindow.Visible)
+				aboutWindow = new CommBug.AboutWindow ();
+		}
+	}
+	
 	
 	
 	

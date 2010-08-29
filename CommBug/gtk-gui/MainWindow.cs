@@ -1161,6 +1161,7 @@ public partial class MainWindow
 		this.Show ();
 		this.DeleteEvent += new global::Gtk.DeleteEventHandler (this.OnDeleteEvent);
 		this.quitAction.Activated += new global::System.EventHandler (this.OnQuitActionActivated);
+		this.aboutAction.Activated += new global::System.EventHandler (this.OnAboutActionActivated);
 		this.togglebuttonPortSwitch.Clicked += new global::System.EventHandler (this.OntogglebuttonPortSwitchClicked);
 		this.radiobuttonText.GroupChanged += new global::System.EventHandler (this.OnRadiobuttonSendActivated);
 		this.radiobuttonText.Clicked += new global::System.EventHandler (this.OnRadiobuttonSendActivated);
