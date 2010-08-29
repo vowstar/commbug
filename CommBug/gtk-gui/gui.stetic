@@ -1461,8 +1461,7 @@ vowstar@gmail.com
             <property name="TopAttach">1</property>
             <property name="BottomAttach">2</property>
             <property name="AutoSize">True</property>
-            <property name="XOptions">Fill</property>
-            <property name="XExpand">False</property>
+            <property name="XExpand">True</property>
             <property name="XFill">True</property>
             <property name="XShrink">False</property>
             <property name="YExpand">True</property>
@@ -1484,9 +1483,8 @@ vowstar@gmail.com
           </widget>
           <packing>
             <property name="AutoSize">True</property>
-            <property name="XOptions">Fill</property>
             <property name="YOptions">Fill</property>
-            <property name="XExpand">False</property>
+            <property name="XExpand">True</property>
             <property name="XFill">True</property>
             <property name="XShrink">False</property>
             <property name="YExpand">False</property>
@@ -1503,9 +1501,8 @@ vowstar@gmail.com
             <property name="TopAttach">2</property>
             <property name="BottomAttach">3</property>
             <property name="AutoSize">True</property>
-            <property name="XOptions">Fill</property>
             <property name="YOptions">Fill</property>
-            <property name="XExpand">False</property>
+            <property name="XExpand">True</property>
             <property name="XFill">True</property>
             <property name="XShrink">False</property>
             <property name="YExpand">False</property>
