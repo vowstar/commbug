@@ -78,6 +78,8 @@
     <Compile Include="AssemblyInfo.cs" />
     <Compile Include="SerialPortEX.cs" />
     <Compile Include="StringConverts.cs" />
+    <Compile Include="AboutWindow.cs" />
+    <Compile Include="gtk-gui\CommBug.AboutWindow.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="app.desktop" />
