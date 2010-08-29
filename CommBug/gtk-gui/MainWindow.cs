@@ -5,6 +5,12 @@ public partial class MainWindow
 {
 	private global::Gtk.UIManager UIManager;
 
+	private global::Gtk.Action FAction;
+
+	private global::Gtk.Action HAction;
+
+	private global::Gtk.Action quitAction;
+
 	private global::Gtk.Table tableMain;
 
 	private global::Gtk.HPaned hpanedMain;
@@ -205,6 +211,8 @@ public partial class MainWindow
 
 	private global::Gtk.Label GtkLabelSendArea;
 
+	private global::Gtk.MenuBar menubar1;
+
 	private global::Gtk.Statusbar statusbarMain;
 
 	protected virtual void Build ()
@@ -213,6 +221,16 @@ public partial class MainWindow
 		// Widget MainWindow
 		this.UIManager = new global::Gtk.UIManager ();
 		global::Gtk.ActionGroup w1 = new global::Gtk.ActionGroup ("Default");
+		this.FAction = new global::Gtk.Action ("FAction", global::Mono.Unix.Catalog.GetString ("文件(_F)"), null, null);
+		this.FAction.ShortLabel = global::Mono.Unix.Catalog.GetString ("文件(_F)");
+		w1.Add (this.FAction, null);
+		this.HAction = new global::Gtk.Action ("HAction", global::Mono.Unix.Catalog.GetString ("帮助(_H)"), null, null);
+		this.HAction.ShortLabel = global::Mono.Unix.Catalog.GetString ("帮助(_H)");
+		w1.Add (this.HAction, null);
+		this.quitAction = new global::Gtk.Action ("quitAction", global::Mono.Unix.Catalog.GetString ("退出(_Q)"), null, "gtk-quit");
+		this.quitAction.IsImportant = true;
+		this.quitAction.ShortLabel = global::Mono.Unix.Catalog.GetString ("退出(_Q)");
+		w1.Add (this.quitAction, null);
 		this.UIManager.InsertActionGroup (w1, 0);
 		this.AddAccelGroup (this.UIManager.AccelGroup);
 		this.Name = "MainWindow";
@@ -220,7 +238,7 @@ public partial class MainWindow
 		this.Icon = global::Stetic.IconLoader.LoadIcon (this, "stock_draw-connector-with-arrows", global::Gtk.IconSize.Menu);
 		this.WindowPosition = ((global::Gtk.WindowPosition)(4));
 		// Container child MainWindow.Gtk.Container+ContainerChild
-		this.tableMain = new global::Gtk.Table (((uint)(2)), ((uint)(1)), false);
+		this.tableMain = new global::Gtk.Table (((uint)(3)), ((uint)(1)), false);
 		this.tableMain.Name = "tableMain";
 		this.tableMain.RowSpacing = ((uint)(6));
 		this.tableMain.ColumnSpacing = ((uint)(6));
@@ -1110,23 +1128,34 @@ public partial class MainWindow
 		this.vpanedRight.Add (this.frameSendArea);
 		this.hpanedMain.Add (this.vpanedRight);
 		this.tableMain.Add (this.hpanedMain);
+		global::Gtk.Table.TableChild w117 = ((global::Gtk.Table.TableChild)(this.tableMain[this.hpanedMain]));
+		w117.TopAttach = ((uint)(1));
+		w117.BottomAttach = ((uint)(2));
+		// Container child tableMain.Gtk.Table+TableChild
+		this.UIManager.AddUiFromString ("<ui><menubar name='menubar1'><menu name='FAction' action='FAction'><menuitem name='quitAction' action='quitAction'/></menu><menu name='HAction' action='HAction'/></menubar></ui>");
+		this.menubar1 = ((global::Gtk.MenuBar)(this.UIManager.GetWidget ("/menubar1")));
+		this.menubar1.Name = "menubar1";
+		this.tableMain.Add (this.menubar1);
+		global::Gtk.Table.TableChild w118 = ((global::Gtk.Table.TableChild)(this.tableMain[this.menubar1]));
+		w118.YOptions = ((global::Gtk.AttachOptions)(4));
 		// Container child tableMain.Gtk.Table+TableChild
 		this.statusbarMain = new global::Gtk.Statusbar ();
 		this.statusbarMain.Name = "statusbarMain";
 		this.statusbarMain.Spacing = 6;
 		this.tableMain.Add (this.statusbarMain);
-		global::Gtk.Table.TableChild w118 = ((global::Gtk.Table.TableChild)(this.tableMain[this.statusbarMain]));
-		w118.TopAttach = ((uint)(1));
-		w118.BottomAttach = ((uint)(2));
-		w118.YOptions = ((global::Gtk.AttachOptions)(4));
+		global::Gtk.Table.TableChild w119 = ((global::Gtk.Table.TableChild)(this.tableMain[this.statusbarMain]));
+		w119.TopAttach = ((uint)(2));
+		w119.BottomAttach = ((uint)(3));
+		w119.YOptions = ((global::Gtk.AttachOptions)(4));
 		this.Add (this.tableMain);
 		if ((this.Child != null)) {
 			this.Child.ShowAll ();
 		}
 		this.DefaultWidth = 580;
-		this.DefaultHeight = 501;
+		this.DefaultHeight = 541;
 		this.Show ();
 		this.DeleteEvent += new global::Gtk.DeleteEventHandler (this.OnDeleteEvent);
+		this.quitAction.Activated += new global::System.EventHandler (this.OnQuitActionActivated);
 		this.togglebuttonPortSwitch.Clicked += new global::System.EventHandler (this.OntogglebuttonPortSwitchClicked);
 		this.radiobuttonText.GroupChanged += new global::System.EventHandler (this.OnRadiobuttonSendActivated);
 		this.radiobuttonText.Clicked += new global::System.EventHandler (this.OnRadiobuttonSendActivated);

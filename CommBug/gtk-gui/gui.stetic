@@ -8,8 +8,27 @@
     <widget-library name="glade-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
     <widget-library name="../bin/Release/CommBug.exe" internal="true" />
   </import>
-  <widget class="Gtk.Window" id="MainWindow" design-size="580 501">
-    <action-group name="Default" />
+  <widget class="Gtk.Window" id="MainWindow" design-size="580 541">
+    <action-group name="Default">
+      <action id="FAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">文件(_F)</property>
+        <property name="ShortLabel" translatable="yes">文件(_F)</property>
+      </action>
+      <action id="HAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">帮助(_H)</property>
+        <property name="ShortLabel" translatable="yes">帮助(_H)</property>
+      </action>
+      <action id="quitAction">
+        <property name="Type">Action</property>
+        <property name="IsImportant">True</property>
+        <property name="Label" translatable="yes">退出(_Q)</property>
+        <property name="ShortLabel" translatable="yes">退出(_Q)</property>
+        <property name="StockId">gtk-quit</property>
+        <signal name="Activated" handler="OnQuitActionActivated" />
+      </action>
+    </action-group>
     <property name="MemberName" />
     <property name="Title" translatable="yes">串口调试助手</property>
     <property name="Icon">stock:stock_draw-connector-with-arrows Menu</property>
@@ -18,7 +37,7 @@
     <child>
       <widget class="Gtk.Table" id="tableMain">
         <property name="MemberName" />
-        <property name="NRows">2</property>
+        <property name="NRows">3</property>
         <property name="RowSpacing">6</property>
         <property name="ColumnSpacing">6</property>
         <child>
@@ -1433,6 +1452,8 @@ vowstar@gmail.com
             </child>
           </widget>
           <packing>
+            <property name="TopAttach">1</property>
+            <property name="BottomAttach">2</property>
             <property name="AutoSize">True</property>
             <property name="XExpand">True</property>
             <property name="XFill">True</property>
@@ -1443,13 +1464,34 @@ vowstar@gmail.com
           </packing>
         </child>
         <child>
+          <widget class="Gtk.MenuBar" id="menubar1">
+            <property name="MemberName" />
+            <node name="__gtksharp_82_Stetic_Editor_ActionMenuBar" type="Menubar">
+              <node type="Menu" action="FAction">
+                <node type="Menuitem" action="quitAction" />
+              </node>
+              <node type="Menu" action="HAction" />
+            </node>
+          </widget>
+          <packing>
+            <property name="AutoSize">True</property>
+            <property name="YOptions">Fill</property>
+            <property name="XExpand">True</property>
+            <property name="XFill">True</property>
+            <property name="XShrink">False</property>
+            <property name="YExpand">False</property>
+            <property name="YFill">True</property>
+            <property name="YShrink">False</property>
+          </packing>
+        </child>
+        <child>
           <widget class="Gtk.Statusbar" id="statusbarMain">
             <property name="MemberName" />
             <property name="Spacing">6</property>
           </widget>
           <packing>
-            <property name="TopAttach">1</property>
-            <property name="BottomAttach">2</property>
+            <property name="TopAttach">2</property>
+            <property name="BottomAttach">3</property>
             <property name="AutoSize">True</property>
             <property name="YOptions">Fill</property>
             <property name="XExpand">True</property>

@@ -96,6 +96,7 @@ public class SerialPortEx : IDisposable
 	// 行分隔标记
 
 	#endregion
+	
 	#region 构造函数及重载们
 	public SerialPortEx ()
 	{
