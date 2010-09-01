@@ -1,6 +1,6 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Release|x86" ctype="Workspace" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="CommBug/MainWindow.cs" ctype="Workbench">
+  <MonoDevelop.Ide.Workbench ActiveDocument="CommBug/AboutWindow.cs" ctype="Workbench">
     <Files>
       <File FileName="CommBug/MainWindow.cs" Line="395" Column="2" />
       <File FileName="CommBug/AboutWindow.cs" Line="13" Column="1" />
@@ -10,7 +10,7 @@
         <State expanded="True">
           <Node name="CommBug" expanded="True">
             <Node name="References" expanded="True" />
-            <Node name="MainWindow.cs" selected="True" />
+            <Node name="AboutWindow.cs" selected="True" />
           </Node>
           <Node name="Packages" expanded="True" />
         </State>

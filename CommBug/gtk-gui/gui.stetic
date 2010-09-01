@@ -1514,7 +1514,7 @@ vowstar@gmail.com
       </widget>
     </child>
   </widget>
-  <widget class="Gtk.Dialog" id="CommBug.AboutWindow" design-size="400 344">
+  <widget class="Gtk.Dialog" id="CommBug.AboutWindow" design-size="400 328">
     <property name="MemberName" />
     <property name="Title" translatable="yes">关于本程序</property>
     <property name="Icon">stock:gtk-about Menu</property>
@@ -1531,28 +1531,47 @@ vowstar@gmail.com
             <property name="CanFocus">True</property>
             <property name="CurrentPage">0</property>
             <child>
-              <widget class="Gtk.Table" id="tableInfo">
+              <widget class="Gtk.Alignment" id="alignmentInfo">
                 <property name="MemberName" />
-                <property name="NColumns">2</property>
-                <property name="RowSpacing">6</property>
-                <property name="ColumnSpacing">6</property>
+                <property name="BorderWidth">10</property>
                 <child>
-                  <placeholder />
-                </child>
-                <child>
-                  <widget class="Gtk.Image" id="imageInfo">
+                  <widget class="Gtk.Table" id="tableInfo">
                     <property name="MemberName" />
+                    <property name="NColumns">2</property>
+                    <property name="RowSpacing">6</property>
+                    <property name="ColumnSpacing">6</property>
+                    <child>
+                      <widget class="Gtk.Image" id="imageInfo">
+                        <property name="MemberName" />
+                      </widget>
+                      <packing>
+                        <property name="AutoSize">False</property>
+                        <property name="XOptions">Fill</property>
+                        <property name="XExpand">False</property>
+                        <property name="XFill">True</property>
+                        <property name="XShrink">False</property>
+                        <property name="YExpand">True</property>
+                        <property name="YFill">True</property>
+                        <property name="YShrink">False</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <widget class="Gtk.Label" id="label2">
+                        <property name="MemberName" />
+                      </widget>
+                      <packing>
+                        <property name="LeftAttach">1</property>
+                        <property name="RightAttach">2</property>
+                        <property name="AutoSize">False</property>
+                        <property name="XExpand">True</property>
+                        <property name="XFill">True</property>
+                        <property name="XShrink">False</property>
+                        <property name="YExpand">True</property>
+                        <property name="YFill">True</property>
+                        <property name="YShrink">False</property>
+                      </packing>
+                    </child>
                   </widget>
-                  <packing>
-                    <property name="AutoSize">False</property>
-                    <property name="XOptions">Fill</property>
-                    <property name="XExpand">False</property>
-                    <property name="XFill">True</property>
-                    <property name="XShrink">False</property>
-                    <property name="YExpand">True</property>
-                    <property name="YFill">True</property>
-                    <property name="YShrink">False</property>
-                  </packing>
                 </child>
               </widget>
             </child>
@@ -1569,9 +1588,7 @@ vowstar@gmail.com
           </widget>
           <packing>
             <property name="Position">0</property>
-            <property name="AutoSize">True</property>
-            <property name="Expand">False</property>
-            <property name="Fill">False</property>
+            <property name="AutoSize">False</property>
           </packing>
         </child>
       </widget>
