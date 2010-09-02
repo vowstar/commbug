@@ -3,7 +3,7 @@
   <MonoDevelop.Ide.Workbench ActiveDocument="CommBug/AboutWindow.cs" ctype="Workbench">
     <Files>
       <File FileName="CommBug/MainWindow.cs" Line="395" Column="2" />
-      <File FileName="CommBug/AboutWindow.cs" Line="13" Column="1" />
+      <File FileName="CommBug/AboutWindow.cs" Line="9" Column="4" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">

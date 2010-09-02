@@ -6,11 +6,45 @@ namespace CommBug
 	{
 		private global::Gtk.Notebook notebookAboutWindow;
 
+		private global::Gtk.Alignment alignmentInfo;
+
 		private global::Gtk.Table tableInfo;
 
 		private global::Gtk.Image imageInfo;
 
+		private global::Gtk.Label labelInfo;
+
 		private global::Gtk.Label labelTabInfo;
+
+		private global::Gtk.Alignment alignmentInfo1;
+
+		private global::Gtk.Table tableInfo1;
+
+		private global::Gtk.Image imageInfo1;
+
+		private global::Gtk.Label labelInfo1;
+
+		private global::Gtk.Label label1;
+
+		private global::Gtk.Alignment alignmentInfo2;
+
+		private global::Gtk.Table tableInfo2;
+
+		private global::Gtk.Image imageInfo2;
+
+		private global::Gtk.Label labelInfo2;
+
+		private global::Gtk.Label label2;
+
+		private global::Gtk.Alignment alignmentInfo3;
+
+		private global::Gtk.Table tableInfo3;
+
+		private global::Gtk.Image imageInfo3;
+
+		private global::Gtk.Label labelInfo3;
+
+		private global::Gtk.Label label3;
 
 		private global::Gtk.Button buttonOk;
 
@@ -30,8 +64,12 @@ namespace CommBug
 			this.notebookAboutWindow = new global::Gtk.Notebook ();
 			this.notebookAboutWindow.CanFocus = true;
 			this.notebookAboutWindow.Name = "notebookAboutWindow";
-			this.notebookAboutWindow.CurrentPage = 0;
+			this.notebookAboutWindow.CurrentPage = 3;
 			// Container child notebookAboutWindow.Gtk.Notebook+NotebookChild
+			this.alignmentInfo = new global::Gtk.Alignment (0.5f, 0.5f, 1f, 1f);
+			this.alignmentInfo.Name = "alignmentInfo";
+			this.alignmentInfo.BorderWidth = ((uint)(10));
+			// Container child alignmentInfo.Gtk.Container+ContainerChild
 			this.tableInfo = new global::Gtk.Table (((uint)(1)), ((uint)(2)), false);
 			this.tableInfo.Name = "tableInfo";
 			this.tableInfo.RowSpacing = ((uint)(6));
@@ -42,25 +80,127 @@ namespace CommBug
 			this.tableInfo.Add (this.imageInfo);
 			global::Gtk.Table.TableChild w2 = ((global::Gtk.Table.TableChild)(this.tableInfo[this.imageInfo]));
 			w2.XOptions = ((global::Gtk.AttachOptions)(4));
-			this.notebookAboutWindow.Add (this.tableInfo);
+			// Container child tableInfo.Gtk.Table+TableChild
+			this.labelInfo = new global::Gtk.Label ();
+			this.labelInfo.Name = "labelInfo";
+			this.tableInfo.Add (this.labelInfo);
+			global::Gtk.Table.TableChild w3 = ((global::Gtk.Table.TableChild)(this.tableInfo[this.labelInfo]));
+			w3.LeftAttach = ((uint)(1));
+			w3.RightAttach = ((uint)(2));
+			this.alignmentInfo.Add (this.tableInfo);
+			this.notebookAboutWindow.Add (this.alignmentInfo);
 			// Notebook tab
 			this.labelTabInfo = new global::Gtk.Label ();
 			this.labelTabInfo.Name = "labelTabInfo";
 			this.labelTabInfo.LabelProp = global::Mono.Unix.Catalog.GetString ("信息(_I)");
 			this.labelTabInfo.UseUnderline = true;
-			this.notebookAboutWindow.SetTabLabel (this.tableInfo, this.labelTabInfo);
+			this.notebookAboutWindow.SetTabLabel (this.alignmentInfo, this.labelTabInfo);
 			this.labelTabInfo.ShowAll ();
+			// Container child notebookAboutWindow.Gtk.Notebook+NotebookChild
+			this.alignmentInfo1 = new global::Gtk.Alignment (0.5f, 0.5f, 1f, 1f);
+			this.alignmentInfo1.Name = "alignmentInfo1";
+			this.alignmentInfo1.BorderWidth = ((uint)(10));
+			// Container child alignmentInfo1.Gtk.Container+ContainerChild
+			this.tableInfo1 = new global::Gtk.Table (((uint)(1)), ((uint)(2)), false);
+			this.tableInfo1.Name = "tableInfo1";
+			this.tableInfo1.RowSpacing = ((uint)(6));
+			this.tableInfo1.ColumnSpacing = ((uint)(6));
+			// Container child tableInfo1.Gtk.Table+TableChild
+			this.imageInfo1 = new global::Gtk.Image ();
+			this.imageInfo1.Name = "imageInfo1";
+			this.tableInfo1.Add (this.imageInfo1);
+			global::Gtk.Table.TableChild w6 = ((global::Gtk.Table.TableChild)(this.tableInfo1[this.imageInfo1]));
+			w6.XOptions = ((global::Gtk.AttachOptions)(4));
+			// Container child tableInfo1.Gtk.Table+TableChild
+			this.labelInfo1 = new global::Gtk.Label ();
+			this.labelInfo1.Name = "labelInfo1";
+			this.tableInfo1.Add (this.labelInfo1);
+			global::Gtk.Table.TableChild w7 = ((global::Gtk.Table.TableChild)(this.tableInfo1[this.labelInfo1]));
+			w7.LeftAttach = ((uint)(1));
+			w7.RightAttach = ((uint)(2));
+			this.alignmentInfo1.Add (this.tableInfo1);
+			this.notebookAboutWindow.Add (this.alignmentInfo1);
+			global::Gtk.Notebook.NotebookChild w9 = ((global::Gtk.Notebook.NotebookChild)(this.notebookAboutWindow[this.alignmentInfo1]));
+			w9.Position = 1;
+			// Notebook tab
+			this.label1 = new global::Gtk.Label ();
+			this.label1.Name = "label1";
+			this.label1.LabelProp = global::Mono.Unix.Catalog.GetString ("page2");
+			this.notebookAboutWindow.SetTabLabel (this.alignmentInfo1, this.label1);
+			this.label1.ShowAll ();
+			// Container child notebookAboutWindow.Gtk.Notebook+NotebookChild
+			this.alignmentInfo2 = new global::Gtk.Alignment (0.5f, 0.5f, 1f, 1f);
+			this.alignmentInfo2.Name = "alignmentInfo2";
+			this.alignmentInfo2.BorderWidth = ((uint)(10));
+			// Container child alignmentInfo2.Gtk.Container+ContainerChild
+			this.tableInfo2 = new global::Gtk.Table (((uint)(1)), ((uint)(2)), false);
+			this.tableInfo2.Name = "tableInfo2";
+			this.tableInfo2.RowSpacing = ((uint)(6));
+			this.tableInfo2.ColumnSpacing = ((uint)(6));
+			// Container child tableInfo2.Gtk.Table+TableChild
+			this.imageInfo2 = new global::Gtk.Image ();
+			this.imageInfo2.Name = "imageInfo2";
+			this.tableInfo2.Add (this.imageInfo2);
+			global::Gtk.Table.TableChild w10 = ((global::Gtk.Table.TableChild)(this.tableInfo2[this.imageInfo2]));
+			w10.XOptions = ((global::Gtk.AttachOptions)(4));
+			// Container child tableInfo2.Gtk.Table+TableChild
+			this.labelInfo2 = new global::Gtk.Label ();
+			this.labelInfo2.Name = "labelInfo2";
+			this.tableInfo2.Add (this.labelInfo2);
+			global::Gtk.Table.TableChild w11 = ((global::Gtk.Table.TableChild)(this.tableInfo2[this.labelInfo2]));
+			w11.LeftAttach = ((uint)(1));
+			w11.RightAttach = ((uint)(2));
+			this.alignmentInfo2.Add (this.tableInfo2);
+			this.notebookAboutWindow.Add (this.alignmentInfo2);
+			global::Gtk.Notebook.NotebookChild w13 = ((global::Gtk.Notebook.NotebookChild)(this.notebookAboutWindow[this.alignmentInfo2]));
+			w13.Position = 2;
+			// Notebook tab
+			this.label2 = new global::Gtk.Label ();
+			this.label2.Name = "label2";
+			this.label2.LabelProp = global::Mono.Unix.Catalog.GetString ("page3");
+			this.notebookAboutWindow.SetTabLabel (this.alignmentInfo2, this.label2);
+			this.label2.ShowAll ();
+			// Container child notebookAboutWindow.Gtk.Notebook+NotebookChild
+			this.alignmentInfo3 = new global::Gtk.Alignment (0.5f, 0.5f, 1f, 1f);
+			this.alignmentInfo3.Name = "alignmentInfo3";
+			this.alignmentInfo3.BorderWidth = ((uint)(10));
+			// Container child alignmentInfo3.Gtk.Container+ContainerChild
+			this.tableInfo3 = new global::Gtk.Table (((uint)(1)), ((uint)(2)), false);
+			this.tableInfo3.Name = "tableInfo3";
+			this.tableInfo3.RowSpacing = ((uint)(6));
+			this.tableInfo3.ColumnSpacing = ((uint)(6));
+			// Container child tableInfo3.Gtk.Table+TableChild
+			this.imageInfo3 = new global::Gtk.Image ();
+			this.imageInfo3.Name = "imageInfo3";
+			this.tableInfo3.Add (this.imageInfo3);
+			global::Gtk.Table.TableChild w14 = ((global::Gtk.Table.TableChild)(this.tableInfo3[this.imageInfo3]));
+			w14.XOptions = ((global::Gtk.AttachOptions)(4));
+			// Container child tableInfo3.Gtk.Table+TableChild
+			this.labelInfo3 = new global::Gtk.Label ();
+			this.labelInfo3.Name = "labelInfo3";
+			this.tableInfo3.Add (this.labelInfo3);
+			global::Gtk.Table.TableChild w15 = ((global::Gtk.Table.TableChild)(this.tableInfo3[this.labelInfo3]));
+			w15.LeftAttach = ((uint)(1));
+			w15.RightAttach = ((uint)(2));
+			this.alignmentInfo3.Add (this.tableInfo3);
+			this.notebookAboutWindow.Add (this.alignmentInfo3);
+			global::Gtk.Notebook.NotebookChild w17 = ((global::Gtk.Notebook.NotebookChild)(this.notebookAboutWindow[this.alignmentInfo3]));
+			w17.Position = 3;
+			// Notebook tab
+			this.label3 = new global::Gtk.Label ();
+			this.label3.Name = "label3";
+			this.label3.LabelProp = global::Mono.Unix.Catalog.GetString ("page4");
+			this.notebookAboutWindow.SetTabLabel (this.alignmentInfo3, this.label3);
+			this.label3.ShowAll ();
 			w1.Add (this.notebookAboutWindow);
-			global::Gtk.Box.BoxChild w4 = ((global::Gtk.Box.BoxChild)(w1[this.notebookAboutWindow]));
-			w4.Position = 0;
-			w4.Expand = false;
-			w4.Fill = false;
+			global::Gtk.Box.BoxChild w18 = ((global::Gtk.Box.BoxChild)(w1[this.notebookAboutWindow]));
+			w18.Position = 0;
 			// Internal child CommBug.AboutWindow.ActionArea
-			global::Gtk.HButtonBox w5 = this.ActionArea;
-			w5.Name = "AboutWindow_ActionArea";
-			w5.Spacing = 10;
-			w5.BorderWidth = ((uint)(5));
-			w5.LayoutStyle = ((global::Gtk.ButtonBoxStyle)(4));
+			global::Gtk.HButtonBox w19 = this.ActionArea;
+			w19.Name = "AboutWindow_ActionArea";
+			w19.Spacing = 10;
+			w19.BorderWidth = ((uint)(5));
+			w19.LayoutStyle = ((global::Gtk.ButtonBoxStyle)(4));
 			// Container child AboutWindow_ActionArea.Gtk.ButtonBox+ButtonBoxChild
 			this.buttonOk = new global::Gtk.Button ();
 			this.buttonOk.CanDefault = true;
@@ -70,15 +210,16 @@ namespace CommBug
 			this.buttonOk.UseUnderline = true;
 			this.buttonOk.Label = "gtk-ok";
 			this.AddActionWidget (this.buttonOk, -5);
-			global::Gtk.ButtonBox.ButtonBoxChild w6 = ((global::Gtk.ButtonBox.ButtonBoxChild)(w5[this.buttonOk]));
-			w6.Expand = false;
-			w6.Fill = false;
+			global::Gtk.ButtonBox.ButtonBoxChild w20 = ((global::Gtk.ButtonBox.ButtonBoxChild)(w19[this.buttonOk]));
+			w20.Expand = false;
+			w20.Fill = false;
 			if ((this.Child != null)) {
 				this.Child.ShowAll ();
 			}
 			this.DefaultWidth = 400;
-			this.DefaultHeight = 344;
+			this.DefaultHeight = 328;
 			this.Show ();
+			this.buttonOk.Clicked += new global::System.EventHandler (this.OnButtonOkClicked);
 		}
 	}
 }
