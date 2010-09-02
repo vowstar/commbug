@@ -64,7 +64,7 @@ namespace CommBug
 			this.notebookAboutWindow = new global::Gtk.Notebook ();
 			this.notebookAboutWindow.CanFocus = true;
 			this.notebookAboutWindow.Name = "notebookAboutWindow";
-			this.notebookAboutWindow.CurrentPage = 3;
+			this.notebookAboutWindow.CurrentPage = 1;
 			// Container child notebookAboutWindow.Gtk.Notebook+NotebookChild
 			this.alignmentInfo = new global::Gtk.Alignment (0.5f, 0.5f, 1f, 1f);
 			this.alignmentInfo.Name = "alignmentInfo";
@@ -77,6 +77,7 @@ namespace CommBug
 			// Container child tableInfo.Gtk.Table+TableChild
 			this.imageInfo = new global::Gtk.Image ();
 			this.imageInfo.Name = "imageInfo";
+			this.imageInfo.Pixbuf = global::Stetic.IconLoader.LoadIcon (this, "gtk-dialog-info", global::Gtk.IconSize.Dialog);
 			this.tableInfo.Add (this.imageInfo);
 			global::Gtk.Table.TableChild w2 = ((global::Gtk.Table.TableChild)(this.tableInfo[this.imageInfo]));
 			w2.XOptions = ((global::Gtk.AttachOptions)(4));
