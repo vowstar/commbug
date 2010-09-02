@@ -10,12 +10,11 @@
     <RootNamespace>CommBug</RootNamespace>
     <AssemblyName>CommBug</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
-    <ReleaseVersion>0.9</ReleaseVersion>
+    <ReleaseVersion>1.0.0.0</ReleaseVersion>
     <Description>串口调试助手，用来调试串口的数据发送与接收。
 支持文本模式、16进制、10进制显示被调试串口接收和发送的内容。
 支持自动发送模式，
 是学习单片机与检测串口设备的必备工具。</Description>
-    <SynchReleaseVersion>false</SynchReleaseVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
     <DebugSymbols>true</DebugSymbols>
