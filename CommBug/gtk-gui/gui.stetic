@@ -8,7 +8,7 @@
     <widget-library name="glade-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
     <widget-library name="../bin/Release/CommBug.exe" internal="true" />
   </import>
-  <widget class="Gtk.Window" id="MainWindow" design-size="580 541">
+  <widget class="Gtk.Window" id="MainWindow" design-size="580 499">
     <action-group name="Default">
       <action id="FAction">
         <property name="Type">Action</property>
@@ -934,67 +934,6 @@ Space</property>
                     <property name="Fill">False</property>
                   </packing>
                 </child>
-                <child>
-                  <widget class="Gtk.HSeparator" id="hseparatorLeftB">
-                    <property name="MemberName" />
-                  </widget>
-                  <packing>
-                    <property name="Position">3</property>
-                    <property name="AutoSize">True</property>
-                    <property name="Expand">False</property>
-                    <property name="Fill">False</property>
-                  </packing>
-                </child>
-                <child>
-                  <widget class="Gtk.Expander" id="expanderAbout">
-                    <property name="MemberName" />
-                    <property name="CanFocus">True</property>
-                    <child>
-                      <widget class="Gtk.Table" id="tableAbout">
-                        <property name="MemberName" />
-                        <property name="RowSpacing">6</property>
-                        <property name="ColumnSpacing">6</property>
-                        <child>
-                          <widget class="Gtk.Label" id="labelAbout">
-                            <property name="MemberName" />
-                            <property name="LabelProp" translatable="yes">关于串口调试助手
-作者：黄锐
-日期：2010-08-03
-vowstar@gmail.com
-</property>
-                          </widget>
-                          <packing>
-                            <property name="AutoSize">False</property>
-                            <property name="YOptions">Fill</property>
-                            <property name="XExpand">True</property>
-                            <property name="XFill">True</property>
-                            <property name="XShrink">False</property>
-                            <property name="YExpand">False</property>
-                            <property name="YFill">True</property>
-                            <property name="YShrink">False</property>
-                          </packing>
-                        </child>
-                      </widget>
-                    </child>
-                    <child>
-                      <widget class="Gtk.Label" id="GtkLabelAbout">
-                        <property name="MemberName" />
-                        <property name="LabelProp" translatable="yes">&lt;b&gt;关于&lt;/b&gt;</property>
-                        <property name="UseMarkup">True</property>
-                        <property name="UseUnderline">True</property>
-                      </widget>
-                      <packing>
-                        <property name="type">label_item</property>
-                      </packing>
-                    </child>
-                  </widget>
-                  <packing>
-                    <property name="Position">4</property>
-                    <property name="AutoSize">True</property>
-                    <property name="Expand">False</property>
-                    <property name="Fill">False</property>
-                  </packing>
-                </child>
               </widget>
               <packing>
                 <property name="Resize">False</property>
@@ -1004,7 +943,7 @@ vowstar@gmail.com
               <widget class="Gtk.VPaned" id="vpanedRight">
                 <property name="MemberName" />
                 <property name="CanFocus">True</property>
-                <property name="Position">277</property>
+                <property name="Position">239</property>
                 <child>
                   <widget class="Gtk.VBox" id="vboxReceiveArea">
                     <property name="MemberName" />
