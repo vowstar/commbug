@@ -799,6 +799,7 @@ Space</property>
                                                 <property name="MemberName" />
                                                 <property name="CanFocus">True</property>
                                                 <property name="Label" translatable="yes">10进制</property>
+                                                <property name="Active">True</property>
                                                 <property name="DrawIndicator">True</property>
                                                 <property name="HasLabel">True</property>
                                                 <property name="UseUnderline">True</property>
@@ -1528,7 +1529,7 @@ vowstar@gmail.com
           <widget class="Gtk.Notebook" id="notebookAboutWindow">
             <property name="MemberName" />
             <property name="CanFocus">True</property>
-            <property name="CurrentPage">3</property>
+            <property name="CurrentPage">1</property>
             <child>
               <widget class="Gtk.Alignment" id="alignmentInfo">
                 <property name="MemberName" />
@@ -1567,6 +1568,7 @@ vowstar@gmail.com
                             <child>
                               <widget class="Gtk.Label" id="labelInfo">
                                 <property name="MemberName" />
+                                <property name="UseMarkup">True</property>
                               </widget>
                             </child>
                           </widget>
@@ -1746,17 +1748,20 @@ vowstar@gmail.com
               </packing>
             </child>
             <child>
-              <widget class="Gtk.Alignment" id="alignmentLisense">
+              <widget class="Gtk.Alignment" id="alignmentLicense">
                 <property name="MemberName" />
                 <property name="BorderWidth">10</property>
                 <child>
-                  <widget class="Gtk.Table" id="tableLisense">
+                  <widget class="Gtk.Table" id="tableLicense">
                     <property name="MemberName" />
                     <property name="NColumns">2</property>
                     <property name="RowSpacing">6</property>
                     <property name="ColumnSpacing">6</property>
                     <child>
-                      <widget class="Gtk.Image" id="imageLisense">
+                      <placeholder />
+                    </child>
+                    <child>
+                      <widget class="Gtk.Image" id="imageLicense">
                         <property name="MemberName" />
                         <property name="Pixbuf">stock:gtk-dialog-warning Dialog</property>
                       </widget>
@@ -1764,22 +1769,6 @@ vowstar@gmail.com
                         <property name="AutoSize">False</property>
                         <property name="XOptions">Fill</property>
                         <property name="XExpand">False</property>
-                        <property name="XFill">True</property>
-                        <property name="XShrink">False</property>
-                        <property name="YExpand">True</property>
-                        <property name="YFill">True</property>
-                        <property name="YShrink">False</property>
-                      </packing>
-                    </child>
-                    <child>
-                      <widget class="Gtk.Label" id="labelLisense">
-                        <property name="MemberName" />
-                      </widget>
-                      <packing>
-                        <property name="LeftAttach">1</property>
-                        <property name="RightAttach">2</property>
-                        <property name="AutoSize">False</property>
-                        <property name="XExpand">True</property>
                         <property name="XFill">True</property>
                         <property name="XShrink">False</property>
                         <property name="YExpand">True</property>
@@ -1795,7 +1784,7 @@ vowstar@gmail.com
               </packing>
             </child>
             <child>
-              <widget class="Gtk.Label" id="labelTabLisense">
+              <widget class="Gtk.Label" id="labelTabLicense">
                 <property name="MemberName" />
                 <property name="LabelProp" translatable="yes">协议(_L)</property>
                 <property name="UseUnderline">True</property>
