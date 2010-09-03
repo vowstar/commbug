@@ -24,7 +24,13 @@ Global
 		$0.StandardHeader = $1
 		$1.Text = 
 		$1.inheritsSet = Apache2License
+		$0.TextStylePolicy = $2
+		$2.FileWidth = 120
+		$2.TabWidth = 4
+		$2.inheritsSet = Mono
+		$2.inheritsScope = text/plain
+		$2.scope = text/plain
 		description = @串口调试助手，用来调试串口的数据发送与接收。\n支持文本模式、16进制、10进制显示被调试串口接收和发送的内容。\n支持自动发送模式，\n是学习单片机与检测串口设备的必备工具。
-		version = 0.9
+		version = 1.0.0.1
 	EndGlobalSection
 EndGlobal
