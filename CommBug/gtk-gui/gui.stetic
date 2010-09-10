@@ -1588,6 +1588,7 @@ Space</property>
 
 &lt;span font_desc='16'&gt;美工&lt;/span&gt;
 黄锐(vowstar@gmail.com)</property>
+                                <property name="Selectable">True</property>
                               </widget>
                             </child>
                           </widget>
@@ -1693,6 +1694,7 @@ Space</property>
                 <property name="MemberName" />
                 <property name="LabelProp" translatable="yes">翻译(_T)</property>
                 <property name="UseUnderline">True</property>
+                <property name="Selectable">True</property>
               </widget>
               <packing>
                 <property name="type">tab</property>
@@ -2438,6 +2440,7 @@ Public License instead of this License.  But first, please read
                 <property name="MemberName" />
                 <property name="LabelProp" translatable="yes">协议(_L)</property>
                 <property name="UseUnderline">True</property>
+                <property name="Selectable">True</property>
               </widget>
               <packing>
                 <property name="type">tab</property>
