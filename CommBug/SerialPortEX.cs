@@ -118,7 +118,6 @@ public class SerialPortEx : IDisposable
 	{
 		Init (portName, baudRate, parity, dataBits, StopBits.One);
 	}
-
 	public SerialPortEx (string portName, int baudRate, System.IO.Ports.Parity parity, int dataBits, System.IO.Ports.StopBits stopBits)
 	{
 		Init (portName, baudRate, parity, dataBits, stopBits);
