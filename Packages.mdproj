@@ -33,6 +33,6 @@
         </Package>
       </Packages>
     </Packages>
-    <ReleaseVersion>1.0.0.1</ReleaseVersion>
+    <ReleaseVersion>1.0.0.1000</ReleaseVersion>
   </PropertyGroup>
 </Project>

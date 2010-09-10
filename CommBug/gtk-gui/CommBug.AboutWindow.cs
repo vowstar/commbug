@@ -146,6 +146,7 @@ namespace CommBug
 			this.labelAuthor = new global::Gtk.Label ();
 			this.labelAuthor.Name = "labelAuthor";
 			this.labelAuthor.LabelProp = global::Mono.Unix.Catalog.GetString ("<span font_desc='16'>编程</span>\n黄锐(vowstar@gmail.com)\n\n<span font_desc='16'>美工</span>\n黄锐(vowstar@gmail.com)");
+			this.labelAuthor.Selectable = true;
 			w10.Add (this.labelAuthor);
 			this.scrolledwindowAuthor.Add (w10);
 			this.tableAuthor.Add (this.scrolledwindowAuthor);
@@ -192,6 +193,7 @@ namespace CommBug
 			this.labelTranslation = new global::Gtk.Label ();
 			this.labelTranslation.Name = "labelTranslation";
 			this.labelTranslation.LabelProp = global::Mono.Unix.Catalog.GetString ("<span font_desc='16'>简体中文</span>\n黄锐(vowstar@gmail.com)");
+			this.labelTranslation.Selectable = true;
 			w17.Add (this.labelTranslation);
 			this.scrolledwindowTranslation.Add (w17);
 			this.tableTranslation.Add (this.scrolledwindowTranslation);

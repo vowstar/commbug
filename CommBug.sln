@@ -30,7 +30,17 @@ Global
 		$2.inheritsSet = Mono
 		$2.inheritsScope = text/plain
 		$2.scope = text/plain
+		$0.TextStylePolicy = $3
+		$3.inheritsSet = null
+		$3.scope = text/x-csharp
+		$0.CSharpFormattingPolicy = $4
+		$4.inheritsSet = Mono
+		$4.inheritsScope = text/x-csharp
+		$4.scope = text/x-csharp
+		$0.TextStylePolicy = $5
+		$5.inheritsSet = null
+		$5.scope = application/x-desktop
 		description = @串口调试助手，用来调试串口的数据发送与接收。\n支持文本模式、16进制、10进制显示被调试串口接收和发送的内容。\n支持自动发送模式，\n是学习单片机与检测串口设备的必备工具。
-		version = 1.0.0.1
+		version = 1.0.0.1000
 	EndGlobalSection
 EndGlobal
