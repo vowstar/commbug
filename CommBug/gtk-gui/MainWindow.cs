@@ -31,7 +31,7 @@ public partial class MainWindow
 
 	private global::Gtk.ComboBoxEntry comboboxentryBaudRate;
 
-	private global::Gtk.ComboBox comboboxPortName;
+	private global::Gtk.ComboBoxEntry comboboxentryPortName;
 
 	private global::Gtk.Image imageBaudRate;
 
@@ -280,7 +280,7 @@ public partial class MainWindow
 		this.comboboxentryBaudRate.AppendText (global::Mono.Unix.Catalog.GetString ("57600"));
 		this.comboboxentryBaudRate.AppendText (global::Mono.Unix.Catalog.GetString ("115200"));
 		this.comboboxentryBaudRate.TooltipMarkup = "设置串口波特率。";
-		this.comboboxentryBaudRate.WidthRequest = 100;
+		this.comboboxentryBaudRate.WidthRequest = 139;
 		this.comboboxentryBaudRate.Name = "comboboxentryBaudRate";
 		this.comboboxentryBaudRate.Active = 2;
 		this.tableCommBasic.Add (this.comboboxentryBaudRate);
@@ -292,13 +292,14 @@ public partial class MainWindow
 		w2.XOptions = ((global::Gtk.AttachOptions)(4));
 		w2.YOptions = ((global::Gtk.AttachOptions)(4));
 		// Container child tableCommBasic.Gtk.Table+TableChild
-		this.comboboxPortName = global::Gtk.ComboBox.NewText ();
-		this.comboboxPortName.TooltipMarkup = "选择您要调试的串口。";
-		this.comboboxPortName.Name = "comboboxPortName";
-		this.tableCommBasic.Add (this.comboboxPortName);
-		global::Gtk.Table.TableChild w3 = ((global::Gtk.Table.TableChild)(this.tableCommBasic[this.comboboxPortName]));
+		this.comboboxentryPortName = global::Gtk.ComboBoxEntry.NewText ();
+		this.comboboxentryPortName.WidthRequest = 139;
+		this.comboboxentryPortName.Name = "comboboxentryPortName";
+		this.tableCommBasic.Add (this.comboboxentryPortName);
+		global::Gtk.Table.TableChild w3 = ((global::Gtk.Table.TableChild)(this.tableCommBasic[this.comboboxentryPortName]));
 		w3.LeftAttach = ((uint)(2));
 		w3.RightAttach = ((uint)(3));
+		w3.XOptions = ((global::Gtk.AttachOptions)(4));
 		w3.YOptions = ((global::Gtk.AttachOptions)(4));
 		// Container child tableCommBasic.Gtk.Table+TableChild
 		this.imageBaudRate = new global::Gtk.Image ();
@@ -688,7 +689,6 @@ public partial class MainWindow
 		this.radiobuttonDec = new global::Gtk.RadioButton (global::Mono.Unix.Catalog.GetString ("10进制"));
 		this.radiobuttonDec.CanFocus = true;
 		this.radiobuttonDec.Name = "radiobuttonDec";
-		this.radiobuttonDec.Active = true;
 		this.radiobuttonDec.DrawIndicator = true;
 		this.radiobuttonDec.UseUnderline = true;
 		this.radiobuttonDec.Group = new global::GLib.SList (global::System.IntPtr.Zero);
@@ -1111,8 +1111,8 @@ public partial class MainWindow
 		if ((this.Child != null)) {
 			this.Child.ShowAll ();
 		}
-		this.DefaultWidth = 580;
-		this.DefaultHeight = 499;
+		this.DefaultWidth = 611;
+		this.DefaultHeight = 512;
 		this.Show ();
 		this.DeleteEvent += new global::Gtk.DeleteEventHandler (this.OnDeleteEvent);
 		this.quitAction.Activated += new global::System.EventHandler (this.OnQuitActionActivated);

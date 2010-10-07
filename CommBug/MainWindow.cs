@@ -16,31 +16,25 @@ public partial class MainWindow : Gtk.Window
 	public ConvertMode NowSendMode = ConvertMode.Text;
 	public SerialPortEx MyPort;
 	private System.Timers.Timer SendTimer;
+	private System.Timers.Timer PortNameTimer;
 	private string portName = "";
 	private int baudRate = 1200;
 	private Parity parity = Parity.None;
 	private int dataBits = 0;
 	private StopBits stopBits = StopBits.One;
+
+	private int portCount = 0;
+	private ListStore portNameModel = new ListStore (typeof(string));
 	private CommBug.AboutWindow aboutWindow;
 	#endregion
 	public MainWindow () : base(Gtk.WindowType.Toplevel)
 	{
 		Build ();
 		textviewSend.Buffer.Changed += HandleTextviewSendBufferChanged;
-		#region 初始化串口
-		// 初始化串口
-		foreach (var Name in System.IO.Ports.SerialPort.GetPortNames ()) {
-			comboboxPortName.AppendText (Name);
-		}
-		int index;
-		index = SerialPort.GetPortNames ().Length;
-		
-		if (index > 0) {
-			comboboxPortName.Active = index - 1;
-			// 自动选择串口
-		} else {
-			// 无串口
-		}
+		#region 初始化串口名称
+		// 初始化串口名称与comboboxentry
+		comboboxentryPortName.Model = portNameModel;
+		InitializationPortName ();
 		SettingsSynchronization ();
 		MyPort = new SerialPortEx (portName, baudRate, parity, dataBits, stopBits);
 		MyPort.DataReceived += new SerialDataReceivedEventHandler (HandleMyPortDataReceived);
@@ -67,17 +61,24 @@ public partial class MainWindow : Gtk.Window
 		SendTimer.Interval = Convert.ToDouble (spinbuttonInterval.Text);
 		SendTimer.AutoReset = true;
 		SendTimer.Enabled = false;
+		PortNameTimer = new System.Timers.Timer ();
+		PortNameTimer.Elapsed += HandlePortNameTimerElapsed;
+		PortNameTimer.Interval = 700;
+		PortNameTimer.AutoReset = true;
+		PortNameTimer.Enabled = true;
 		// 自动复位定时器，一直能触发
 		#endregion
 		
 	}
 
-
 	protected void OnDeleteEvent (object sender, DeleteEventArgs a)
 	{
+		PortNameTimer.Enabled = false;
+		PortNameTimer.Dispose ();
 		SendTimer.Enabled = false;
 		SendTimer.Dispose ();
 		MyPort.Dispose ();
+		//System.Diagnostics.Process.GetCurrentProcess().Kill();
 		Application.Quit ();
 		a.RetVal = true;
 	}
@@ -117,6 +118,12 @@ public partial class MainWindow : Gtk.Window
 		Gdk.Threads.Leave ();
 	}
 
+	void HandlePortNameTimerElapsed (object sender, System.Timers.ElapsedEventArgs e)
+	{
+		Gdk.Threads.Enter ();
+		InitializationPortName ();
+		Gdk.Threads.Leave ();
+	}
 	void HandleMyPortDataReceived (object sender, SerialDataReceivedEventArgs e)
 	{
 		byte[] buffer = new byte[MyPort.BytesToRead];
@@ -150,13 +157,31 @@ public partial class MainWindow : Gtk.Window
 	#endregion
 
 
+	private void InitializationPortName ()
+	{
+		if (System.IO.Ports.SerialPort.GetPortNames ().Length != portCount) {
+			Console.WriteLine ("Detect Serial Ports Changed");
+			portCount = System.IO.Ports.SerialPort.GetPortNames ().Length;
+			portNameModel.Clear ();
+			foreach (var Name in System.IO.Ports.SerialPort.GetPortNames ()) {
+				comboboxentryPortName.AppendText (Name);
+			}
+			if (portCount > 0) {
+				comboboxentryPortName.Active = portCount - 1;
+				// 自动选择串口
+				
+			} else {
+				// 无串口
+			}
+		}
+	}
 	private void SettingsSynchronization ()
 	{
 		int index;
-		portName = comboboxPortName.ActiveText;
-		Console.WriteLine (portName);
+		portName = comboboxentryPortName.ActiveText;
+		Console.WriteLine ("Synchronization\tPortName\t>>\t" + portName);
 		baudRate = Convert.ToInt32 (comboboxentryBaudRate.ActiveText);
-		Console.WriteLine (baudRate);
+		Console.WriteLine ("Synchronization\tBaudRate\t>>\t" + baudRate.ToString ());
 		index = comboboxPatity.Active;
 		switch (index) {
 		case 0:
@@ -178,9 +203,9 @@ public partial class MainWindow : Gtk.Window
 			parity = Parity.None;
 			break;
 		}
-		Console.WriteLine (parity);
+		Console.WriteLine ("Synchronization\tParity\t\t>>\t" + parity.ToString ());
 		dataBits = Convert.ToInt32 (spinbuttonDataBits.Text);
-		Console.WriteLine (dataBits);
+		Console.WriteLine ("Synchronization\tDataBits\t>>\t" + dataBits.ToString ());
 		index = comboboxStopBits.Active;
 		switch (index) {
 		case 0:
@@ -199,7 +224,7 @@ public partial class MainWindow : Gtk.Window
 			stopBits = StopBits.One;
 			break;
 		}
-		Console.WriteLine (stopBits);
+		Console.WriteLine ("Synchronization\tStopBits\t>>\t" + stopBits.ToString ());
 		if (MyPort != null) {
 			MyPort.PortName = portName;
 			MyPort.BaudRate = baudRate;
