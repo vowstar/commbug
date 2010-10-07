@@ -1,4 +1,7 @@
 using System;
+/// <summary>
+/// 关于界面
+/// </summary>
 namespace CommBug
 {
 	public partial class AboutWindow : Gtk.Dialog

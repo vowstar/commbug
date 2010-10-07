@@ -1,7 +1,9 @@
 using System;
 using System.IO.Ports;
 using Gtk;
-
+/// <summary>
+/// 主界面
+/// </summary>
 public partial class MainWindow : Gtk.Window
 {
 	#region 变量与类定义
