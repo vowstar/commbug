@@ -13,6 +13,10 @@ public partial class MainWindow
 
 	private global::Gtk.Action aboutAction;
 
+	private global::Gtk.Action TAction;
+
+	private global::Gtk.Action openportAction;
+
 	private global::Gtk.Table tableMain;
 
 	private global::Gtk.HPaned hpanedMain;
@@ -226,6 +230,12 @@ public partial class MainWindow
 		this.aboutAction = new global::Gtk.Action ("aboutAction", global::Mono.Unix.Catalog.GetString ("关于(_A)"), null, "gtk-about");
 		this.aboutAction.ShortLabel = global::Mono.Unix.Catalog.GetString ("关于(_A)");
 		w1.Add (this.aboutAction, null);
+		this.TAction = new global::Gtk.Action ("TAction", global::Mono.Unix.Catalog.GetString ("工具(_T)"), null, null);
+		this.TAction.ShortLabel = global::Mono.Unix.Catalog.GetString ("工具(_T)");
+		w1.Add (this.TAction, null);
+		this.openportAction = new global::Gtk.Action ("openportAction", global::Mono.Unix.Catalog.GetString ("打开串口(_O)"), null, "gtk-connect");
+		this.openportAction.ShortLabel = global::Mono.Unix.Catalog.GetString ("打开串口(_O)");
+		w1.Add (this.openportAction, null);
 		this.UIManager.InsertActionGroup (w1, 0);
 		this.AddAccelGroup (this.UIManager.AccelGroup);
 		this.Name = "MainWindow";
@@ -1092,7 +1102,7 @@ public partial class MainWindow
 		w113.TopAttach = ((uint)(1));
 		w113.BottomAttach = ((uint)(2));
 		// Container child tableMain.Gtk.Table+TableChild
-		this.UIManager.AddUiFromString ("<ui><menubar name='menubarMain'><menu name='FAction' action='FAction'><menuitem name='quitAction' action='quitAction'/></menu><menu name='HAction' action='HAction'><menuitem name='aboutAction' action='aboutAction'/></menu></menubar></ui>");
+		this.UIManager.AddUiFromString ("<ui><menubar name='menubarMain'><menu name='FAction' action='FAction'><menuitem name='quitAction' action='quitAction'/></menu><menu name='TAction' action='TAction'/><menu name='HAction' action='HAction'><menuitem name='aboutAction' action='aboutAction'/></menu></menubar></ui>");
 		this.menubarMain = ((global::Gtk.MenuBar)(this.UIManager.GetWidget ("/menubarMain")));
 		this.menubarMain.Name = "menubarMain";
 		this.tableMain.Add (this.menubarMain);
@@ -1112,7 +1122,7 @@ public partial class MainWindow
 			this.Child.ShowAll ();
 		}
 		this.DefaultWidth = 611;
-		this.DefaultHeight = 512;
+		this.DefaultHeight = 521;
 		this.Show ();
 		this.DeleteEvent += new global::Gtk.DeleteEventHandler (this.OnDeleteEvent);
 		this.quitAction.Activated += new global::System.EventHandler (this.OnQuitActionActivated);

@@ -438,7 +438,7 @@ Copyright (C) 2009 Free Software Foundation, Inc.
 This config.status script is free software; the Free Software Foundation
 gives unlimited permission to copy, distribute and modify it."
 
-ac_pwd='/home/vowstar/commbug'
+ac_pwd='/home/vowstar/Projects/Commbug'
 srcdir='.'
 INSTALL='/usr/bin/install -c'
 MKDIR_P='/bin/mkdir -p'
@@ -618,7 +618,7 @@ S["MAINTAINER_MODE_FALSE"]="#"
 S["MAINTAINER_MODE_TRUE"]=""
 S["am__untar"]="${AMTAR} xf -"
 S["am__tar"]="${AMTAR} chof - \"$$tardir\""
-S["AMTAR"]="${SHELL} /home/vowstar/commbug/missing --run tar"
+S["AMTAR"]="${SHELL} /home/vowstar/Projects/Commbug/missing --run tar"
 S["am__leading_dot"]="."
 S["SET_MAKE"]=""
 S["AWK"]="gawk"
@@ -626,12 +626,12 @@ S["mkdir_p"]="/bin/mkdir -p"
 S["MKDIR_P"]="/bin/mkdir -p"
 S["INSTALL_STRIP_PROGRAM"]="$(install_sh) -c -s"
 S["STRIP"]=""
-S["install_sh"]="${SHELL} /home/vowstar/commbug/install-sh"
-S["MAKEINFO"]="${SHELL} /home/vowstar/commbug/missing --run makeinfo"
-S["AUTOHEADER"]="${SHELL} /home/vowstar/commbug/missing --run autoheader"
-S["AUTOMAKE"]="${SHELL} /home/vowstar/commbug/missing --run automake-1.11"
-S["AUTOCONF"]="${SHELL} /home/vowstar/commbug/missing --run autoconf"
-S["ACLOCAL"]="${SHELL} /home/vowstar/commbug/missing --run aclocal-1.11"
+S["install_sh"]="${SHELL} /home/vowstar/Projects/Commbug/install-sh"
+S["MAKEINFO"]="${SHELL} /home/vowstar/Projects/Commbug/missing --run makeinfo"
+S["AUTOHEADER"]="${SHELL} /home/vowstar/Projects/Commbug/missing --run autoheader"
+S["AUTOMAKE"]="${SHELL} /home/vowstar/Projects/Commbug/missing --run automake-1.11"
+S["AUTOCONF"]="${SHELL} /home/vowstar/Projects/Commbug/missing --run autoconf"
+S["ACLOCAL"]="${SHELL} /home/vowstar/Projects/Commbug/missing --run aclocal-1.11"
 S["VERSION"]="1.0.0.1000"
 S["PACKAGE"]="commbug"
 S["CYGPATH_W"]="echo"

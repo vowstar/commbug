@@ -8,7 +8,7 @@
     <widget-library name="glade-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
     <widget-library name="../bin/Release/CommBug.exe" internal="true" />
   </import>
-  <widget class="Gtk.Window" id="MainWindow" design-size="611 512">
+  <widget class="Gtk.Window" id="MainWindow" design-size="611 521">
     <action-group name="Default">
       <action id="FAction">
         <property name="Type">Action</property>
@@ -34,6 +34,17 @@
         <property name="ShortLabel" translatable="yes">关于(_A)</property>
         <property name="StockId">gtk-about</property>
         <signal name="Activated" handler="OnAboutActionActivated" />
+      </action>
+      <action id="TAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">工具(_T)</property>
+        <property name="ShortLabel" translatable="yes">工具(_T)</property>
+      </action>
+      <action id="openportAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">打开串口(_O)</property>
+        <property name="ShortLabel" translatable="yes">打开串口(_O)</property>
+        <property name="StockId">gtk-connect</property>
       </action>
     </action-group>
     <property name="MemberName" />
@@ -1417,6 +1428,7 @@ Space</property>
               <node type="Menu" action="FAction">
                 <node type="Menuitem" action="quitAction" />
               </node>
+              <node type="Menu" action="TAction" />
               <node type="Menu" action="HAction">
                 <node type="Menuitem" action="aboutAction" />
               </node>
