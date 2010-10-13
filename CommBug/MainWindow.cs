@@ -165,7 +165,7 @@ public partial class MainWindow : Gtk.Window
 			Console.WriteLine ("Detect Serial Ports Changed");
 			portCount = System.IO.Ports.SerialPort.GetPortNames ().Length;
 			portNameModel.Clear ();
-			foreach (var Name in System.IO.Ports.SerialPort.GetPortNames ()) {
+			foreach (string Name in System.IO.Ports.SerialPort.GetPortNames ()) {
 				comboboxentryPortName.AppendText (Name);
 			}
 			if (portCount > 0) {

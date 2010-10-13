@@ -2,7 +2,7 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Release|x86" ctype="Workspace" />
   <MonoDevelop.Ide.Workbench ActiveDocument="CommBug/MainWindow.cs" ctype="Workbench">
     <Files>
-      <File FileName="CommBug/MainWindow.cs" Line="22" Column="31" />
+      <File FileName="CommBug/MainWindow.cs" Line="163" Column="3" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
