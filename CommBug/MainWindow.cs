@@ -177,6 +177,14 @@ public partial class MainWindow : Gtk.Window
 			}
 		}
 	}
+	public void SettingsSafeUpdate ()
+	{
+		if (MyPort.IsOpen) {
+			MyPort.Close ();
+			SettingsSynchronization ();
+			MyPort.Open ();
+		}
+	}
 	private void SettingsSynchronization ()
 	{
 		int index;
@@ -419,6 +427,44 @@ public partial class MainWindow : Gtk.Window
 				aboutWindow = new CommBug.AboutWindow ();
 		}
 	}
+
+	protected virtual void OnComboboxentryBaudRateChanged (object sender, System.EventArgs e)
+	{
+		SettingsSafeUpdate ();
+	}
+
+	protected virtual void OnComboboxentryPortNameChanged (object sender, System.EventArgs e)
+	{
+		;
+		// To be fix
+	}
+
+	protected virtual void OnComboboxPatityChanged (object sender, System.EventArgs e)
+	{
+		SettingsSafeUpdate ();
+	}
+
+	protected virtual void OnSpinbuttonDataBitsChanged (object sender, System.EventArgs e)
+	{
+		try {
+			int TestDataBits = Convert.ToInt32 (spinbuttonDataBits.Text);
+			if (TestDataBits > 8)
+				spinbuttonDataBits.Text = "8";
+			if (TestDataBits < 5)
+				spinbuttonDataBits.Text = "5";
+			SettingsSafeUpdate ();			
+		} catch (Exception ex) {
+			Console.WriteLine(ex.Message);
+		}
+		
+		
+	}
+
+	protected virtual void OnComboboxStopBitsChanged (object sender, System.EventArgs e)
+	{
+		SettingsSafeUpdate ();
+	}
+	
 	
 	
 	

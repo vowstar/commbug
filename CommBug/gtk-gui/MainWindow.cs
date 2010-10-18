@@ -292,7 +292,7 @@ public partial class MainWindow
 		this.comboboxentryBaudRate.TooltipMarkup = "设置串口波特率。";
 		this.comboboxentryBaudRate.WidthRequest = 139;
 		this.comboboxentryBaudRate.Name = "comboboxentryBaudRate";
-		this.comboboxentryBaudRate.Active = 2;
+		this.comboboxentryBaudRate.Active = 3;
 		this.tableCommBasic.Add (this.comboboxentryBaudRate);
 		global::Gtk.Table.TableChild w2 = ((global::Gtk.Table.TableChild)(this.tableCommBasic[this.comboboxentryBaudRate]));
 		w2.TopAttach = ((uint)(1));
@@ -388,7 +388,7 @@ public partial class MainWindow
 		w10.XOptions = ((global::Gtk.AttachOptions)(4));
 		w10.YOptions = ((global::Gtk.AttachOptions)(4));
 		// Container child tableCommSetDataBits.Gtk.Table+TableChild
-		this.spinbuttonDataBits = new global::Gtk.SpinButton (0, 100, 1);
+		this.spinbuttonDataBits = new global::Gtk.SpinButton (5, 8, 1);
 		this.spinbuttonDataBits.CanFocus = true;
 		this.spinbuttonDataBits.Name = "spinbuttonDataBits";
 		this.spinbuttonDataBits.Adjustment.PageIncrement = 10;
@@ -699,6 +699,7 @@ public partial class MainWindow
 		this.radiobuttonDec = new global::Gtk.RadioButton (global::Mono.Unix.Catalog.GetString ("10进制"));
 		this.radiobuttonDec.CanFocus = true;
 		this.radiobuttonDec.Name = "radiobuttonDec";
+		this.radiobuttonDec.Active = true;
 		this.radiobuttonDec.DrawIndicator = true;
 		this.radiobuttonDec.UseUnderline = true;
 		this.radiobuttonDec.Group = new global::GLib.SList (global::System.IntPtr.Zero);
@@ -1127,6 +1128,11 @@ public partial class MainWindow
 		this.DeleteEvent += new global::Gtk.DeleteEventHandler (this.OnDeleteEvent);
 		this.quitAction.Activated += new global::System.EventHandler (this.OnQuitActionActivated);
 		this.aboutAction.Activated += new global::System.EventHandler (this.OnAboutActionActivated);
+		this.comboboxentryPortName.Changed += new global::System.EventHandler (this.OnComboboxentryPortNameChanged);
+		this.comboboxentryBaudRate.Changed += new global::System.EventHandler (this.OnComboboxentryBaudRateChanged);
+		this.comboboxStopBits.Changed += new global::System.EventHandler (this.OnComboboxStopBitsChanged);
+		this.comboboxPatity.Changed += new global::System.EventHandler (this.OnComboboxPatityChanged);
+		this.spinbuttonDataBits.Changed += new global::System.EventHandler (this.OnSpinbuttonDataBitsChanged);
 		this.togglebuttonPortSwitch.Clicked += new global::System.EventHandler (this.OntogglebuttonPortSwitchClicked);
 		this.radiobuttonText.GroupChanged += new global::System.EventHandler (this.OnRadiobuttonSendActivated);
 		this.radiobuttonText.Clicked += new global::System.EventHandler (this.OnRadiobuttonSendActivated);

@@ -108,7 +108,8 @@
 38400
 57600
 115200</property>
-                                        <property name="Active">2</property>
+                                        <property name="Active">3</property>
+                                        <signal name="Changed" handler="OnComboboxentryBaudRateChanged" />
                                       </widget>
                                       <packing>
                                         <property name="TopAttach">1</property>
@@ -132,6 +133,7 @@
                                         <property name="WidthRequest">139</property>
                                         <property name="IsTextCombo">True</property>
                                         <property name="Items" translatable="yes" />
+                                        <signal name="Changed" handler="OnComboboxentryPortNameChanged" />
                                       </widget>
                                       <packing>
                                         <property name="LeftAttach">2</property>
@@ -286,12 +288,14 @@
                                           <widget class="Gtk.SpinButton" id="spinbuttonDataBits">
                                             <property name="MemberName" />
                                             <property name="CanFocus">True</property>
-                                            <property name="Upper">100</property>
+                                            <property name="Lower">5</property>
+                                            <property name="Upper">8</property>
                                             <property name="PageIncrement">10</property>
                                             <property name="StepIncrement">1</property>
                                             <property name="ClimbRate">1</property>
                                             <property name="Numeric">True</property>
                                             <property name="Value">8</property>
+                                            <signal name="Changed" handler="OnSpinbuttonDataBitsChanged" />
                                           </widget>
                                           <packing>
                                             <property name="TopAttach">1</property>
@@ -338,6 +342,7 @@ Odd
 Mark
 Space</property>
                                             <property name="Active">0</property>
+                                            <signal name="Changed" handler="OnComboboxPatityChanged" />
                                           </widget>
                                           <packing>
                                             <property name="TopAttach">1</property>
@@ -398,6 +403,7 @@ Space</property>
 1.5
 2</property>
                                             <property name="Active">1</property>
+                                            <signal name="Changed" handler="OnComboboxStopBitsChanged" />
                                           </widget>
                                           <packing>
                                             <property name="TopAttach">1</property>
