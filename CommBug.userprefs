@@ -1,10 +1,18 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Release|x86" ctype="Workspace" />
-  <MonoDevelop.Ide.Workbench ctype="Workbench">
+  <MonoDevelop.Ide.Workbench ActiveDocument="CommBug/MainWindow.cs" ctype="Workbench">
+    <Files>
+      <File FileName="CommBug/MainWindow.cs" Line="111" Column="67" />
+    </Files>
     <Pads>
       <Pad Id="ProjectPad">
-        <State expanded="True" selected="True">
-          <Node name="CommBug" expanded="True" />
+        <State expanded="True">
+          <Node name="CommBug" expanded="True">
+            <Node name="UserInterface" expanded="True">
+              <Node name="MainWindow" expanded="True" />
+            </Node>
+            <Node name="MainWindow.cs" selected="True" />
+          </Node>
         </State>
       </Pad>
       <Pad Id="ClassPad">
@@ -16,5 +24,4 @@
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches ctype="PinnedWatchStore" />
-  <AuthorInfo Name="vowstar" Email="vowstar@gmail.com" Copyright="vowstar" ctype="AuthorInformation" />
 </Properties>

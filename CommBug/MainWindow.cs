@@ -435,8 +435,20 @@ public partial class MainWindow : Gtk.Window
 
 	protected virtual void OnComboboxentryPortNameChanged (object sender, System.EventArgs e)
 	{
-		;
-		// To be fix
+		try {
+			if (MyPort.IsOpen) {
+				MyPort.Close ();
+				MyPort.PortName = comboboxentryPortName.ActiveText;
+				MyPort.Open();
+			} else {
+				MyPort.PortName = comboboxentryPortName.ActiveText;
+			}
+			
+		} catch (Exception ex) {
+			Console.WriteLine (ex.Message);
+		}
+		
+		
 	}
 
 	protected virtual void OnComboboxPatityChanged (object sender, System.EventArgs e)
@@ -452,9 +464,9 @@ public partial class MainWindow : Gtk.Window
 				spinbuttonDataBits.Text = "8";
 			if (TestDataBits < 5)
 				spinbuttonDataBits.Text = "5";
-			SettingsSafeUpdate ();			
+			SettingsSafeUpdate ();
 		} catch (Exception ex) {
-			Console.WriteLine(ex.Message);
+			Console.WriteLine (ex.Message);
 		}
 		
 		
