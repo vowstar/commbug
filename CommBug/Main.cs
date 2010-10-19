@@ -6,18 +6,19 @@ namespace CommBug
 	class MainClass
 	{
 		public static void Main (string[] args)
-		{
+		{			
+			if (!GLib.Thread.Supported)
+				GLib.Thread.Init ();
 			Application.Init ();
-			if(!GLib.Thread.Supported)
-				GLib.Thread.Init();
-			Gdk.Threads.Init();
-			// Gtk线程更新界面的无奈解决方法
-			Gdk.Threads.Enter();
-			MainWindow win = new MainWindow ();			
+			Gdk.Threads.Init ();
+			MainWindow win = new MainWindow ();
 			win.Show ();
-			Gdk.Threads.Leave();
-			Application.Run ();
-			
+			Gdk.Threads.Enter ();
+			try {
+				Application.Run ();
+			} finally {
+				Gdk.Threads.Leave ();
+			}	
 		}
 	}
 }
