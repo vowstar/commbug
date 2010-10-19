@@ -57,7 +57,13 @@ FILES =  \
 
 DATA_FILES = 
 
-RESOURCES = gtk-gui/gui.stetic 
+RESOURCES =  \
+	gtk-gui/gui.stetic \
+	icons/baudrate/baudrate_24x24.png,CommBug.icons.baudrate.baudrate_24x24.png \
+	icons/clear_receive/clear_receive_24x24.png,CommBug.icons.clear_receive.clear_receive_24x24.png \
+	icons/clear_send/clear_send_24x24.png,CommBug.icons.clear_send.clear_send_24x24.png \
+	icons/port/port_24x24.png,CommBug.icons.port.port_24x24.png \
+	icons/send/send_24x24.png,CommBug.icons.send.send_24x24.png 
 
 EXTRAS = \
 	app.desktop \

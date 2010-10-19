@@ -315,7 +315,7 @@ public partial class MainWindow
 		this.imageBaudRate = new global::Gtk.Image ();
 		this.imageBaudRate.TooltipMarkup = "设置串口波特率。";
 		this.imageBaudRate.Name = "imageBaudRate";
-		this.imageBaudRate.Pixbuf = global::Stetic.IconLoader.LoadIcon (this, "stock_channel", global::Gtk.IconSize.Menu);
+		this.imageBaudRate.Pixbuf = global::Gdk.Pixbuf.LoadFromResource ("CommBug.icons.baudrate.baudrate_24x24.png");
 		this.tableCommBasic.Add (this.imageBaudRate);
 		global::Gtk.Table.TableChild w4 = ((global::Gtk.Table.TableChild)(this.tableCommBasic[this.imageBaudRate]));
 		w4.TopAttach = ((uint)(1));
@@ -326,7 +326,7 @@ public partial class MainWindow
 		this.imageCommSelect = new global::Gtk.Image ();
 		this.imageCommSelect.TooltipMarkup = "选择您要调试的串口。";
 		this.imageCommSelect.Name = "imageCommSelect";
-		this.imageCommSelect.Pixbuf = global::Stetic.IconLoader.LoadIcon (this, "gtk-connect", global::Gtk.IconSize.Button);
+		this.imageCommSelect.Pixbuf = global::Gdk.Pixbuf.LoadFromResource ("CommBug.icons.port.port_24x24.png");
 		this.tableCommBasic.Add (this.imageCommSelect);
 		global::Gtk.Table.TableChild w5 = ((global::Gtk.Table.TableChild)(this.tableCommBasic[this.imageCommSelect]));
 		w5.XOptions = ((global::Gtk.AttachOptions)(4));
@@ -680,7 +680,7 @@ public partial class MainWindow
 		w39.Spacing = 2;
 		// Container child GtkHBox.Gtk.Container+ContainerChild
 		global::Gtk.Image w40 = new global::Gtk.Image ();
-		w40.Pixbuf = global::Stetic.IconLoader.LoadIcon (this, "stock_draw-connector-ends-with-arrow", global::Gtk.IconSize.Menu);
+		w40.Pixbuf = global::Gdk.Pixbuf.LoadFromResource ("CommBug.icons.send.send_24x24.png");
 		w39.Add (w40);
 		// Container child GtkHBox.Gtk.Container+ContainerChild
 		global::Gtk.Label w42 = new global::Gtk.Label ();
@@ -785,7 +785,7 @@ public partial class MainWindow
 		this.notebookReceiveArea = new global::Gtk.Notebook ();
 		this.notebookReceiveArea.CanFocus = true;
 		this.notebookReceiveArea.Name = "notebookReceiveArea";
-		this.notebookReceiveArea.CurrentPage = 2;
+		this.notebookReceiveArea.CurrentPage = 1;
 		// Container child notebookReceiveArea.Gtk.Notebook+NotebookChild
 		this.GtkScrolledWindowText = new global::Gtk.ScrolledWindow ();
 		this.GtkScrolledWindowText.Name = "GtkScrolledWindowText";
@@ -902,7 +902,7 @@ public partial class MainWindow
 		// Container child tableScrollSet.Gtk.Table+TableChild
 		this.imageAutoScroll = new global::Gtk.Image ();
 		this.imageAutoScroll.Name = "imageAutoScroll";
-		this.imageAutoScroll.Pixbuf = global::Stetic.IconLoader.LoadIcon (this, "gtk-goto-bottom", global::Gtk.IconSize.Menu);
+		this.imageAutoScroll.Pixbuf = global::Stetic.IconLoader.LoadIcon (this, "gtk-media-play", global::Gtk.IconSize.Menu);
 		this.tableScrollSet.Add (this.imageAutoScroll);
 		global::Gtk.Table.TableChild w69 = ((global::Gtk.Table.TableChild)(this.tableScrollSet[this.imageAutoScroll]));
 		w69.XOptions = ((global::Gtk.AttachOptions)(4));
@@ -957,7 +957,7 @@ public partial class MainWindow
 		w81.Spacing = 2;
 		// Container child GtkHBox.Gtk.Container+ContainerChild
 		global::Gtk.Image w82 = new global::Gtk.Image ();
-		w82.Pixbuf = global::Stetic.IconLoader.LoadIcon (this, "stock_alignment-top", global::Gtk.IconSize.Menu);
+		w82.Pixbuf = global::Gdk.Pixbuf.LoadFromResource ("CommBug.icons.clear_receive.clear_receive_24x24.png");
 		w81.Add (w82);
 		// Container child GtkHBox.Gtk.Container+ContainerChild
 		global::Gtk.Label w84 = new global::Gtk.Label ();
@@ -982,7 +982,7 @@ public partial class MainWindow
 		w90.Spacing = 2;
 		// Container child GtkHBox.Gtk.Container+ContainerChild
 		global::Gtk.Image w91 = new global::Gtk.Image ();
-		w91.Pixbuf = global::Stetic.IconLoader.LoadIcon (this, "stock_alignment-bottom", global::Gtk.IconSize.Menu);
+		w91.Pixbuf = global::Gdk.Pixbuf.LoadFromResource ("CommBug.icons.clear_send.clear_send_24x24.png");
 		w90.Add (w91);
 		// Container child GtkHBox.Gtk.Container+ContainerChild
 		global::Gtk.Label w93 = new global::Gtk.Label ();
@@ -1029,7 +1029,7 @@ public partial class MainWindow
 		this.notebookSendArea = new global::Gtk.Notebook ();
 		this.notebookSendArea.CanFocus = true;
 		this.notebookSendArea.Name = "notebookSendArea";
-		this.notebookSendArea.CurrentPage = 2;
+		this.notebookSendArea.CurrentPage = 1;
 		// Container child notebookSendArea.Gtk.Notebook+NotebookChild
 		this.GtkScrolledWindowTextS = new global::Gtk.ScrolledWindow ();
 		this.GtkScrolledWindowTextS.Name = "GtkScrolledWindowTextS";
