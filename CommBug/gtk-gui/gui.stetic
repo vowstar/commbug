@@ -5,7 +5,6 @@
     <target-gtk-version>2.12</target-gtk-version>
   </configuration>
   <import>
-    <widget-library name="glade-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
     <widget-library name="../bin/Release/CommBug.exe" internal="true" />
   </import>
   <widget class="Gtk.Window" id="MainWindow" design-size="611 521">
@@ -49,7 +48,7 @@
     </action-group>
     <property name="MemberName" />
     <property name="Title" translatable="yes">串口调试助手</property>
-    <property name="Icon">stock:stock_draw-connector-with-arrows Menu</property>
+    <property name="Icon">resource:CommBug.icons.commbug.commbug_24x24.png</property>
     <property name="WindowPosition">CenterOnParent</property>
     <signal name="DeleteEvent" handler="OnDeleteEvent" />
     <child>
@@ -817,6 +816,7 @@ Space</property>
                                                 <property name="MemberName" />
                                                 <property name="CanFocus">True</property>
                                                 <property name="Label" translatable="yes">10进制</property>
+                                                <property name="Active">True</property>
                                                 <property name="DrawIndicator">True</property>
                                                 <property name="HasLabel">True</property>
                                                 <property name="UseUnderline">True</property>
@@ -868,7 +868,6 @@ Space</property>
                                                 <property name="MemberName" />
                                                 <property name="CanFocus">True</property>
                                                 <property name="Label" translatable="yes">文本</property>
-                                                <property name="Active">True</property>
                                                 <property name="DrawIndicator">True</property>
                                                 <property name="HasLabel">True</property>
                                                 <property name="UseUnderline">True</property>

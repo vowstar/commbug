@@ -240,7 +240,7 @@ public partial class MainWindow
 		this.AddAccelGroup (this.UIManager.AccelGroup);
 		this.Name = "MainWindow";
 		this.Title = global::Mono.Unix.Catalog.GetString ("串口调试助手");
-		this.Icon = global::Stetic.IconLoader.LoadIcon (this, "stock_draw-connector-with-arrows", global::Gtk.IconSize.Menu);
+		this.Icon = global::Gdk.Pixbuf.LoadFromResource ("CommBug.icons.commbug.commbug_24x24.png");
 		this.WindowPosition = ((global::Gtk.WindowPosition)(4));
 		// Container child MainWindow.Gtk.Container+ContainerChild
 		this.tableMain = new global::Gtk.Table (((uint)(3)), ((uint)(1)), false);
@@ -699,6 +699,7 @@ public partial class MainWindow
 		this.radiobuttonDec = new global::Gtk.RadioButton (global::Mono.Unix.Catalog.GetString ("10进制"));
 		this.radiobuttonDec.CanFocus = true;
 		this.radiobuttonDec.Name = "radiobuttonDec";
+		this.radiobuttonDec.Active = true;
 		this.radiobuttonDec.DrawIndicator = true;
 		this.radiobuttonDec.UseUnderline = true;
 		this.radiobuttonDec.Group = new global::GLib.SList (global::System.IntPtr.Zero);
@@ -785,7 +786,7 @@ public partial class MainWindow
 		this.notebookReceiveArea = new global::Gtk.Notebook ();
 		this.notebookReceiveArea.CanFocus = true;
 		this.notebookReceiveArea.Name = "notebookReceiveArea";
-		this.notebookReceiveArea.CurrentPage = 1;
+		this.notebookReceiveArea.CurrentPage = 0;
 		// Container child notebookReceiveArea.Gtk.Notebook+NotebookChild
 		this.GtkScrolledWindowText = new global::Gtk.ScrolledWindow ();
 		this.GtkScrolledWindowText.Name = "GtkScrolledWindowText";
@@ -1029,7 +1030,7 @@ public partial class MainWindow
 		this.notebookSendArea = new global::Gtk.Notebook ();
 		this.notebookSendArea.CanFocus = true;
 		this.notebookSendArea.Name = "notebookSendArea";
-		this.notebookSendArea.CurrentPage = 1;
+		this.notebookSendArea.CurrentPage = 0;
 		// Container child notebookSendArea.Gtk.Notebook+NotebookChild
 		this.GtkScrolledWindowTextS = new global::Gtk.ScrolledWindow ();
 		this.GtkScrolledWindowTextS.Name = "GtkScrolledWindowTextS";

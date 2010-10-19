@@ -204,6 +204,7 @@ RESOURCES = \
 	icons/baudrate/baudrate_24x24.png,CommBug.icons.baudrate.baudrate_24x24.png \
 	icons/clear_receive/clear_receive_24x24.png,CommBug.icons.clear_receive.clear_receive_24x24.png \
 	icons/clear_send/clear_send_24x24.png,CommBug.icons.clear_send.clear_send_24x24.png \
+	icons/commbug/commbug_24x24.png,CommBug.icons.commbug.commbug_24x24.png \
 	icons/port/port_24x24.png,CommBug.icons.port.port_24x24.png \
 	icons/send/send_24x24.png,CommBug.icons.send.send_24x24.png 
 
@@ -213,7 +214,6 @@ EXTRAS = \
 
 REFERENCES = \
 	Mono.Posix \
-	-pkg:glade-sharp-2.0 \
 	-pkg:glib-sharp-2.0 \
 	-pkg:gtk-sharp-2.0 \
 	System
