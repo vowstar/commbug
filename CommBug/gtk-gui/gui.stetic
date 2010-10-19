@@ -7,7 +7,7 @@
   <import>
     <widget-library name="../bin/Release/CommBug.exe" internal="true" />
   </import>
-  <widget class="Gtk.Window" id="MainWindow" design-size="611 521">
+  <widget class="Gtk.Window" id="MainWindow" design-size="611 528">
     <action-group name="Default">
       <action id="FAction">
         <property name="Type">Action</property>
@@ -34,10 +34,10 @@
         <property name="StockId">gtk-about</property>
         <signal name="Activated" handler="OnAboutActionActivated" />
       </action>
-      <action id="TAction">
+      <action id="EAction">
         <property name="Type">Action</property>
-        <property name="Label" translatable="yes">工具(_T)</property>
-        <property name="ShortLabel" translatable="yes">工具(_T)</property>
+        <property name="Label" translatable="yes">编辑(_E)</property>
+        <property name="ShortLabel" translatable="yes">编辑(_E)</property>
       </action>
       <action id="openportAction">
         <property name="Type">Action</property>
@@ -1433,7 +1433,7 @@ Space</property>
               <node type="Menu" action="FAction">
                 <node type="Menuitem" action="quitAction" />
               </node>
-              <node type="Menu" action="TAction" />
+              <node type="Menu" action="EAction" />
               <node type="Menu" action="HAction">
                 <node type="Menuitem" action="aboutAction" />
               </node>

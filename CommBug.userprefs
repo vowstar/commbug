@@ -7,7 +7,7 @@
           <Node name="CommBug" expanded="True">
             <Node name="References" expanded="True" />
             <Node name="UserInterface" expanded="True">
-              <Node name="StockIcons" selected="True" />
+              <Node name="MainWindow" selected="True" />
             </Node>
             <Node name="icons" expanded="True">
               <Node name="send" expanded="True" />
