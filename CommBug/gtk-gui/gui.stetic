@@ -7,7 +7,7 @@
   <import>
     <widget-library name="../bin/Release/CommBug.exe" internal="true" />
   </import>
-  <widget class="Gtk.Window" id="MainWindow" design-size="611 528">
+  <widget class="Gtk.Window" id="MainWindow" design-size="840 471">
     <action-group name="Default">
       <action id="FAction">
         <property name="Type">Action</property>
@@ -253,7 +253,6 @@
                               <widget class="Gtk.Expander" id="expanderSetComm">
                                 <property name="MemberName" />
                                 <property name="CanFocus">True</property>
-                                <property name="Expanded">True</property>
                                 <child>
                                   <widget class="Gtk.Table" id="tableCommSet">
                                     <property name="MemberName" />
@@ -957,14 +956,368 @@ Space</property>
               </packing>
             </child>
             <child>
-              <widget class="Gtk.VPaned" id="vpanedRight">
+              <widget class="Gtk.Table" id="tableRight">
                 <property name="MemberName" />
-                <property name="CanFocus">True</property>
-                <property name="Position">239</property>
+                <property name="NRows">2</property>
+                <property name="RowSpacing">6</property>
+                <property name="ColumnSpacing">6</property>
                 <child>
-                  <widget class="Gtk.VBox" id="vboxReceiveArea">
+                  <widget class="Gtk.Expander" id="expanderDataShowSet">
                     <property name="MemberName" />
-                    <property name="Spacing">6</property>
+                    <property name="CanFocus">True</property>
+                    <property name="Expanded">True</property>
+                    <child>
+                      <widget class="Gtk.Alignment" id="alignmentClear">
+                        <property name="MemberName" />
+                        <property name="Xalign">0</property>
+                        <property name="Yalign">0</property>
+                        <property name="LeftPadding">12</property>
+                        <child>
+                          <widget class="Gtk.Table" id="tableDataShowSet">
+                            <property name="MemberName" />
+                            <property name="NRows">2</property>
+                            <property name="RowSpacing">6</property>
+                            <property name="ColumnSpacing">6</property>
+                            <child>
+                              <widget class="Gtk.Table" id="tableScrollSet">
+                                <property name="MemberName" />
+                                <property name="NColumns">3</property>
+                                <property name="RowSpacing">6</property>
+                                <property name="ColumnSpacing">6</property>
+                                <child>
+                                  <widget class="Gtk.CheckButton" id="checkbuttonAutoScrollReceive">
+                                    <property name="MemberName" />
+                                    <property name="CanFocus">True</property>
+                                    <property name="Label" translatable="yes">接收区自动滚屏</property>
+                                    <property name="Active">True</property>
+                                    <property name="DrawIndicator">True</property>
+                                    <property name="HasLabel">True</property>
+                                    <property name="UseUnderline">True</property>
+                                  </widget>
+                                  <packing>
+                                    <property name="LeftAttach">1</property>
+                                    <property name="RightAttach">2</property>
+                                    <property name="AutoSize">True</property>
+                                    <property name="YOptions">Fill</property>
+                                    <property name="XExpand">True</property>
+                                    <property name="XFill">True</property>
+                                    <property name="XShrink">False</property>
+                                    <property name="YExpand">False</property>
+                                    <property name="YFill">True</property>
+                                    <property name="YShrink">False</property>
+                                  </packing>
+                                </child>
+                                <child>
+                                  <widget class="Gtk.CheckButton" id="checkbuttonAutoScrollSend">
+                                    <property name="MemberName" />
+                                    <property name="CanFocus">True</property>
+                                    <property name="Label" translatable="yes">发送区自动滚屏</property>
+                                    <property name="Active">True</property>
+                                    <property name="DrawIndicator">True</property>
+                                    <property name="HasLabel">True</property>
+                                    <property name="UseUnderline">True</property>
+                                  </widget>
+                                  <packing>
+                                    <property name="LeftAttach">2</property>
+                                    <property name="RightAttach">3</property>
+                                    <property name="AutoSize">True</property>
+                                    <property name="YOptions">Fill</property>
+                                    <property name="XExpand">True</property>
+                                    <property name="XFill">True</property>
+                                    <property name="XShrink">False</property>
+                                    <property name="YExpand">False</property>
+                                    <property name="YFill">True</property>
+                                    <property name="YShrink">False</property>
+                                  </packing>
+                                </child>
+                                <child>
+                                  <widget class="Gtk.Image" id="imageAutoScroll">
+                                    <property name="MemberName" />
+                                    <property name="Pixbuf">stock:gtk-media-play Menu</property>
+                                  </widget>
+                                  <packing>
+                                    <property name="AutoSize">True</property>
+                                    <property name="XOptions">Fill</property>
+                                    <property name="YOptions">Fill</property>
+                                    <property name="XExpand">False</property>
+                                    <property name="XFill">True</property>
+                                    <property name="XShrink">False</property>
+                                    <property name="YExpand">False</property>
+                                    <property name="YFill">True</property>
+                                    <property name="YShrink">False</property>
+                                  </packing>
+                                </child>
+                              </widget>
+                              <packing>
+                                <property name="TopAttach">1</property>
+                                <property name="BottomAttach">2</property>
+                                <property name="AutoSize">True</property>
+                                <property name="XOptions">Fill</property>
+                                <property name="YOptions">Fill</property>
+                                <property name="XExpand">False</property>
+                                <property name="XFill">True</property>
+                                <property name="XShrink">False</property>
+                                <property name="YExpand">False</property>
+                                <property name="YFill">True</property>
+                                <property name="YShrink">False</property>
+                              </packing>
+                            </child>
+                            <child>
+                              <widget class="Gtk.Table" id="tableShowClearSet">
+                                <property name="MemberName" />
+                                <property name="NColumns">4</property>
+                                <property name="RowSpacing">6</property>
+                                <property name="ColumnSpacing">6</property>
+                                <child>
+                                  <widget class="Gtk.Button" id="buttonClearAll">
+                                    <property name="MemberName" />
+                                    <property name="CanFocus">True</property>
+                                    <property name="Type">TextAndIcon</property>
+                                    <property name="Icon">stock:gtk-clear Menu</property>
+                                    <property name="Label" translatable="yes">全部清空(_A)</property>
+                                    <property name="UseUnderline">True</property>
+                                    <signal name="Clicked" handler="OnButtonClearAllClicked" />
+                                  </widget>
+                                  <packing>
+                                    <property name="LeftAttach">3</property>
+                                    <property name="RightAttach">4</property>
+                                    <property name="AutoSize">False</property>
+                                    <property name="YOptions">Fill</property>
+                                    <property name="XExpand">True</property>
+                                    <property name="XFill">True</property>
+                                    <property name="XShrink">False</property>
+                                    <property name="YExpand">False</property>
+                                    <property name="YFill">True</property>
+                                    <property name="YShrink">False</property>
+                                  </packing>
+                                </child>
+                                <child>
+                                  <widget class="Gtk.Button" id="buttonClearReceiveArea">
+                                    <property name="MemberName" />
+                                    <property name="CanFocus">True</property>
+                                    <property name="Type">TextAndIcon</property>
+                                    <property name="Icon">resource:CommBug.icons.clear_receive.clear_receive_24x24.png</property>
+                                    <property name="Label" translatable="yes">清空接收区</property>
+                                    <property name="UseUnderline">True</property>
+                                    <signal name="Clicked" handler="OnButtonClearReceiveAreaClicked" />
+                                  </widget>
+                                  <packing>
+                                    <property name="LeftAttach">2</property>
+                                    <property name="RightAttach">3</property>
+                                    <property name="AutoSize">False</property>
+                                    <property name="YOptions">Fill</property>
+                                    <property name="XExpand">True</property>
+                                    <property name="XFill">True</property>
+                                    <property name="XShrink">False</property>
+                                    <property name="YExpand">False</property>
+                                    <property name="YFill">True</property>
+                                    <property name="YShrink">False</property>
+                                  </packing>
+                                </child>
+                                <child>
+                                  <widget class="Gtk.Button" id="buttonClearSendArea">
+                                    <property name="MemberName" />
+                                    <property name="CanFocus">True</property>
+                                    <property name="Type">TextAndIcon</property>
+                                    <property name="Icon">resource:CommBug.icons.clear_send.clear_send_24x24.png</property>
+                                    <property name="Label" translatable="yes">清空发送区</property>
+                                    <property name="UseUnderline">True</property>
+                                    <signal name="Clicked" handler="OnButtonClearSendAreaClicked" />
+                                  </widget>
+                                  <packing>
+                                    <property name="LeftAttach">1</property>
+                                    <property name="RightAttach">2</property>
+                                    <property name="AutoSize">False</property>
+                                    <property name="YOptions">Fill</property>
+                                    <property name="XExpand">True</property>
+                                    <property name="XFill">True</property>
+                                    <property name="XShrink">False</property>
+                                    <property name="YExpand">False</property>
+                                    <property name="YFill">True</property>
+                                    <property name="YShrink">False</property>
+                                  </packing>
+                                </child>
+                                <child>
+                                  <widget class="Gtk.Button" id="buttonClearSendContents">
+                                    <property name="MemberName" />
+                                    <property name="CanFocus">True</property>
+                                    <property name="Type">TextOnly</property>
+                                    <property name="Label" translatable="yes">清空发送内容</property>
+                                    <property name="UseUnderline">True</property>
+                                    <signal name="Clicked" handler="OnButtonClearSendContentsClicked" />
+                                  </widget>
+                                  <packing>
+                                    <property name="AutoSize">False</property>
+                                    <property name="YOptions">Fill</property>
+                                    <property name="XExpand">True</property>
+                                    <property name="XFill">True</property>
+                                    <property name="XShrink">False</property>
+                                    <property name="YExpand">False</property>
+                                    <property name="YFill">True</property>
+                                    <property name="YShrink">False</property>
+                                  </packing>
+                                </child>
+                              </widget>
+                              <packing>
+                                <property name="AutoSize">False</property>
+                                <property name="YOptions">Fill</property>
+                                <property name="XExpand">True</property>
+                                <property name="XFill">True</property>
+                                <property name="XShrink">False</property>
+                                <property name="YExpand">False</property>
+                                <property name="YFill">True</property>
+                                <property name="YShrink">False</property>
+                              </packing>
+                            </child>
+                          </widget>
+                        </child>
+                      </widget>
+                    </child>
+                    <child>
+                      <widget class="Gtk.Label" id="GtkLabelDataShowSet">
+                        <property name="MemberName" />
+                        <property name="LabelProp" translatable="yes">&lt;b&gt;数据显示&lt;/b&gt;</property>
+                        <property name="UseMarkup">True</property>
+                        <property name="UseUnderline">True</property>
+                      </widget>
+                      <packing>
+                        <property name="type">label_item</property>
+                      </packing>
+                    </child>
+                  </widget>
+                  <packing>
+                    <property name="TopAttach">1</property>
+                    <property name="BottomAttach">2</property>
+                    <property name="AutoSize">False</property>
+                    <property name="YOptions">Fill</property>
+                    <property name="XExpand">True</property>
+                    <property name="XFill">True</property>
+                    <property name="XShrink">False</property>
+                    <property name="YExpand">False</property>
+                    <property name="YFill">True</property>
+                    <property name="YShrink">False</property>
+                  </packing>
+                </child>
+                <child>
+                  <widget class="Gtk.HPaned" id="hpanedRight">
+                    <property name="MemberName" />
+                    <property name="CanFocus">True</property>
+                    <property name="Position">285</property>
+                    <child>
+                      <widget class="Gtk.Frame" id="frameSendArea">
+                        <property name="MemberName" />
+                        <property name="ShadowType">None</property>
+                        <child>
+                          <widget class="Gtk.Alignment" id="GtkAlignmentSendArea">
+                            <property name="MemberName" />
+                            <property name="Xalign">0</property>
+                            <property name="Yalign">0</property>
+                            <property name="LeftPadding">12</property>
+                            <child>
+                              <widget class="Gtk.Notebook" id="notebookSendArea">
+                                <property name="MemberName" />
+                                <property name="CanFocus">True</property>
+                                <property name="CurrentPage">0</property>
+                                <child>
+                                  <widget class="Gtk.ScrolledWindow" id="GtkScrolledWindowTextS">
+                                    <property name="MemberName" />
+                                    <property name="ShadowType">In</property>
+                                    <child>
+                                      <widget class="Gtk.TextView" id="textviewTextS">
+                                        <property name="MemberName" />
+                                        <property name="CanFocus">True</property>
+                                        <property name="ShowScrollbars">True</property>
+                                        <property name="Editable">False</property>
+                                        <property name="Text" translatable="yes" />
+                                        <property name="WrapMode">WordChar</property>
+                                      </widget>
+                                    </child>
+                                  </widget>
+                                </child>
+                                <child>
+                                  <widget class="Gtk.Label" id="labelSText">
+                                    <property name="MemberName" />
+                                    <property name="LabelProp" translatable="yes">文本</property>
+                                  </widget>
+                                  <packing>
+                                    <property name="type">tab</property>
+                                  </packing>
+                                </child>
+                                <child>
+                                  <widget class="Gtk.ScrolledWindow" id="GtkScrolledWindowHexS">
+                                    <property name="MemberName" />
+                                    <property name="ShadowType">In</property>
+                                    <child>
+                                      <widget class="Gtk.TextView" id="textviewHexS">
+                                        <property name="MemberName" />
+                                        <property name="CanFocus">True</property>
+                                        <property name="ShowScrollbars">True</property>
+                                        <property name="Editable">False</property>
+                                        <property name="Text" translatable="yes" />
+                                        <property name="WrapMode">WordChar</property>
+                                      </widget>
+                                    </child>
+                                  </widget>
+                                  <packing>
+                                    <property name="Position">1</property>
+                                  </packing>
+                                </child>
+                                <child>
+                                  <widget class="Gtk.Label" id="labelSHex">
+                                    <property name="MemberName" />
+                                    <property name="LabelProp" translatable="yes">十六进制</property>
+                                  </widget>
+                                  <packing>
+                                    <property name="type">tab</property>
+                                  </packing>
+                                </child>
+                                <child>
+                                  <widget class="Gtk.ScrolledWindow" id="GtkScrolledWindowDecS">
+                                    <property name="MemberName" />
+                                    <property name="ShadowType">In</property>
+                                    <child>
+                                      <widget class="Gtk.TextView" id="textviewDecS">
+                                        <property name="MemberName" />
+                                        <property name="CanFocus">True</property>
+                                        <property name="ShowScrollbars">True</property>
+                                        <property name="Editable">False</property>
+                                        <property name="Text" translatable="yes" />
+                                        <property name="WrapMode">WordChar</property>
+                                      </widget>
+                                    </child>
+                                  </widget>
+                                  <packing>
+                                    <property name="Position">2</property>
+                                  </packing>
+                                </child>
+                                <child>
+                                  <widget class="Gtk.Label" id="labelSDex">
+                                    <property name="MemberName" />
+                                    <property name="LabelProp" translatable="yes">十进制</property>
+                                  </widget>
+                                  <packing>
+                                    <property name="type">tab</property>
+                                  </packing>
+                                </child>
+                              </widget>
+                            </child>
+                          </widget>
+                        </child>
+                        <child>
+                          <widget class="Gtk.Label" id="GtkLabelSendArea">
+                            <property name="MemberName" />
+                            <property name="LabelProp" translatable="yes">&lt;b&gt;已发送的数据&lt;/b&gt;</property>
+                            <property name="UseMarkup">True</property>
+                          </widget>
+                          <packing>
+                            <property name="type">label_item</property>
+                          </packing>
+                        </child>
+                      </widget>
+                      <packing>
+                        <property name="Resize">False</property>
+                      </packing>
+                    </child>
                     <child>
                       <widget class="Gtk.Frame" id="frameReceiveArea">
                         <property name="MemberName" />
@@ -1076,340 +1429,18 @@ Space</property>
                           </packing>
                         </child>
                       </widget>
-                      <packing>
-                        <property name="Position">0</property>
-                        <property name="AutoSize">True</property>
-                      </packing>
-                    </child>
-                    <child>
-                      <widget class="Gtk.Expander" id="expanderDataShowSet">
-                        <property name="MemberName" />
-                        <property name="CanFocus">True</property>
-                        <property name="Expanded">True</property>
-                        <child>
-                          <widget class="Gtk.Alignment" id="alignmentClear">
-                            <property name="MemberName" />
-                            <property name="Xalign">0</property>
-                            <property name="Yalign">0</property>
-                            <property name="LeftPadding">12</property>
-                            <child>
-                              <widget class="Gtk.Table" id="tableDataShowSet">
-                                <property name="MemberName" />
-                                <property name="NRows">2</property>
-                                <property name="RowSpacing">6</property>
-                                <property name="ColumnSpacing">6</property>
-                                <child>
-                                  <widget class="Gtk.Table" id="tableScrollSet">
-                                    <property name="MemberName" />
-                                    <property name="NColumns">3</property>
-                                    <property name="RowSpacing">6</property>
-                                    <property name="ColumnSpacing">6</property>
-                                    <child>
-                                      <widget class="Gtk.CheckButton" id="checkbuttonAutoScrollReceive">
-                                        <property name="MemberName" />
-                                        <property name="CanFocus">True</property>
-                                        <property name="Label" translatable="yes">接收区自动滚屏</property>
-                                        <property name="Active">True</property>
-                                        <property name="DrawIndicator">True</property>
-                                        <property name="HasLabel">True</property>
-                                        <property name="UseUnderline">True</property>
-                                      </widget>
-                                      <packing>
-                                        <property name="LeftAttach">1</property>
-                                        <property name="RightAttach">2</property>
-                                        <property name="AutoSize">True</property>
-                                        <property name="YOptions">Fill</property>
-                                        <property name="XExpand">True</property>
-                                        <property name="XFill">True</property>
-                                        <property name="XShrink">False</property>
-                                        <property name="YExpand">False</property>
-                                        <property name="YFill">True</property>
-                                        <property name="YShrink">False</property>
-                                      </packing>
-                                    </child>
-                                    <child>
-                                      <widget class="Gtk.CheckButton" id="checkbuttonAutoScrollSend">
-                                        <property name="MemberName" />
-                                        <property name="CanFocus">True</property>
-                                        <property name="Label" translatable="yes">发送区自动滚屏</property>
-                                        <property name="Active">True</property>
-                                        <property name="DrawIndicator">True</property>
-                                        <property name="HasLabel">True</property>
-                                        <property name="UseUnderline">True</property>
-                                      </widget>
-                                      <packing>
-                                        <property name="LeftAttach">2</property>
-                                        <property name="RightAttach">3</property>
-                                        <property name="AutoSize">True</property>
-                                        <property name="YOptions">Fill</property>
-                                        <property name="XExpand">True</property>
-                                        <property name="XFill">True</property>
-                                        <property name="XShrink">False</property>
-                                        <property name="YExpand">False</property>
-                                        <property name="YFill">True</property>
-                                        <property name="YShrink">False</property>
-                                      </packing>
-                                    </child>
-                                    <child>
-                                      <widget class="Gtk.Image" id="imageAutoScroll">
-                                        <property name="MemberName" />
-                                        <property name="Pixbuf">stock:gtk-media-play Menu</property>
-                                      </widget>
-                                      <packing>
-                                        <property name="AutoSize">True</property>
-                                        <property name="XOptions">Fill</property>
-                                        <property name="YOptions">Fill</property>
-                                        <property name="XExpand">False</property>
-                                        <property name="XFill">True</property>
-                                        <property name="XShrink">False</property>
-                                        <property name="YExpand">False</property>
-                                        <property name="YFill">True</property>
-                                        <property name="YShrink">False</property>
-                                      </packing>
-                                    </child>
-                                  </widget>
-                                  <packing>
-                                    <property name="TopAttach">1</property>
-                                    <property name="BottomAttach">2</property>
-                                    <property name="AutoSize">True</property>
-                                    <property name="XOptions">Fill</property>
-                                    <property name="YOptions">Fill</property>
-                                    <property name="XExpand">False</property>
-                                    <property name="XFill">True</property>
-                                    <property name="XShrink">False</property>
-                                    <property name="YExpand">False</property>
-                                    <property name="YFill">True</property>
-                                    <property name="YShrink">False</property>
-                                  </packing>
-                                </child>
-                                <child>
-                                  <widget class="Gtk.Table" id="tableShowClearSet">
-                                    <property name="MemberName" />
-                                    <property name="NColumns">3</property>
-                                    <property name="RowSpacing">6</property>
-                                    <property name="ColumnSpacing">6</property>
-                                    <child>
-                                      <widget class="Gtk.Button" id="buttonClearAll">
-                                        <property name="MemberName" />
-                                        <property name="CanFocus">True</property>
-                                        <property name="Type">TextAndIcon</property>
-                                        <property name="Icon">stock:gtk-clear Menu</property>
-                                        <property name="Label" translatable="yes">全部清空(_A)</property>
-                                        <property name="UseUnderline">True</property>
-                                        <signal name="Clicked" handler="OnButtonClearAllClicked" />
-                                      </widget>
-                                      <packing>
-                                        <property name="LeftAttach">2</property>
-                                        <property name="RightAttach">3</property>
-                                        <property name="AutoSize">False</property>
-                                        <property name="XOptions">Fill</property>
-                                        <property name="YOptions">Fill</property>
-                                        <property name="XExpand">False</property>
-                                        <property name="XFill">True</property>
-                                        <property name="XShrink">False</property>
-                                        <property name="YExpand">False</property>
-                                        <property name="YFill">True</property>
-                                        <property name="YShrink">False</property>
-                                      </packing>
-                                    </child>
-                                    <child>
-                                      <widget class="Gtk.Button" id="buttonClearReceiveArea">
-                                        <property name="MemberName" />
-                                        <property name="CanFocus">True</property>
-                                        <property name="Type">TextAndIcon</property>
-                                        <property name="Icon">resource:CommBug.icons.clear_receive.clear_receive_24x24.png</property>
-                                        <property name="Label" translatable="yes">清空接收区</property>
-                                        <property name="UseUnderline">True</property>
-                                        <signal name="Clicked" handler="OnButtonClearReceiveAreaClicked" />
-                                      </widget>
-                                      <packing>
-                                        <property name="AutoSize">True</property>
-                                        <property name="XOptions">Fill</property>
-                                        <property name="YOptions">Fill</property>
-                                        <property name="XExpand">False</property>
-                                        <property name="XFill">True</property>
-                                        <property name="XShrink">False</property>
-                                        <property name="YExpand">False</property>
-                                        <property name="YFill">True</property>
-                                        <property name="YShrink">False</property>
-                                      </packing>
-                                    </child>
-                                    <child>
-                                      <widget class="Gtk.Button" id="buttonClearSendArea">
-                                        <property name="MemberName" />
-                                        <property name="CanFocus">True</property>
-                                        <property name="Type">TextAndIcon</property>
-                                        <property name="Icon">resource:CommBug.icons.clear_send.clear_send_24x24.png</property>
-                                        <property name="Label" translatable="yes">清空发送区</property>
-                                        <property name="UseUnderline">True</property>
-                                        <signal name="Clicked" handler="OnButtonClearSendAreaClicked" />
-                                      </widget>
-                                      <packing>
-                                        <property name="LeftAttach">1</property>
-                                        <property name="RightAttach">2</property>
-                                        <property name="AutoSize">True</property>
-                                        <property name="XOptions">Fill</property>
-                                        <property name="YOptions">Fill</property>
-                                        <property name="XExpand">False</property>
-                                        <property name="XFill">True</property>
-                                        <property name="XShrink">False</property>
-                                        <property name="YExpand">False</property>
-                                        <property name="YFill">True</property>
-                                        <property name="YShrink">False</property>
-                                      </packing>
-                                    </child>
-                                  </widget>
-                                  <packing>
-                                    <property name="AutoSize">True</property>
-                                    <property name="XOptions">Fill</property>
-                                    <property name="YOptions">Fill</property>
-                                    <property name="XExpand">False</property>
-                                    <property name="XFill">True</property>
-                                    <property name="XShrink">False</property>
-                                    <property name="YExpand">False</property>
-                                    <property name="YFill">True</property>
-                                    <property name="YShrink">False</property>
-                                  </packing>
-                                </child>
-                              </widget>
-                            </child>
-                          </widget>
-                        </child>
-                        <child>
-                          <widget class="Gtk.Label" id="GtkLabelDataShowSet">
-                            <property name="MemberName" />
-                            <property name="LabelProp" translatable="yes">&lt;b&gt;数据显示&lt;/b&gt;</property>
-                            <property name="UseMarkup">True</property>
-                            <property name="UseUnderline">True</property>
-                          </widget>
-                          <packing>
-                            <property name="type">label_item</property>
-                          </packing>
-                        </child>
-                      </widget>
-                      <packing>
-                        <property name="Position">1</property>
-                        <property name="AutoSize">True</property>
-                        <property name="Expand">False</property>
-                        <property name="Fill">False</property>
-                      </packing>
                     </child>
                   </widget>
                   <packing>
-                    <property name="Resize">False</property>
+                    <property name="AutoSize">True</property>
+                    <property name="XOptions">Fill</property>
+                    <property name="XExpand">False</property>
+                    <property name="XFill">True</property>
+                    <property name="XShrink">False</property>
+                    <property name="YExpand">True</property>
+                    <property name="YFill">True</property>
+                    <property name="YShrink">False</property>
                   </packing>
-                </child>
-                <child>
-                  <widget class="Gtk.Frame" id="frameSendArea">
-                    <property name="MemberName" />
-                    <property name="ShadowType">None</property>
-                    <child>
-                      <widget class="Gtk.Alignment" id="GtkAlignmentSendArea">
-                        <property name="MemberName" />
-                        <property name="Xalign">0</property>
-                        <property name="Yalign">0</property>
-                        <property name="LeftPadding">12</property>
-                        <child>
-                          <widget class="Gtk.Notebook" id="notebookSendArea">
-                            <property name="MemberName" />
-                            <property name="CanFocus">True</property>
-                            <property name="CurrentPage">0</property>
-                            <child>
-                              <widget class="Gtk.ScrolledWindow" id="GtkScrolledWindowTextS">
-                                <property name="MemberName" />
-                                <property name="ShadowType">In</property>
-                                <child>
-                                  <widget class="Gtk.TextView" id="textviewTextS">
-                                    <property name="MemberName" />
-                                    <property name="CanFocus">True</property>
-                                    <property name="ShowScrollbars">True</property>
-                                    <property name="Editable">False</property>
-                                    <property name="Text" translatable="yes" />
-                                    <property name="WrapMode">WordChar</property>
-                                  </widget>
-                                </child>
-                              </widget>
-                            </child>
-                            <child>
-                              <widget class="Gtk.Label" id="labelSText">
-                                <property name="MemberName" />
-                                <property name="LabelProp" translatable="yes">文本</property>
-                              </widget>
-                              <packing>
-                                <property name="type">tab</property>
-                              </packing>
-                            </child>
-                            <child>
-                              <widget class="Gtk.ScrolledWindow" id="GtkScrolledWindowHexS">
-                                <property name="MemberName" />
-                                <property name="ShadowType">In</property>
-                                <child>
-                                  <widget class="Gtk.TextView" id="textviewHexS">
-                                    <property name="MemberName" />
-                                    <property name="CanFocus">True</property>
-                                    <property name="ShowScrollbars">True</property>
-                                    <property name="Editable">False</property>
-                                    <property name="Text" translatable="yes" />
-                                    <property name="WrapMode">WordChar</property>
-                                  </widget>
-                                </child>
-                              </widget>
-                              <packing>
-                                <property name="Position">1</property>
-                              </packing>
-                            </child>
-                            <child>
-                              <widget class="Gtk.Label" id="labelSHex">
-                                <property name="MemberName" />
-                                <property name="LabelProp" translatable="yes">十六进制</property>
-                              </widget>
-                              <packing>
-                                <property name="type">tab</property>
-                              </packing>
-                            </child>
-                            <child>
-                              <widget class="Gtk.ScrolledWindow" id="GtkScrolledWindowDecS">
-                                <property name="MemberName" />
-                                <property name="ShadowType">In</property>
-                                <child>
-                                  <widget class="Gtk.TextView" id="textviewDecS">
-                                    <property name="MemberName" />
-                                    <property name="CanFocus">True</property>
-                                    <property name="ShowScrollbars">True</property>
-                                    <property name="Editable">False</property>
-                                    <property name="Text" translatable="yes" />
-                                    <property name="WrapMode">WordChar</property>
-                                  </widget>
-                                </child>
-                              </widget>
-                              <packing>
-                                <property name="Position">2</property>
-                              </packing>
-                            </child>
-                            <child>
-                              <widget class="Gtk.Label" id="labelSDex">
-                                <property name="MemberName" />
-                                <property name="LabelProp" translatable="yes">十进制</property>
-                              </widget>
-                              <packing>
-                                <property name="type">tab</property>
-                              </packing>
-                            </child>
-                          </widget>
-                        </child>
-                      </widget>
-                    </child>
-                    <child>
-                      <widget class="Gtk.Label" id="GtkLabelSendArea">
-                        <property name="MemberName" />
-                        <property name="LabelProp" translatable="yes">&lt;b&gt;已发送的数据&lt;/b&gt;</property>
-                        <property name="UseMarkup">True</property>
-                      </widget>
-                      <packing>
-                        <property name="type">label_item</property>
-                      </packing>
-                    </child>
-                  </widget>
                 </child>
               </widget>
             </child>

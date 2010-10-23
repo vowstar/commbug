@@ -383,6 +383,10 @@ public partial class MainWindow : Gtk.Window
 		}
 	}
 
+	protected virtual void OnButtonClearSendContentsClicked (object sender, System.EventArgs e)
+	{
+		textviewSend.Buffer.Clear ();
+	}
 	protected virtual void OnButtonClearReceiveAreaClicked (object sender, System.EventArgs e)
 	{
 		textviewText.Buffer.Clear ();
@@ -399,6 +403,7 @@ public partial class MainWindow : Gtk.Window
 
 	protected virtual void OnButtonClearAllClicked (object sender, System.EventArgs e)
 	{
+		OnButtonClearSendContentsClicked (this, null);
 		OnButtonClearReceiveAreaClicked (this, null);
 		OnButtonClearSendAreaClicked (this, null);
 		
@@ -439,7 +444,7 @@ public partial class MainWindow : Gtk.Window
 			if (MyPort.IsOpen) {
 				MyPort.Close ();
 				MyPort.PortName = comboboxentryPortName.ActiveText;
-				MyPort.Open();
+				MyPort.Open ();
 			} else {
 				MyPort.PortName = comboboxentryPortName.ActiveText;
 			}
@@ -476,6 +481,9 @@ public partial class MainWindow : Gtk.Window
 	{
 		SettingsSafeUpdate ();
 	}
+	
+	
+	
 	
 	
 	
