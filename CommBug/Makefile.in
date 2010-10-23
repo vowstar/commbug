@@ -205,7 +205,10 @@ RESOURCES = \
 	icons/clear_receive/clear_receive_24x24.png,CommBug.icons.clear_receive.clear_receive_24x24.png \
 	icons/clear_send/clear_send_24x24.png,CommBug.icons.clear_send.clear_send_24x24.png \
 	icons/commbug/commbug_24x24.png,CommBug.icons.commbug.commbug_24x24.png \
+	icons/commbug/commbug_64x64.png,CommBug.icons.commbug.commbug_64x64.png \
 	icons/port/port_24x24.png,CommBug.icons.port.port_24x24.png \
+	icons/port_state/port_state-off_24x24.png,CommBug.icons.port_state.port_state-off_24x24.png \
+	icons/port_state/port_state-on_24x24.png,CommBug.icons.port_state.port_state-on_24x24.png \
 	icons/send/send_24x24.png,CommBug.icons.send.send_24x24.png 
 
 EXTRAS = \

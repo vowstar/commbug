@@ -85,7 +85,7 @@ namespace CommBug
 			// Container child tableInfo.Gtk.Table+TableChild
 			this.imageInfo = new global::Gtk.Image ();
 			this.imageInfo.Name = "imageInfo";
-			this.imageInfo.Pixbuf = global::Stetic.IconLoader.LoadIcon (this, "gtk-dialog-info", global::Gtk.IconSize.Dialog);
+			this.imageInfo.Pixbuf = global::Gdk.Pixbuf.LoadFromResource ("CommBug.icons.commbug.commbug_64x64.png");
 			this.tableInfo.Add (this.imageInfo);
 			global::Gtk.Table.TableChild w2 = ((global::Gtk.Table.TableChild)(this.tableInfo[this.imageInfo]));
 			w2.XOptions = ((global::Gtk.AttachOptions)(4));
@@ -130,7 +130,7 @@ namespace CommBug
 			// Container child tableAuthor.Gtk.Table+TableChild
 			this.imageAuthor = new global::Gtk.Image ();
 			this.imageAuthor.Name = "imageAuthor";
-			this.imageAuthor.Pixbuf = global::Stetic.IconLoader.LoadIcon (this, "stock_person", global::Gtk.IconSize.Dialog);
+			this.imageAuthor.Pixbuf = global::Gdk.Pixbuf.LoadFromResource ("CommBug.icons.commbug.commbug_64x64.png");
 			this.tableAuthor.Add (this.imageAuthor);
 			global::Gtk.Table.TableChild w9 = ((global::Gtk.Table.TableChild)(this.tableAuthor[this.imageAuthor]));
 			w9.XOptions = ((global::Gtk.AttachOptions)(4));
@@ -177,7 +177,7 @@ namespace CommBug
 			// Container child tableTranslation.Gtk.Table+TableChild
 			this.imageTranslation = new global::Gtk.Image ();
 			this.imageTranslation.Name = "imageTranslation";
-			this.imageTranslation.Pixbuf = global::Stetic.IconLoader.LoadIcon (this, "stock_people", global::Gtk.IconSize.Dialog);
+			this.imageTranslation.Pixbuf = global::Gdk.Pixbuf.LoadFromResource ("CommBug.icons.commbug.commbug_64x64.png");
 			this.tableTranslation.Add (this.imageTranslation);
 			global::Gtk.Table.TableChild w16 = ((global::Gtk.Table.TableChild)(this.tableTranslation[this.imageTranslation]));
 			w16.XOptions = ((global::Gtk.AttachOptions)(4));
@@ -224,7 +224,7 @@ namespace CommBug
 			// Container child tableLicense.Gtk.Table+TableChild
 			this.imageLicense = new global::Gtk.Image ();
 			this.imageLicense.Name = "imageLicense";
-			this.imageLicense.Pixbuf = global::Stetic.IconLoader.LoadIcon (this, "gtk-dialog-warning", global::Gtk.IconSize.Dialog);
+			this.imageLicense.Pixbuf = global::Gdk.Pixbuf.LoadFromResource ("CommBug.icons.commbug.commbug_64x64.png");
 			this.tableLicense.Add (this.imageLicense);
 			global::Gtk.Table.TableChild w23 = ((global::Gtk.Table.TableChild)(this.tableLicense[this.imageLicense]));
 			w23.XOptions = ((global::Gtk.AttachOptions)(4));

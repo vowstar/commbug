@@ -254,7 +254,7 @@ public partial class MainWindow : Gtk.Window
 			MyPort.Open ();
 			togglebuttonPortSwitch.Label = "关闭串口(_C)";
 			labelPortState.Text = "串口开";
-			
+			imagePortState.Pixbuf = global::Gdk.Pixbuf.LoadFromResource ("CommBug.icons.port_state.port_state-on_24x24.png");			
 		} else {
 			if (checkbuttonAutoSend.Active) {
 				checkbuttonAutoSend.Active = false;
@@ -263,6 +263,7 @@ public partial class MainWindow : Gtk.Window
 			MyPort.Close ();
 			togglebuttonPortSwitch.Label = "打开串口(_O)";
 			labelPortState.Text = "串口关";
+			imagePortState.Pixbuf = global::Gdk.Pixbuf.LoadFromResource ("CommBug.icons.port_state.port_state-off_24x24.png");
 			togglebuttonPortSwitch.Active = false;
 		}
 	}

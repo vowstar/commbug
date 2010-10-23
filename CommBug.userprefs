@@ -5,13 +5,7 @@
       <Pad Id="ProjectPad">
         <State expanded="True">
           <Node name="CommBug" expanded="True">
-            <Node name="References" expanded="True" />
-            <Node name="UserInterface" expanded="True">
-              <Node name="MainWindow" selected="True" />
-            </Node>
-            <Node name="icons" expanded="True">
-              <Node name="send" expanded="True" />
-            </Node>
+            <Node name="AboutWindow.cs" selected="True" />
           </Node>
         </State>
       </Pad>

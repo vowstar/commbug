@@ -75,7 +75,7 @@ public partial class MainWindow
 
 	private global::Gtk.Table tableComm;
 
-	private global::Gtk.Label labelPortState;
+	private global::Gtk.Image imagePortState;
 
 	private global::Gtk.ToggleButton togglebuttonPortSwitch;
 
@@ -212,6 +212,8 @@ public partial class MainWindow
 	private global::Gtk.MenuBar menubarMain;
 
 	private global::Gtk.Statusbar statusbarMain;
+
+	private global::Gtk.Label labelPortState;
 
 	protected virtual void Build ()
 	{
@@ -509,12 +511,11 @@ public partial class MainWindow
 		this.tableComm.RowSpacing = ((uint)(6));
 		this.tableComm.ColumnSpacing = ((uint)(6));
 		// Container child tableComm.Gtk.Table+TableChild
-		this.labelPortState = new global::Gtk.Label ();
-		this.labelPortState.Name = "labelPortState";
-		this.labelPortState.Xalign = 0f;
-		this.labelPortState.LabelProp = global::Mono.Unix.Catalog.GetString ("串口关");
-		this.tableComm.Add (this.labelPortState);
-		global::Gtk.Table.TableChild w23 = ((global::Gtk.Table.TableChild)(this.tableComm[this.labelPortState]));
+		this.imagePortState = new global::Gtk.Image ();
+		this.imagePortState.Name = "imagePortState";
+		this.imagePortState.Pixbuf = global::Gdk.Pixbuf.LoadFromResource ("CommBug.icons.port_state.port_state-off_24x24.png");
+		this.tableComm.Add (this.imagePortState);
+		global::Gtk.Table.TableChild w23 = ((global::Gtk.Table.TableChild)(this.tableComm[this.imagePortState]));
 		w23.LeftAttach = ((uint)(1));
 		w23.RightAttach = ((uint)(2));
 		w23.XOptions = ((global::Gtk.AttachOptions)(4));
@@ -700,6 +701,7 @@ public partial class MainWindow
 		this.radiobuttonDec = new global::Gtk.RadioButton (global::Mono.Unix.Catalog.GetString ("10进制"));
 		this.radiobuttonDec.CanFocus = true;
 		this.radiobuttonDec.Name = "radiobuttonDec";
+		this.radiobuttonDec.Active = true;
 		this.radiobuttonDec.DrawIndicator = true;
 		this.radiobuttonDec.UseUnderline = true;
 		this.radiobuttonDec.Group = new global::GLib.SList (global::System.IntPtr.Zero);
@@ -1121,17 +1123,27 @@ public partial class MainWindow
 		this.statusbarMain = new global::Gtk.Statusbar ();
 		this.statusbarMain.Name = "statusbarMain";
 		this.statusbarMain.Spacing = 6;
+		// Container child statusbarMain.Gtk.Box+BoxChild
+		this.labelPortState = new global::Gtk.Label ();
+		this.labelPortState.Name = "labelPortState";
+		this.labelPortState.Xalign = 0f;
+		this.labelPortState.LabelProp = global::Mono.Unix.Catalog.GetString ("串口关");
+		this.statusbarMain.Add (this.labelPortState);
+		global::Gtk.Box.BoxChild w116 = ((global::Gtk.Box.BoxChild)(this.statusbarMain[this.labelPortState]));
+		w116.Position = 0;
+		w116.Expand = false;
+		w116.Fill = false;
 		this.tableMain.Add (this.statusbarMain);
-		global::Gtk.Table.TableChild w116 = ((global::Gtk.Table.TableChild)(this.tableMain[this.statusbarMain]));
-		w116.TopAttach = ((uint)(2));
-		w116.BottomAttach = ((uint)(3));
-		w116.YOptions = ((global::Gtk.AttachOptions)(4));
+		global::Gtk.Table.TableChild w117 = ((global::Gtk.Table.TableChild)(this.tableMain[this.statusbarMain]));
+		w117.TopAttach = ((uint)(2));
+		w117.BottomAttach = ((uint)(3));
+		w117.YOptions = ((global::Gtk.AttachOptions)(4));
 		this.Add (this.tableMain);
 		if ((this.Child != null)) {
 			this.Child.ShowAll ();
 		}
 		this.DefaultWidth = 840;
-		this.DefaultHeight = 471;
+		this.DefaultHeight = 482;
 		this.Show ();
 		this.DeleteEvent += new global::Gtk.DeleteEventHandler (this.OnDeleteEvent);
 		this.quitAction.Activated += new global::System.EventHandler (this.OnQuitActionActivated);

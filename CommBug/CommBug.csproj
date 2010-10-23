@@ -65,6 +65,9 @@
     <EmbeddedResource Include="icons\clear_receive\clear_receive_24x24.png" />
     <EmbeddedResource Include="icons\clear_send\clear_send_24x24.png" />
     <EmbeddedResource Include="icons\commbug\commbug_24x24.png" />
+    <EmbeddedResource Include="icons\port_state\port_state-off_24x24.png" />
+    <EmbeddedResource Include="icons\port_state\port_state-on_24x24.png" />
+    <EmbeddedResource Include="icons\commbug\commbug_64x64.png" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="gtk-gui\generated.cs" />

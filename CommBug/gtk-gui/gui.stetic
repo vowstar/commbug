@@ -7,7 +7,7 @@
   <import>
     <widget-library name="../bin/Release/CommBug.exe" internal="true" />
   </import>
-  <widget class="Gtk.Window" id="MainWindow" design-size="840 471">
+  <widget class="Gtk.Window" id="MainWindow" design-size="840 482">
     <action-group name="Default">
       <action id="FAction">
         <property name="Type">Action</property>
@@ -513,10 +513,9 @@ Space</property>
                                 <property name="RowSpacing">6</property>
                                 <property name="ColumnSpacing">6</property>
                                 <child>
-                                  <widget class="Gtk.Label" id="labelPortState">
+                                  <widget class="Gtk.Image" id="imagePortState">
                                     <property name="MemberName" />
-                                    <property name="Xalign">0</property>
-                                    <property name="LabelProp" translatable="yes">串口关</property>
+                                    <property name="Pixbuf">resource:CommBug.icons.port_state.port_state-off_24x24.png</property>
                                   </widget>
                                   <packing>
                                     <property name="LeftAttach">1</property>
@@ -1485,6 +1484,19 @@ Space</property>
           <widget class="Gtk.Statusbar" id="statusbarMain">
             <property name="MemberName" />
             <property name="Spacing">6</property>
+            <child>
+              <widget class="Gtk.Label" id="labelPortState">
+                <property name="MemberName" />
+                <property name="Xalign">0</property>
+                <property name="LabelProp" translatable="yes">串口关</property>
+              </widget>
+              <packing>
+                <property name="Position">0</property>
+                <property name="AutoSize">True</property>
+                <property name="Expand">False</property>
+                <property name="Fill">False</property>
+              </packing>
+            </child>
           </widget>
           <packing>
             <property name="TopAttach">2</property>
@@ -1531,7 +1543,7 @@ Space</property>
                     <child>
                       <widget class="Gtk.Image" id="imageInfo">
                         <property name="MemberName" />
-                        <property name="Pixbuf">stock:gtk-dialog-info Dialog</property>
+                        <property name="Pixbuf">resource:CommBug.icons.commbug.commbug_64x64.png</property>
                       </widget>
                       <packing>
                         <property name="AutoSize">False</property>
@@ -1607,7 +1619,7 @@ Space</property>
                     <child>
                       <widget class="Gtk.Image" id="imageAuthor">
                         <property name="MemberName" />
-                        <property name="Pixbuf">stock:stock_person Dialog</property>
+                        <property name="Pixbuf">resource:CommBug.icons.commbug.commbug_64x64.png</property>
                       </widget>
                       <packing>
                         <property name="AutoSize">False</property>
@@ -1686,7 +1698,7 @@ Space</property>
                     <child>
                       <widget class="Gtk.Image" id="imageTranslation">
                         <property name="MemberName" />
-                        <property name="Pixbuf">stock:stock_people Dialog</property>
+                        <property name="Pixbuf">resource:CommBug.icons.commbug.commbug_64x64.png</property>
                       </widget>
                       <packing>
                         <property name="AutoSize">False</property>
@@ -1762,7 +1774,7 @@ Space</property>
                     <child>
                       <widget class="Gtk.Image" id="imageLicense">
                         <property name="MemberName" />
-                        <property name="Pixbuf">stock:gtk-dialog-warning Dialog</property>
+                        <property name="Pixbuf">resource:CommBug.icons.commbug.commbug_64x64.png</property>
                       </widget>
                       <packing>
                         <property name="AutoSize">False</property>
