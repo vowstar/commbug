@@ -206,6 +206,9 @@ RESOURCES = \
 	icons/clear_send/clear_send_24x24.png,CommBug.icons.clear_send.clear_send_24x24.png \
 	icons/commbug/commbug_24x24.png,CommBug.icons.commbug.commbug_24x24.png \
 	icons/commbug/commbug_64x64.png,CommBug.icons.commbug.commbug_64x64.png \
+	icons/commbug_author/commbug_author_64x64.png,CommBug.icons.commbug_author.commbug_author_64x64.png \
+	icons/commbug_license/commbug_license_64x64.png,CommBug.icons.commbug_license.commbug_license_64x64.png \
+	icons/commbug_translation/commbug_translation_64x64.png,CommBug.icons.commbug_translation.commbug_translation_64x64.png \
 	icons/port/port_24x24.png,CommBug.icons.port.port_24x24.png \
 	icons/port_state/port_state-off_24x24.png,CommBug.icons.port_state.port_state-off_24x24.png \
 	icons/port_state/port_state-on_24x24.png,CommBug.icons.port_state.port_state-on_24x24.png \

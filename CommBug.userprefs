@@ -4,9 +4,7 @@
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True">
-          <Node name="CommBug" expanded="True">
-            <Node name="AboutWindow.cs" selected="True" />
-          </Node>
+          <Node name="CommBug" expanded="True" selected="True" />
         </State>
       </Pad>
       <Pad Id="ClassPad">

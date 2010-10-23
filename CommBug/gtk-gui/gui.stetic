@@ -1619,7 +1619,7 @@ Space</property>
                     <child>
                       <widget class="Gtk.Image" id="imageAuthor">
                         <property name="MemberName" />
-                        <property name="Pixbuf">resource:CommBug.icons.commbug.commbug_64x64.png</property>
+                        <property name="Pixbuf">resource:CommBug.icons.commbug_author.commbug_author_64x64.png</property>
                       </widget>
                       <packing>
                         <property name="AutoSize">False</property>
@@ -1698,7 +1698,7 @@ Space</property>
                     <child>
                       <widget class="Gtk.Image" id="imageTranslation">
                         <property name="MemberName" />
-                        <property name="Pixbuf">resource:CommBug.icons.commbug.commbug_64x64.png</property>
+                        <property name="Pixbuf">resource:CommBug.icons.commbug_translation.commbug_translation_64x64.png</property>
                       </widget>
                       <packing>
                         <property name="AutoSize">False</property>
@@ -1774,7 +1774,7 @@ Space</property>
                     <child>
                       <widget class="Gtk.Image" id="imageLicense">
                         <property name="MemberName" />
-                        <property name="Pixbuf">resource:CommBug.icons.commbug.commbug_64x64.png</property>
+                        <property name="Pixbuf">resource:CommBug.icons.commbug_license.commbug_license_64x64.png</property>
                       </widget>
                       <packing>
                         <property name="AutoSize">False</property>

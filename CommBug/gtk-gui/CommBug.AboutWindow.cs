@@ -130,7 +130,7 @@ namespace CommBug
 			// Container child tableAuthor.Gtk.Table+TableChild
 			this.imageAuthor = new global::Gtk.Image ();
 			this.imageAuthor.Name = "imageAuthor";
-			this.imageAuthor.Pixbuf = global::Gdk.Pixbuf.LoadFromResource ("CommBug.icons.commbug.commbug_64x64.png");
+			this.imageAuthor.Pixbuf = global::Gdk.Pixbuf.LoadFromResource ("CommBug.icons.commbug_author.commbug_author_64x64.png");
 			this.tableAuthor.Add (this.imageAuthor);
 			global::Gtk.Table.TableChild w9 = ((global::Gtk.Table.TableChild)(this.tableAuthor[this.imageAuthor]));
 			w9.XOptions = ((global::Gtk.AttachOptions)(4));
@@ -177,7 +177,7 @@ namespace CommBug
 			// Container child tableTranslation.Gtk.Table+TableChild
 			this.imageTranslation = new global::Gtk.Image ();
 			this.imageTranslation.Name = "imageTranslation";
-			this.imageTranslation.Pixbuf = global::Gdk.Pixbuf.LoadFromResource ("CommBug.icons.commbug.commbug_64x64.png");
+			this.imageTranslation.Pixbuf = global::Gdk.Pixbuf.LoadFromResource ("CommBug.icons.commbug_translation.commbug_translation_64x64.png");
 			this.tableTranslation.Add (this.imageTranslation);
 			global::Gtk.Table.TableChild w16 = ((global::Gtk.Table.TableChild)(this.tableTranslation[this.imageTranslation]));
 			w16.XOptions = ((global::Gtk.AttachOptions)(4));
@@ -224,7 +224,7 @@ namespace CommBug
 			// Container child tableLicense.Gtk.Table+TableChild
 			this.imageLicense = new global::Gtk.Image ();
 			this.imageLicense.Name = "imageLicense";
-			this.imageLicense.Pixbuf = global::Gdk.Pixbuf.LoadFromResource ("CommBug.icons.commbug.commbug_64x64.png");
+			this.imageLicense.Pixbuf = global::Gdk.Pixbuf.LoadFromResource ("CommBug.icons.commbug_license.commbug_license_64x64.png");
 			this.tableLicense.Add (this.imageLicense);
 			global::Gtk.Table.TableChild w23 = ((global::Gtk.Table.TableChild)(this.tableLicense[this.imageLicense]));
 			w23.XOptions = ((global::Gtk.AttachOptions)(4));

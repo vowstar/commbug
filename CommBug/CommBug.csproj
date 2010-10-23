@@ -68,6 +68,9 @@
     <EmbeddedResource Include="icons\port_state\port_state-off_24x24.png" />
     <EmbeddedResource Include="icons\port_state\port_state-on_24x24.png" />
     <EmbeddedResource Include="icons\commbug\commbug_64x64.png" />
+    <EmbeddedResource Include="icons\commbug_license\commbug_license_64x64.png" />
+    <EmbeddedResource Include="icons\commbug_translation\commbug_translation_64x64.png" />
+    <EmbeddedResource Include="icons\commbug_author\commbug_author_64x64.png" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="gtk-gui\generated.cs" />
