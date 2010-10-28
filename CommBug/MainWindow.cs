@@ -252,9 +252,18 @@ public partial class MainWindow : Gtk.Window
 		if (!MyPort.IsOpen) {
 			SettingsSynchronization ();
 			MyPort.Open ();
-			togglebuttonPortSwitch.Label = "关闭串口(_C)";
-			labelPortState.Text = "串口开";
-			imagePortState.Pixbuf = global::Gdk.Pixbuf.LoadFromResource ("CommBug.icons.port_state.port_state-on_24x24.png");			
+			if (MyPort.IsOpen) {
+				togglebuttonPortSwitch.Label = "关闭串口(_C)";
+				labelPortState.Text = "串口开";
+				imagePortState.Pixbuf = global::Gdk.Pixbuf.LoadFromResource ("CommBug.icons.port_state.port_state-on_24x24.png");
+			} else {
+				Console.WriteLine ("Can't open this port.");
+				if (checkbuttonAutoSend.Active) {
+					checkbuttonAutoSend.Active = false;
+					OnCheckbuttonAutoSendClicked (this, null);
+				}
+				togglebuttonPortSwitch.Active = false;
+			}
 		} else {
 			if (checkbuttonAutoSend.Active) {
 				checkbuttonAutoSend.Active = false;
