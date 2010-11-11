@@ -5,7 +5,7 @@
       <Pad Id="ProjectPad">
         <State expanded="True">
           <Node name="CommBug" expanded="True">
-            <Node name="MainWindow.cs" selected="True" />
+            <Node name="StringConverts.cs" selected="True" />
           </Node>
         </State>
       </Pad>
