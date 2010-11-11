@@ -2534,6 +2534,7 @@ Public License instead of this License.  But first, please read
           <widget class="Gtk.Button" id="buttonOk">
             <property name="MemberName" />
             <property name="CanDefault">True</property>
+            <property name="HasDefault">True</property>
             <property name="CanFocus">True</property>
             <property name="Type">TextAndIcon</property>
             <property name="Icon">stock:gtk-yes Menu</property>
@@ -2594,6 +2595,7 @@ Public License instead of this License.  But first, please read
           <widget class="Gtk.Button" id="buttonOk">
             <property name="MemberName" />
             <property name="CanDefault">True</property>
+            <property name="HasDefault">True</property>
             <property name="CanFocus">True</property>
             <property name="UseStock">True</property>
             <property name="Type">StockItem</property>

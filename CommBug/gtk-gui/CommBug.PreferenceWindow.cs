@@ -56,6 +56,7 @@ namespace CommBug
 			}
 			this.DefaultWidth = 400;
 			this.DefaultHeight = 300;
+			this.buttonOk.HasDefault = true;
 			this.Show ();
 			this.buttonCancel.Clicked += new global::System.EventHandler (this.OnButtonCancelClicked);
 			this.buttonOk.Clicked += new global::System.EventHandler (this.OnButtonOkClicked);
