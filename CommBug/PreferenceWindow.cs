@@ -13,10 +13,27 @@ namespace CommBug
 {
 	public partial class PreferenceWindow : Gtk.Dialog
 	{
+
+
 		public PreferenceWindow ()
 		{
 			this.Build ();
 		}
+		public void ApplySettings ()
+		{
+		}
+
+		protected virtual void OnButtonOkClicked (object sender, System.EventArgs e)
+		{
+			ApplySettings ();
+			this.Destroy ();
+		}
+		protected virtual void OnButtonCancelClicked (object sender, System.EventArgs e)
+		{
+			this.Destroy ();
+		}
+		
+		
 	}
 }
 

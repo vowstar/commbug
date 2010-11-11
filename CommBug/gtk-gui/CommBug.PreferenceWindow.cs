@@ -14,18 +14,19 @@ namespace CommBug
 			// Widget CommBug.PreferenceWindow
 			this.Name = "CommBug.PreferenceWindow";
 			this.Title = global::Mono.Unix.Catalog.GetString ("首选项");
+			this.Icon = global::Stetic.IconLoader.LoadIcon (this, "gtk-preferences", global::Gtk.IconSize.Menu);
 			this.WindowPosition = ((global::Gtk.WindowPosition)(4));
 			// Internal child CommBug.PreferenceWindow.VBox
 			global::Gtk.VBox w1 = this.VBox;
-			w1.Name = "dialog1_VBox";
+			w1.Name = "PreferenceWindow_VBox";
 			w1.BorderWidth = ((uint)(2));
 			// Internal child CommBug.PreferenceWindow.ActionArea
 			global::Gtk.HButtonBox w2 = this.ActionArea;
-			w2.Name = "dialog1_ActionArea";
+			w2.Name = "PreferenceWindow_ActionArea";
 			w2.Spacing = 10;
 			w2.BorderWidth = ((uint)(5));
 			w2.LayoutStyle = ((global::Gtk.ButtonBoxStyle)(4));
-			// Container child dialog1_ActionArea.Gtk.ButtonBox+ButtonBoxChild
+			// Container child PreferenceWindow_ActionArea.Gtk.ButtonBox+ButtonBoxChild
 			this.buttonCancel = new global::Gtk.Button ();
 			this.buttonCancel.CanDefault = true;
 			this.buttonCancel.CanFocus = true;
@@ -37,7 +38,7 @@ namespace CommBug
 			global::Gtk.ButtonBox.ButtonBoxChild w3 = ((global::Gtk.ButtonBox.ButtonBoxChild)(w2[this.buttonCancel]));
 			w3.Expand = false;
 			w3.Fill = false;
-			// Container child dialog1_ActionArea.Gtk.ButtonBox+ButtonBoxChild
+			// Container child PreferenceWindow_ActionArea.Gtk.ButtonBox+ButtonBoxChild
 			this.buttonOk = new global::Gtk.Button ();
 			this.buttonOk.CanDefault = true;
 			this.buttonOk.CanFocus = true;
@@ -56,6 +57,8 @@ namespace CommBug
 			this.DefaultWidth = 400;
 			this.DefaultHeight = 300;
 			this.Show ();
+			this.buttonCancel.Clicked += new global::System.EventHandler (this.OnButtonCancelClicked);
+			this.buttonOk.Clicked += new global::System.EventHandler (this.OnButtonOkClicked);
 		}
 	}
 }

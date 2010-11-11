@@ -2553,11 +2553,12 @@ Public License instead of this License.  But first, please read
   <widget class="Gtk.Dialog" id="CommBug.PreferenceWindow" design-size="400 300">
     <property name="MemberName" />
     <property name="Title" translatable="yes">首选项</property>
+    <property name="Icon">stock:gtk-preferences Menu</property>
     <property name="WindowPosition">CenterOnParent</property>
     <property name="Buttons">2</property>
     <property name="HelpButton">False</property>
     <child internal-child="VBox">
-      <widget class="Gtk.VBox" id="dialog1_VBox">
+      <widget class="Gtk.VBox" id="PreferenceWindow_VBox">
         <property name="MemberName" />
         <property name="BorderWidth">2</property>
         <child>
@@ -2566,7 +2567,7 @@ Public License instead of this License.  But first, please read
       </widget>
     </child>
     <child internal-child="ActionArea">
-      <widget class="Gtk.HButtonBox" id="dialog1_ActionArea">
+      <widget class="Gtk.HButtonBox" id="PreferenceWindow_ActionArea">
         <property name="MemberName" />
         <property name="Spacing">10</property>
         <property name="BorderWidth">5</property>
@@ -2581,6 +2582,7 @@ Public License instead of this License.  But first, please read
             <property name="Type">StockItem</property>
             <property name="StockId">gtk-cancel</property>
             <property name="ResponseId">-6</property>
+            <signal name="Clicked" handler="OnButtonCancelClicked" />
             <property name="label">gtk-cancel</property>
           </widget>
           <packing>
@@ -2597,6 +2599,7 @@ Public License instead of this License.  But first, please read
             <property name="Type">StockItem</property>
             <property name="StockId">gtk-ok</property>
             <property name="ResponseId">-5</property>
+            <signal name="Clicked" handler="OnButtonOkClicked" />
             <property name="label">gtk-ok</property>
           </widget>
           <packing>
