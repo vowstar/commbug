@@ -18,6 +18,7 @@ namespace CommBug
 		public PreferenceWindow ()
 		{
 			this.Build ();
+			
 		}
 		public void ApplySettings ()
 		{
@@ -32,6 +33,24 @@ namespace CommBug
 		{
 			this.Destroy ();
 		}
+		
+	
+		protected virtual void OnLabel2MotionNotifyEvent (object o, Gtk.MotionNotifyEventArgs args)
+		{
+			int x = 0, y = 0;
+			Gdk.ModifierType mask;
+			GdkWindow.GetPointer (out x, out y, out mask);
+			label5.Text = x.ToString () + y.ToString ();
+		}
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		
 		
 	}

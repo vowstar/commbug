@@ -706,7 +706,6 @@ public partial class MainWindow
 		this.radiobuttonDec = new global::Gtk.RadioButton (global::Mono.Unix.Catalog.GetString ("10进制"));
 		this.radiobuttonDec.CanFocus = true;
 		this.radiobuttonDec.Name = "radiobuttonDec";
-		this.radiobuttonDec.Active = true;
 		this.radiobuttonDec.DrawIndicator = true;
 		this.radiobuttonDec.UseUnderline = true;
 		this.radiobuttonDec.Group = new global::GLib.SList (global::System.IntPtr.Zero);
@@ -956,7 +955,6 @@ public partial class MainWindow
 		// Container child frameSendArea.Gtk.Container+ContainerChild
 		this.GtkAlignmentSendArea = new global::Gtk.Alignment (0f, 0f, 1f, 1f);
 		this.GtkAlignmentSendArea.Name = "GtkAlignmentSendArea";
-		this.GtkAlignmentSendArea.LeftPadding = ((uint)(12));
 		// Container child GtkAlignmentSendArea.Gtk.Container+ContainerChild
 		this.notebookSendArea = new global::Gtk.Notebook ();
 		this.notebookSendArea.CanFocus = true;
@@ -1037,7 +1035,6 @@ public partial class MainWindow
 		// Container child frameReceiveArea.Gtk.Container+ContainerChild
 		this.GtkAlignmentReceiveArea = new global::Gtk.Alignment (0f, 0f, 1f, 1f);
 		this.GtkAlignmentReceiveArea.Name = "GtkAlignmentReceiveArea";
-		this.GtkAlignmentReceiveArea.LeftPadding = ((uint)(12));
 		// Container child GtkAlignmentReceiveArea.Gtk.Container+ContainerChild
 		this.notebookReceiveArea = new global::Gtk.Notebook ();
 		this.notebookReceiveArea.CanFocus = true;
