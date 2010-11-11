@@ -30,7 +30,7 @@ public static class StringConverts
 		int i;
 		string result = "";
 		for (i = 0; i < buffer.Length; i++) {
-			result = result + buffer[i].ToString ("X") + SplitString;
+			result = result + buffer[i].ToString ("X2") + SplitString;
 			// 转换为16进制
 		}
 		return result;
@@ -40,7 +40,7 @@ public static class StringConverts
 		int i;
 		string result = "";
 		for (i = 0; i < buffer.Length; i++) {
-			result = result + buffer[i].ToString () + SplitString;
+			result = result + buffer[i].ToString ("D3") + SplitString;
 		}
 		return result;
 	}

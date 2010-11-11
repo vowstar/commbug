@@ -959,7 +959,7 @@ public partial class MainWindow
 		this.notebookSendArea = new global::Gtk.Notebook ();
 		this.notebookSendArea.CanFocus = true;
 		this.notebookSendArea.Name = "notebookSendArea";
-		this.notebookSendArea.CurrentPage = 0;
+		this.notebookSendArea.CurrentPage = 1;
 		// Container child notebookSendArea.Gtk.Notebook+NotebookChild
 		this.GtkScrolledWindowTextS = new global::Gtk.ScrolledWindow ();
 		this.GtkScrolledWindowTextS.Name = "GtkScrolledWindowTextS";
@@ -1039,7 +1039,7 @@ public partial class MainWindow
 		this.notebookReceiveArea = new global::Gtk.Notebook ();
 		this.notebookReceiveArea.CanFocus = true;
 		this.notebookReceiveArea.Name = "notebookReceiveArea";
-		this.notebookReceiveArea.CurrentPage = 0;
+		this.notebookReceiveArea.CurrentPage = 1;
 		// Container child notebookReceiveArea.Gtk.Notebook+NotebookChild
 		this.GtkScrolledWindowText = new global::Gtk.ScrolledWindow ();
 		this.GtkScrolledWindowText.Name = "GtkScrolledWindowText";
