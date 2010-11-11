@@ -15,13 +15,11 @@ Global
 		{D6D60EAB-139F-4B3C-A306-A6C9D92D180A}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
-		description = @串口调试助手，用来调试串口的数据发送与接收。\n支持文本模式、16进制、10进制显示被调试串口接收和发送的内容。\n支持自动发送模式，\n是学习单片机与检测串口设备的必备工具。
-		version = 1.0.0
 		StartupItem = CommBug\CommBug.csproj
 		Policies = $0
 		$0.StandardHeader = $1
 		$1.Text = 
-		$1.inheritsSet = MITX11License
+		$1.inheritsSet = Apache2License
 		$0.TextStylePolicy = $2
 		$2.FileWidth = 120
 		$2.TabWidth = 4
@@ -38,5 +36,7 @@ Global
 		$0.TextStylePolicy = $5
 		$5.inheritsSet = null
 		$5.scope = application/x-desktop
+		description = @串口调试助手，用来调试串口的数据发送与接收。\n支持文本模式、16进制、10进制显示被调试串口接收和发送的内容。\n支持自动发送模式，\n是学习单片机与检测串口设备的必备工具。
+		version = 1.0.3
 	EndGlobalSection
 EndGlobal

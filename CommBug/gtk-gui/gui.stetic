@@ -2,7 +2,6 @@
 <stetic-interface>
   <configuration>
     <images-root-path>..</images-root-path>
-    <target-gtk-version>2.12</target-gtk-version>
   </configuration>
   <import>
     <widget-library name="../bin/Release/CommBug.exe" internal="true" />
