@@ -191,10 +191,12 @@ FILES = \
 	AboutWindow.cs \
 	AssemblyInfo.cs \
 	gtk-gui/CommBug.AboutWindow.cs \
+	gtk-gui/CommBug.PreferenceWindow.cs \
 	gtk-gui/generated.cs \
 	gtk-gui/MainWindow.cs \
 	Main.cs \
 	MainWindow.cs \
+	PreferenceWindow.cs \
 	SerialPortEX.cs \
 	StringConverts.cs 
 

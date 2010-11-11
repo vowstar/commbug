@@ -82,6 +82,8 @@
     <Compile Include="StringConverts.cs" />
     <Compile Include="AboutWindow.cs" />
     <Compile Include="gtk-gui\CommBug.AboutWindow.cs" />
+    <Compile Include="PreferenceWindow.cs" />
+    <Compile Include="gtk-gui\CommBug.PreferenceWindow.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="app.desktop" />

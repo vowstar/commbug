@@ -16,6 +16,10 @@ using Gtk;
 /// </summary>
 public partial class MainWindow : Gtk.Window
 {
+	#region Sub windows
+	private CommBug.AboutWindow aboutWindow;
+	private CommBug.PreferenceWindow preferenceWindow;
+	#endregion
 	#region 变量与类定义
 	public enum ConvertMode
 	{
@@ -37,7 +41,7 @@ public partial class MainWindow : Gtk.Window
 
 	private int portCount = 0;
 	private ListStore portNameModel = new ListStore (typeof(string));
-	private CommBug.AboutWindow aboutWindow;
+
 	#endregion
 	public MainWindow () : base(Gtk.WindowType.Toplevel)
 	{
@@ -443,6 +447,15 @@ public partial class MainWindow : Gtk.Window
 		OnDeleteEvent (this, null);
 	}
 
+	protected virtual void OnPreferencesActionActivated (object sender, System.EventArgs e)
+	{
+		if (preferenceWindow == null) {
+			preferenceWindow = new CommBug.PreferenceWindow ();
+		} else {
+			if (!preferenceWindow.Visible)
+				preferenceWindow = new CommBug.PreferenceWindow ();
+		}
+	}
 	protected virtual void OnAboutActionActivated (object sender, System.EventArgs e)
 	{
 		if (aboutWindow == null) {
@@ -501,10 +514,6 @@ public partial class MainWindow : Gtk.Window
 	{
 		SettingsSafeUpdate ();
 	}
-	
-	
-	
-	
 	
 	
 	
