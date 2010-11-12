@@ -42,18 +42,16 @@ public partial class MainWindow : Gtk.Window
 	private int portCount = 0;
 	private ListStore portNameModel = new ListStore (typeof(string));
 
-	private int lineHeight = 0;
 	#endregion
 	public MainWindow () : base(Gtk.WindowType.Toplevel)
 	{
 		Build ();
 		// Let scroll disappear
-		lineHeight=TextViewUtils.GetLineHeight(textviewSend);
-		Console.WriteLine(lineHeight);
-		textviewTextSL.SetScrollAdjustments (GtkScrolledWindowTextSL.Hadjustment, GtkScrolledWindowTextS.Vadjustment);
-		GtkScrolledWindowTextSL.Vadjustment.Lower=0;
-		GtkScrolledWindowTextSL.Vadjustment.Value=0;
-		GtkScrolledWindowTextSL.Vadjustment.Upper=0;
+		// textviewTextSL.SetScrollAdjustments (GtkScrolledWindowTextSL.Hadjustment, GtkScrolledWindowTextS.Vadjustment);
+		
+		// GtkScrolledWindowTextSL.Vadjustment.Lower=0;
+		// GtkScrolledWindowTextSL.Vadjustment.Value=0;
+		// GtkScrolledWindowTextSL.Vadjustment.Upper=0;
 		
 		textviewSend.Buffer.Changed += HandleTextviewSendBufferChanged;
 		#region 初始化串口名称
@@ -337,14 +335,7 @@ public partial class MainWindow : Gtk.Window
 				textviewTextS.ScrollToMark (textviewTextS.Buffer.CreateMark ("EndMark", iter, false), 0, false, 0, 0);
 				textviewTextS.Buffer.DeleteMark ("EndMark");
 			}
-			Console.WriteLine("R{0}",textviewTextSL.HeightRequest);
-			if (textviewTextS.Buffer.LineCount > textviewTextSL.Buffer.LineCount) {
-				int i;
-				for (i = textviewTextSL.Buffer.LineCount + 1; i < textviewTextS.Buffer.LineCount - textviewTextSL.Buffer.LineCount; i++) {
-					iter = textviewTextSL.Buffer.EndIter;
-					textviewTextSL.Buffer.Insert (ref iter, i.ToString ()+"\n");
-				}
-			}
+			
 			iter = textviewHexS.Buffer.EndIter;
 			textviewHexS.Buffer.Insert (ref iter, StringConverts.BytesToHexString (sendByte));
 			if (checkbuttonAutoScrollSend.Active) {
@@ -359,7 +350,9 @@ public partial class MainWindow : Gtk.Window
 				textviewDecS.ScrollToMark (textviewDecS.Buffer.CreateMark ("EndMark", iter, false), 0, false, 0, 0);
 				textviewDecS.Buffer.DeleteMark ("EndMark");
 			}
-			
+			// ---------------
+			// Generate Linenumber,copyright by vowstar@gmail.com,^-^
+			// TextViewUtils.GenerateLineNumber(textviewTextS,textviewTextSL,lineHeight);			
 		}
 	}
 

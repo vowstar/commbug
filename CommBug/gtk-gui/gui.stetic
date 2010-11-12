@@ -8,7 +8,7 @@
     <widget-library name="../bin/Release/CommBug.exe" internal="true" />
     <widget-library name="../../../../../../usr/lib/monodevelop/AddIns/MonoDevelop.GtkCore/libstetic.dll" />
   </import>
-  <widget class="Gtk.Window" id="MainWindow" design-size="840 482">
+  <widget class="Gtk.Window" id="MainWindow" design-size="840 463">
     <action-group name="Default">
       <action id="FAction">
         <property name="Type">Action</property>
@@ -822,7 +822,6 @@ Space</property>
                                                 <property name="MemberName" />
                                                 <property name="CanFocus">True</property>
                                                 <property name="Label" translatable="yes">10进制</property>
-                                                <property name="Active">True</property>
                                                 <property name="DrawIndicator">True</property>
                                                 <property name="HasLabel">True</property>
                                                 <property name="UseUnderline">True</property>
@@ -1223,30 +1222,6 @@ Space</property>
                               <widget class="Gtk.HBox" id="hboxTextS">
                                 <property name="MemberName" />
                                 <child>
-                                  <widget class="Gtk.ScrolledWindow" id="GtkScrolledWindowTextSL">
-                                    <property name="MemberName" />
-                                    <property name="VscrollbarPolicy">Never</property>
-                                    <property name="ShadowType">In</property>
-                                    <child>
-                                      <widget class="Gtk.TextView" id="textviewTextSL">
-                                        <property name="MemberName" />
-                                        <property name="WidthRequest">10</property>
-                                        <property name="CanFocus">True</property>
-                                        <property name="ShowScrollbars">True</property>
-                                        <property name="Editable">False</property>
-                                        <property name="CursorVisible">False</property>
-                                        <property name="Text" translatable="yes" />
-                                        <property name="WrapMode">WordChar</property>
-                                      </widget>
-                                    </child>
-                                  </widget>
-                                  <packing>
-                                    <property name="Position">0</property>
-                                    <property name="AutoSize">False</property>
-                                    <property name="Expand">False</property>
-                                  </packing>
-                                </child>
-                                <child>
                                   <widget class="Gtk.ScrolledWindow" id="GtkScrolledWindowTextS">
                                     <property name="MemberName" />
                                     <property name="ShadowType">In</property>
@@ -1262,7 +1237,7 @@ Space</property>
                                     </child>
                                   </widget>
                                   <packing>
-                                    <property name="Position">1</property>
+                                    <property name="Position">0</property>
                                     <property name="AutoSize">True</property>
                                   </packing>
                                 </child>

@@ -14,22 +14,23 @@ using Gtk;
 public class TextViewUtils
 {
 	public TextViewUtils ()
-	{		
+	{
 	}
 	public static int GetLineHeight (Gtk.TextView GtkTextView)
-	{		
+	{
 		int y, height;
-		GtkTextView.Buffer.Text="";
+		GtkTextView.Buffer.Text = "";
 		GtkTextView.GetLineYrange (GtkTextView.Buffer.StartIter, out y, out height);
 		return height;
 	}
-	public static int GetLineCount (Gtk.TextView GtkTextView,int LineHeight)
-	{		
+	public static int GetLineCount (Gtk.TextView GtkTextView, int LineHeight)
+	{
 		int y, height;
-		GtkTextView.Buffer.Text="";
-		GtkTextView.GetLineYrange (GtkTextView.Buffer.StartIter, out y, out height);
-		return (y+height)/LineHeight;
+		GtkTextView.GetLineYrange (GtkTextView.Buffer.EndIter, out y, out height);
+		return (y + height) / LineHeight;
 	}
+
+	
 }
 
 
