@@ -55,7 +55,8 @@ FILES =  \
 	MainWindow.cs \
 	PreferenceWindow.cs \
 	SerialPortEX.cs \
-	StringConverts.cs 
+	StringConverts.cs \
+	TextViewUtils.cs 
 
 DATA_FILES = 
 

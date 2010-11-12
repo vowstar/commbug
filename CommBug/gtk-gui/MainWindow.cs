@@ -161,9 +161,13 @@ public partial class MainWindow
 
 	private global::Gtk.Frame frameSendArea;
 
-	private global::Gtk.Alignment GtkAlignmentSendArea;
-
 	private global::Gtk.Notebook notebookSendArea;
+
+	private global::Gtk.HBox hboxTextS;
+
+	private global::Gtk.ScrolledWindow GtkScrolledWindowTextSL;
+
+	private global::Gtk.TextView textviewTextSL;
 
 	private global::Gtk.ScrolledWindow GtkScrolledWindowTextS;
 
@@ -186,8 +190,6 @@ public partial class MainWindow
 	private global::Gtk.Label GtkLabelSendArea;
 
 	private global::Gtk.Frame frameReceiveArea;
-
-	private global::Gtk.Alignment GtkAlignmentReceiveArea;
 
 	private global::Gtk.Notebook notebookReceiveArea;
 
@@ -260,7 +262,7 @@ public partial class MainWindow
 		this.hpanedMain = new global::Gtk.HPaned ();
 		this.hpanedMain.CanFocus = true;
 		this.hpanedMain.Name = "hpanedMain";
-		this.hpanedMain.Position = 237;
+		this.hpanedMain.Position = 235;
 		// Container child hpanedMain.Gtk.Paned+PanedChild
 		this.vboxLeft = new global::Gtk.VBox ();
 		this.vboxLeft.Name = "vboxLeft";
@@ -947,20 +949,38 @@ public partial class MainWindow
 		this.hpanedRight = new global::Gtk.HPaned ();
 		this.hpanedRight.CanFocus = true;
 		this.hpanedRight.Name = "hpanedRight";
-		this.hpanedRight.Position = 285;
+		this.hpanedRight.Position = 291;
 		// Container child hpanedRight.Gtk.Paned+PanedChild
 		this.frameSendArea = new global::Gtk.Frame ();
 		this.frameSendArea.Name = "frameSendArea";
 		this.frameSendArea.ShadowType = ((global::Gtk.ShadowType)(0));
 		// Container child frameSendArea.Gtk.Container+ContainerChild
-		this.GtkAlignmentSendArea = new global::Gtk.Alignment (0f, 0f, 1f, 1f);
-		this.GtkAlignmentSendArea.Name = "GtkAlignmentSendArea";
-		// Container child GtkAlignmentSendArea.Gtk.Container+ContainerChild
 		this.notebookSendArea = new global::Gtk.Notebook ();
 		this.notebookSendArea.CanFocus = true;
 		this.notebookSendArea.Name = "notebookSendArea";
-		this.notebookSendArea.CurrentPage = 1;
+		this.notebookSendArea.CurrentPage = 0;
 		// Container child notebookSendArea.Gtk.Notebook+NotebookChild
+		this.hboxTextS = new global::Gtk.HBox ();
+		this.hboxTextS.Name = "hboxTextS";
+		// Container child hboxTextS.Gtk.Box+BoxChild
+		this.GtkScrolledWindowTextSL = new global::Gtk.ScrolledWindow ();
+		this.GtkScrolledWindowTextSL.Name = "GtkScrolledWindowTextSL";
+		this.GtkScrolledWindowTextSL.VscrollbarPolicy = ((global::Gtk.PolicyType)(2));
+		this.GtkScrolledWindowTextSL.ShadowType = ((global::Gtk.ShadowType)(1));
+		// Container child GtkScrolledWindowTextSL.Gtk.Container+ContainerChild
+		this.textviewTextSL = new global::Gtk.TextView ();
+		this.textviewTextSL.WidthRequest = 10;
+		this.textviewTextSL.CanFocus = true;
+		this.textviewTextSL.Name = "textviewTextSL";
+		this.textviewTextSL.Editable = false;
+		this.textviewTextSL.CursorVisible = false;
+		this.textviewTextSL.WrapMode = ((global::Gtk.WrapMode)(3));
+		this.GtkScrolledWindowTextSL.Add (this.textviewTextSL);
+		this.hboxTextS.Add (this.GtkScrolledWindowTextSL);
+		global::Gtk.Box.BoxChild w95 = ((global::Gtk.Box.BoxChild)(this.hboxTextS[this.GtkScrolledWindowTextSL]));
+		w95.Position = 0;
+		w95.Expand = false;
+		// Container child hboxTextS.Gtk.Box+BoxChild
 		this.GtkScrolledWindowTextS = new global::Gtk.ScrolledWindow ();
 		this.GtkScrolledWindowTextS.Name = "GtkScrolledWindowTextS";
 		this.GtkScrolledWindowTextS.ShadowType = ((global::Gtk.ShadowType)(1));
@@ -971,12 +991,15 @@ public partial class MainWindow
 		this.textviewTextS.Editable = false;
 		this.textviewTextS.WrapMode = ((global::Gtk.WrapMode)(3));
 		this.GtkScrolledWindowTextS.Add (this.textviewTextS);
-		this.notebookSendArea.Add (this.GtkScrolledWindowTextS);
+		this.hboxTextS.Add (this.GtkScrolledWindowTextS);
+		global::Gtk.Box.BoxChild w97 = ((global::Gtk.Box.BoxChild)(this.hboxTextS[this.GtkScrolledWindowTextS]));
+		w97.Position = 1;
+		this.notebookSendArea.Add (this.hboxTextS);
 		// Notebook tab
 		this.labelSText = new global::Gtk.Label ();
 		this.labelSText.Name = "labelSText";
 		this.labelSText.LabelProp = global::Mono.Unix.Catalog.GetString ("文本");
-		this.notebookSendArea.SetTabLabel (this.GtkScrolledWindowTextS, this.labelSText);
+		this.notebookSendArea.SetTabLabel (this.hboxTextS, this.labelSText);
 		this.labelSText.ShowAll ();
 		// Container child notebookSendArea.Gtk.Notebook+NotebookChild
 		this.GtkScrolledWindowHexS = new global::Gtk.ScrolledWindow ();
@@ -990,8 +1013,8 @@ public partial class MainWindow
 		this.textviewHexS.WrapMode = ((global::Gtk.WrapMode)(3));
 		this.GtkScrolledWindowHexS.Add (this.textviewHexS);
 		this.notebookSendArea.Add (this.GtkScrolledWindowHexS);
-		global::Gtk.Notebook.NotebookChild w97 = ((global::Gtk.Notebook.NotebookChild)(this.notebookSendArea[this.GtkScrolledWindowHexS]));
-		w97.Position = 1;
+		global::Gtk.Notebook.NotebookChild w100 = ((global::Gtk.Notebook.NotebookChild)(this.notebookSendArea[this.GtkScrolledWindowHexS]));
+		w100.Position = 1;
 		// Notebook tab
 		this.labelSHex = new global::Gtk.Label ();
 		this.labelSHex.Name = "labelSHex";
@@ -1010,36 +1033,32 @@ public partial class MainWindow
 		this.textviewDecS.WrapMode = ((global::Gtk.WrapMode)(3));
 		this.GtkScrolledWindowDecS.Add (this.textviewDecS);
 		this.notebookSendArea.Add (this.GtkScrolledWindowDecS);
-		global::Gtk.Notebook.NotebookChild w99 = ((global::Gtk.Notebook.NotebookChild)(this.notebookSendArea[this.GtkScrolledWindowDecS]));
-		w99.Position = 2;
+		global::Gtk.Notebook.NotebookChild w102 = ((global::Gtk.Notebook.NotebookChild)(this.notebookSendArea[this.GtkScrolledWindowDecS]));
+		w102.Position = 2;
 		// Notebook tab
 		this.labelSDex = new global::Gtk.Label ();
 		this.labelSDex.Name = "labelSDex";
 		this.labelSDex.LabelProp = global::Mono.Unix.Catalog.GetString ("十进制");
 		this.notebookSendArea.SetTabLabel (this.GtkScrolledWindowDecS, this.labelSDex);
 		this.labelSDex.ShowAll ();
-		this.GtkAlignmentSendArea.Add (this.notebookSendArea);
-		this.frameSendArea.Add (this.GtkAlignmentSendArea);
+		this.frameSendArea.Add (this.notebookSendArea);
 		this.GtkLabelSendArea = new global::Gtk.Label ();
 		this.GtkLabelSendArea.Name = "GtkLabelSendArea";
 		this.GtkLabelSendArea.LabelProp = global::Mono.Unix.Catalog.GetString ("<b>已发送的数据</b>");
 		this.GtkLabelSendArea.UseMarkup = true;
 		this.frameSendArea.LabelWidget = this.GtkLabelSendArea;
 		this.hpanedRight.Add (this.frameSendArea);
-		global::Gtk.Paned.PanedChild w102 = ((global::Gtk.Paned.PanedChild)(this.hpanedRight[this.frameSendArea]));
-		w102.Resize = false;
+		global::Gtk.Paned.PanedChild w104 = ((global::Gtk.Paned.PanedChild)(this.hpanedRight[this.frameSendArea]));
+		w104.Resize = false;
 		// Container child hpanedRight.Gtk.Paned+PanedChild
 		this.frameReceiveArea = new global::Gtk.Frame ();
 		this.frameReceiveArea.Name = "frameReceiveArea";
 		this.frameReceiveArea.ShadowType = ((global::Gtk.ShadowType)(0));
 		// Container child frameReceiveArea.Gtk.Container+ContainerChild
-		this.GtkAlignmentReceiveArea = new global::Gtk.Alignment (0f, 0f, 1f, 1f);
-		this.GtkAlignmentReceiveArea.Name = "GtkAlignmentReceiveArea";
-		// Container child GtkAlignmentReceiveArea.Gtk.Container+ContainerChild
 		this.notebookReceiveArea = new global::Gtk.Notebook ();
 		this.notebookReceiveArea.CanFocus = true;
 		this.notebookReceiveArea.Name = "notebookReceiveArea";
-		this.notebookReceiveArea.CurrentPage = 1;
+		this.notebookReceiveArea.CurrentPage = 0;
 		// Container child notebookReceiveArea.Gtk.Notebook+NotebookChild
 		this.GtkScrolledWindowText = new global::Gtk.ScrolledWindow ();
 		this.GtkScrolledWindowText.Name = "GtkScrolledWindowText";
@@ -1070,8 +1089,8 @@ public partial class MainWindow
 		this.textviewHex.WrapMode = ((global::Gtk.WrapMode)(3));
 		this.GtkScrolledWindowHex.Add (this.textviewHex);
 		this.notebookReceiveArea.Add (this.GtkScrolledWindowHex);
-		global::Gtk.Notebook.NotebookChild w106 = ((global::Gtk.Notebook.NotebookChild)(this.notebookReceiveArea[this.GtkScrolledWindowHex]));
-		w106.Position = 1;
+		global::Gtk.Notebook.NotebookChild w108 = ((global::Gtk.Notebook.NotebookChild)(this.notebookReceiveArea[this.GtkScrolledWindowHex]));
+		w108.Position = 1;
 		// Notebook tab
 		this.labelRHex = new global::Gtk.Label ();
 		this.labelRHex.Name = "labelRHex";
@@ -1090,16 +1109,15 @@ public partial class MainWindow
 		this.textviewDec.WrapMode = ((global::Gtk.WrapMode)(3));
 		this.GtkScrolledWindowDec.Add (this.textviewDec);
 		this.notebookReceiveArea.Add (this.GtkScrolledWindowDec);
-		global::Gtk.Notebook.NotebookChild w108 = ((global::Gtk.Notebook.NotebookChild)(this.notebookReceiveArea[this.GtkScrolledWindowDec]));
-		w108.Position = 2;
+		global::Gtk.Notebook.NotebookChild w110 = ((global::Gtk.Notebook.NotebookChild)(this.notebookReceiveArea[this.GtkScrolledWindowDec]));
+		w110.Position = 2;
 		// Notebook tab
 		this.labelRDec = new global::Gtk.Label ();
 		this.labelRDec.Name = "labelRDec";
 		this.labelRDec.LabelProp = global::Mono.Unix.Catalog.GetString ("十进制");
 		this.notebookReceiveArea.SetTabLabel (this.GtkScrolledWindowDec, this.labelRDec);
 		this.labelRDec.ShowAll ();
-		this.GtkAlignmentReceiveArea.Add (this.notebookReceiveArea);
-		this.frameReceiveArea.Add (this.GtkAlignmentReceiveArea);
+		this.frameReceiveArea.Add (this.notebookReceiveArea);
 		this.GtkLabelR = new global::Gtk.Label ();
 		this.GtkLabelR.Name = "GtkLabelR";
 		this.GtkLabelR.LabelProp = global::Mono.Unix.Catalog.GetString ("<b>接收到的数据</b>");
@@ -1107,20 +1125,20 @@ public partial class MainWindow
 		this.frameReceiveArea.LabelWidget = this.GtkLabelR;
 		this.hpanedRight.Add (this.frameReceiveArea);
 		this.tableRight.Add (this.hpanedRight);
-		global::Gtk.Table.TableChild w112 = ((global::Gtk.Table.TableChild)(this.tableRight[this.hpanedRight]));
-		w112.XOptions = ((global::Gtk.AttachOptions)(4));
+		global::Gtk.Table.TableChild w113 = ((global::Gtk.Table.TableChild)(this.tableRight[this.hpanedRight]));
+		w113.XOptions = ((global::Gtk.AttachOptions)(4));
 		this.hpanedMain.Add (this.tableRight);
 		this.tableMain.Add (this.hpanedMain);
-		global::Gtk.Table.TableChild w114 = ((global::Gtk.Table.TableChild)(this.tableMain[this.hpanedMain]));
-		w114.TopAttach = ((uint)(1));
-		w114.BottomAttach = ((uint)(2));
+		global::Gtk.Table.TableChild w115 = ((global::Gtk.Table.TableChild)(this.tableMain[this.hpanedMain]));
+		w115.TopAttach = ((uint)(1));
+		w115.BottomAttach = ((uint)(2));
 		// Container child tableMain.Gtk.Table+TableChild
 		this.UIManager.AddUiFromString ("<ui><menubar name='menubarMain'><menu name='FAction' action='FAction'><menuitem name='quitAction' action='quitAction'/></menu><menu name='EAction' action='EAction'><menuitem name='preferencesAction' action='preferencesAction'/></menu><menu name='HAction' action='HAction'><menuitem name='aboutAction' action='aboutAction'/></menu></menubar></ui>");
 		this.menubarMain = ((global::Gtk.MenuBar)(this.UIManager.GetWidget ("/menubarMain")));
 		this.menubarMain.Name = "menubarMain";
 		this.tableMain.Add (this.menubarMain);
-		global::Gtk.Table.TableChild w115 = ((global::Gtk.Table.TableChild)(this.tableMain[this.menubarMain]));
-		w115.YOptions = ((global::Gtk.AttachOptions)(4));
+		global::Gtk.Table.TableChild w116 = ((global::Gtk.Table.TableChild)(this.tableMain[this.menubarMain]));
+		w116.YOptions = ((global::Gtk.AttachOptions)(4));
 		// Container child tableMain.Gtk.Table+TableChild
 		this.statusbarMain = new global::Gtk.Statusbar ();
 		this.statusbarMain.Name = "statusbarMain";
@@ -1131,15 +1149,15 @@ public partial class MainWindow
 		this.labelPortState.Xalign = 0f;
 		this.labelPortState.LabelProp = global::Mono.Unix.Catalog.GetString ("串口关");
 		this.statusbarMain.Add (this.labelPortState);
-		global::Gtk.Box.BoxChild w116 = ((global::Gtk.Box.BoxChild)(this.statusbarMain[this.labelPortState]));
-		w116.Position = 0;
-		w116.Expand = false;
-		w116.Fill = false;
+		global::Gtk.Box.BoxChild w117 = ((global::Gtk.Box.BoxChild)(this.statusbarMain[this.labelPortState]));
+		w117.Position = 0;
+		w117.Expand = false;
+		w117.Fill = false;
 		this.tableMain.Add (this.statusbarMain);
-		global::Gtk.Table.TableChild w117 = ((global::Gtk.Table.TableChild)(this.tableMain[this.statusbarMain]));
-		w117.TopAttach = ((uint)(2));
-		w117.BottomAttach = ((uint)(3));
-		w117.YOptions = ((global::Gtk.AttachOptions)(4));
+		global::Gtk.Table.TableChild w118 = ((global::Gtk.Table.TableChild)(this.tableMain[this.statusbarMain]));
+		w118.TopAttach = ((uint)(2));
+		w118.BottomAttach = ((uint)(3));
+		w118.YOptions = ((global::Gtk.AttachOptions)(4));
 		this.Add (this.tableMain);
 		if ((this.Child != null)) {
 			this.Child.ShowAll ();

@@ -1,12 +1,12 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Release|x86" ctype="Workspace" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="CommBug/PreferenceWindow.cs" ctype="Workbench">
+  <MonoDevelop.Ide.Workbench ActiveDocument="CommBug/MainWindow.cs" ctype="Workbench">
     <Files>
-      <File FileName="CommBug/PreferenceWindow.cs" Line="45" Column="2" />
+      <File FileName="CommBug/MainWindow.cs" Line="331" Column="28" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
-        <State expanded="True" selected="True">
+        <State expanded="True">
           <Node name="CommBug" expanded="True" />
         </State>
       </Pad>
