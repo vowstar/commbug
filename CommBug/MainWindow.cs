@@ -454,7 +454,8 @@ public partial class MainWindow : Gtk.Window
 
 	protected virtual void OnQuitActionActivated (object sender, System.EventArgs e)
 	{
-		OnDeleteEvent (this, null);
+		DeleteEventArgs a=new DeleteEventArgs();
+		OnDeleteEvent (this, a);
 	}
 
 	protected virtual void OnPreferencesActionActivated (object sender, System.EventArgs e)
