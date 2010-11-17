@@ -1,10 +1,14 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Release|x86" ctype="Workspace" />
-  <MonoDevelop.Ide.Workbench ctype="Workbench">
+  <MonoDevelop.Ide.Workbench ActiveDocument="CommBug/MainWindow.cs" ctype="Workbench">
+    <Files>
+      <File FileName="CommBug/MainWindow.cs" Line="356" Column="186" />
+    </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True">
           <Node name="CommBug" expanded="True">
+            <Node name="UserInterface" expanded="True" />
             <Node name="MainWindow.cs" selected="True" />
           </Node>
         </State>

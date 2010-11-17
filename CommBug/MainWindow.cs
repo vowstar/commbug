@@ -331,24 +331,32 @@ public partial class MainWindow : Gtk.Window
 			iter = textviewTextS.Buffer.EndIter;
 			textviewTextS.Buffer.Insert (ref iter, StringConverts.BytesToString (sendByte));
 			if (checkbuttonAutoScrollSend.Active) {
-				textviewTextS.Buffer.CreateMark ("EndMark", iter, false);
-				textviewTextS.ScrollToMark (textviewTextS.Buffer.CreateMark ("EndMark", iter, false), 0, false, 0, 0);
-				textviewTextS.Buffer.DeleteMark ("EndMark");
+				// Console.WriteLine("\nLast\t{0}",GtkScrolledWindowTextS.Vadjustment.Value);
+				// Console.WriteLine("Lower\t{0}",GtkScrolledWindowTextS.Vadjustment.Lower);
+				// Console.WriteLine("S\t{0}",GtkScrolledWindowTextS.Vadjustment.StepIncrement);
+				// Console.WriteLine("P\t{0}",GtkScrolledWindowTextS.Vadjustment.PageIncrement);
+				GtkScrolledWindowTextS.Vadjustment.Value = GtkScrolledWindowTextS.Vadjustment.Upper - GtkScrolledWindowTextS.Vadjustment.PageIncrement - GtkScrolledWindowTextS.Vadjustment.StepIncrement / 2;
+				// Console.WriteLine("Upper\t{0}",GtkScrolledWindowTextS.Vadjustment.Upper);
+				// textviewTextS.Buffer.CreateMark ("EndMark", iter, false);
+				// textviewTextS.ScrollToMark (textviewTextS.Buffer.CreateMark ("EndMark", iter, false), 0, false, 0, 0);
+				// textviewTextS.Buffer.DeleteMark ("EndMark");
 			}
 			
 			iter = textviewHexS.Buffer.EndIter;
 			textviewHexS.Buffer.Insert (ref iter, StringConverts.BytesToHexString (sendByte));
 			if (checkbuttonAutoScrollSend.Active) {
-				textviewHexS.Buffer.CreateMark ("EndMark", iter, false);
-				textviewHexS.ScrollToMark (textviewHexS.Buffer.CreateMark ("EndMark", iter, false), 0, false, 0, 0);
-				textviewHexS.Buffer.DeleteMark ("EndMark");
+				GtkScrolledWindowHexS.Vadjustment.Value = GtkScrolledWindowHexS.Vadjustment.Upper - GtkScrolledWindowHexS.Vadjustment.PageIncrement - GtkScrolledWindowHexS.Vadjustment.StepIncrement / 2;
+				// textviewHexS.Buffer.CreateMark ("EndMark", iter, false);
+				// textviewHexS.ScrollToMark (textviewHexS.Buffer.CreateMark ("EndMark", iter, false), 0, false, 0, 0);
+				// textviewHexS.Buffer.DeleteMark ("EndMark");
 			}
 			iter = textviewDecS.Buffer.EndIter;
 			textviewDecS.Buffer.Insert (ref iter, StringConverts.BytesToDecString (sendByte));
 			if (checkbuttonAutoScrollSend.Active) {
-				textviewDecS.Buffer.CreateMark ("EndMark", iter, false);
-				textviewDecS.ScrollToMark (textviewDecS.Buffer.CreateMark ("EndMark", iter, false), 0, false, 0, 0);
-				textviewDecS.Buffer.DeleteMark ("EndMark");
+				GtkScrolledWindowDecS.Vadjustment.Value = GtkScrolledWindowDecS.Vadjustment.Upper - GtkScrolledWindowDecS.Vadjustment.PageIncrement - GtkScrolledWindowDecS.Vadjustment.StepIncrement / 2;
+				// textviewDecS.Buffer.CreateMark ("EndMark", iter, false);
+				// textviewDecS.ScrollToMark (textviewDecS.Buffer.CreateMark ("EndMark", iter, false), 0, false, 0, 0);
+				// textviewDecS.Buffer.DeleteMark ("EndMark");
 			}
 			// ---------------
 			// Generate Linenumber,copyright by vowstar@gmail.com,^-^
@@ -454,7 +462,7 @@ public partial class MainWindow : Gtk.Window
 
 	protected virtual void OnQuitActionActivated (object sender, System.EventArgs e)
 	{
-		DeleteEventArgs a=new DeleteEventArgs();
+		DeleteEventArgs a = new DeleteEventArgs ();
 		OnDeleteEvent (this, a);
 	}
 
