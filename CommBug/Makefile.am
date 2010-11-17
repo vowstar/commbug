@@ -53,6 +53,7 @@ FILES =  \
 	gtk-gui/MainWindow.cs \
 	Main.cs \
 	MainWindow.cs \
+	NumericalAnalysis.cs \
 	PreferenceWindow.cs \
 	SerialPortEX.cs \
 	StringConverts.cs \

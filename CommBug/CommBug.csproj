@@ -89,6 +89,7 @@
     <Compile Include="PreferenceWindow.cs" />
     <Compile Include="gtk-gui\CommBug.PreferenceWindow.cs" />
     <Compile Include="TextViewUtils.cs" />
+    <Compile Include="NumericalAnalysis.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="app.desktop" />

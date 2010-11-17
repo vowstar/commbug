@@ -5,8 +5,8 @@
     <target-gtk-version>2.12</target-gtk-version>
   </configuration>
   <import>
-    <widget-library name="../bin/Release/CommBug.exe" internal="true" />
     <widget-library name="../../../../../../usr/lib/monodevelop/AddIns/MonoDevelop.GtkCore/libstetic.dll" />
+    <widget-library name="../bin/Release/CommBug.exe" internal="true" />
   </import>
   <widget class="Gtk.Window" id="MainWindow" design-size="840 463">
     <action-group name="Default">
