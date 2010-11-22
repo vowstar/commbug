@@ -21,6 +21,8 @@ public static class StringConverts
 	public static string Charset = "gb2312";
 	public static string SplitString = "\t";
 	// 转码函数分隔标记
+	public static bool EnableOutput = true;
+	// 是否允许调试输出
 	public static string BytesToString (byte[] buffer)
 	{
 		return System.Text.Encoding.GetEncoding (Charset).GetString (buffer);
@@ -46,7 +48,13 @@ public static class StringConverts
 	}
 	public static byte[] StringToBytes (string str)
 	{
-		return System.Text.Encoding.GetEncoding (Charset).GetBytes (str);
+		try {
+			return System.Text.Encoding.GetEncoding (Charset).GetBytes (str);
+		} catch (Exception ex) {
+			OutPut (ex.Message);
+			OutPut ("Try to use default encoding.Please install mono-i18n.");
+			return System.Text.Encoding.Default.GetBytes (str);
+		}
 	}
 	public static byte[] HexStringToBytes (string str)
 	{
@@ -70,7 +78,13 @@ public static class StringConverts
 		}
 		return result;
 	}
-	
+	private static void OutPut (string format, params object[] arg)
+	{
+		if (EnableOutput) {
+			Console.Write ("{0}\t>>\t", "StringConverts");
+			Console.WriteLine (format, arg);
+		}
+	}
 }
 
 

@@ -2597,11 +2597,7 @@ Public License instead of this License.  But first, please read
                 <property name="ShowTabs">False</property>
                 <property name="Scrollable">True</property>
                 <child>
-                  <widget class="Gtk.Label" id="label5">
-                    <property name="MemberName" />
-                    <property name="Events">PointerMotionMask</property>
-                    <property name="LabelProp" translatable="yes">Page1</property>
-                  </widget>
+                  <placeholder />
                 </child>
                 <child>
                   <widget class="Gtk.Label" id="label1">

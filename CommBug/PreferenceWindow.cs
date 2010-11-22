@@ -23,7 +23,6 @@ namespace CommBug
 		public void ApplySettings ()
 		{
 		}
-
 		protected virtual void OnButtonOkClicked (object sender, System.EventArgs e)
 		{
 			ApplySettings ();
@@ -32,27 +31,7 @@ namespace CommBug
 		protected virtual void OnButtonCancelClicked (object sender, System.EventArgs e)
 		{
 			this.Destroy ();
-		}
-		
-	
-		protected virtual void OnLabel2MotionNotifyEvent (object o, Gtk.MotionNotifyEventArgs args)
-		{
-			int x = 0, y = 0;
-			Gdk.ModifierType mask;
-			GdkWindow.GetPointer (out x, out y, out mask);
-			label5.Text = x.ToString () + y.ToString ();
-		}
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+		}		
 	}
 }
 

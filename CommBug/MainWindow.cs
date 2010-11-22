@@ -535,7 +535,5 @@ public partial class MainWindow : Gtk.Window
 	}
 	
 	
-	
-	
 }
 

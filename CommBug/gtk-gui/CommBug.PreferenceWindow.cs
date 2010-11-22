@@ -12,8 +12,6 @@ namespace CommBug
 
 		private global::Gtk.Notebook notebookRight;
 
-		private global::Gtk.Label label5;
-
 		private global::Gtk.Label label1;
 
 		private global::Gtk.Button buttonCancel;
@@ -61,17 +59,14 @@ namespace CommBug
 			this.notebookRight.CurrentPage = 0;
 			this.notebookRight.ShowTabs = false;
 			this.notebookRight.Scrollable = true;
-			// Container child notebookRight.Gtk.Notebook+NotebookChild
-			this.label5 = new global::Gtk.Label ();
-			this.label5.Events = ((global::Gdk.EventMask)(4));
-			this.label5.Name = "label5";
-			this.label5.LabelProp = global::Mono.Unix.Catalog.GetString ("Page1");
-			this.notebookRight.Add (this.label5);
 			// Notebook tab
+			global::Gtk.Label w6 = new global::Gtk.Label ();
+			w6.Visible = true;
+			this.notebookRight.Add (w6);
 			this.label1 = new global::Gtk.Label ();
 			this.label1.Name = "label1";
 			this.label1.LabelProp = global::Mono.Unix.Catalog.GetString ("page1");
-			this.notebookRight.SetTabLabel (this.label5, this.label1);
+			this.notebookRight.SetTabLabel (w6, this.label1);
 			this.label1.ShowAll ();
 			this.hpanedMain.Add (this.notebookRight);
 			w1.Add (this.hpanedMain);

@@ -382,12 +382,13 @@ public class SerialPortEx : IDisposable
 		}
 		OutPut ("ThreadEnd");
 	}
-	private void OutPut (string s)
+	private void OutPut (string format, params object[] arg)
 	{
-		if (EnableOutput)
-			Console.WriteLine (this.ToString () + ">>" + s);
+		if (EnableOutput) {
+			Console.Write ("{0}\t>>\t", this.ToString ());
+			Console.WriteLine (format, arg);
+		}
 	}
-	
 	
 	
 	#endregion
