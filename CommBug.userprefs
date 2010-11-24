@@ -1,19 +1,15 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Release|x86" ctype="Workspace" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="CommBug/SerialPortEX.cs" ctype="Workbench">
+  <MonoDevelop.Ide.Workbench ActiveDocument="CommBug/PreferenceWindow.cs" ctype="Workbench">
     <Files>
-      <File FileName="CommBug/NumericalAnalysis.cs" Line="30" Column="3" />
-      <File FileName="CommBug/PreferenceWindow.cs" Line="25" Column="4" />
-      <File FileName="CommBug/MainWindow.cs" Line="536" Column="2" />
-      <File FileName="CommBug/StringConverts.cs" Line="80" Column="3" />
-      <File FileName="CommBug/SerialPortEX.cs" Line="385" Column="1" />
+      <File FileName="CommBug/PreferenceWindow.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True">
           <Node name="CommBug" expanded="True">
             <Node name="UserInterface" expanded="True" />
-            <Node name="SerialPortEX.cs" selected="True" />
+            <Node name="PreferenceWindow.cs" selected="True" />
           </Node>
         </State>
       </Pad>
@@ -26,4 +22,5 @@
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches ctype="PinnedWatchStore" />
+  <AuthorInfo Name="vowstar" Email="vowstar@gmail.com" Copyright="vowstar@gmail.com" ctype="AuthorInformation" />
 </Properties>

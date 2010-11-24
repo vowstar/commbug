@@ -704,6 +704,7 @@ public partial class MainWindow
 		this.radiobuttonDec = new global::Gtk.RadioButton (global::Mono.Unix.Catalog.GetString ("10进制"));
 		this.radiobuttonDec.CanFocus = true;
 		this.radiobuttonDec.Name = "radiobuttonDec";
+		this.radiobuttonDec.Active = true;
 		this.radiobuttonDec.DrawIndicator = true;
 		this.radiobuttonDec.UseUnderline = true;
 		this.radiobuttonDec.Group = new global::GLib.SList (global::System.IntPtr.Zero);

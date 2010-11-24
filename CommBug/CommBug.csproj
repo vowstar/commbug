@@ -98,7 +98,7 @@
   <ProjectExtensions>
     <MonoDevelop>
       <Properties>
-        <MonoDevelop.Autotools.MakefileInfo IntegrationEnabled="true" RelativeMakefileName="Makefile.am" SyncReferences="true" IsAutotoolsProject="true" RelativeConfigureInPath="..">
+        <MonoDevelop.Autotools.MakefileInfo RelativeMakefileName="Makefile.am" SyncReferences="true" IsAutotoolsProject="true" RelativeConfigureInPath="..">
           <BuildFilesVar Sync="true" Name="FILES" />
           <DeployFilesVar />
           <ResourcesVar Sync="true" Name="RESOURCES" />

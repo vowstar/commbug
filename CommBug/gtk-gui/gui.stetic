@@ -2593,21 +2593,8 @@ Public License instead of this License.  But first, please read
               <widget class="Gtk.Notebook" id="notebookRight">
                 <property name="MemberName" />
                 <property name="CanFocus">True</property>
-                <property name="CurrentPage">0</property>
-                <property name="ShowTabs">False</property>
+                <property name="CurrentPage">-1</property>
                 <property name="Scrollable">True</property>
-                <child>
-                  <placeholder />
-                </child>
-                <child>
-                  <widget class="Gtk.Label" id="label1">
-                    <property name="MemberName" />
-                    <property name="LabelProp" translatable="yes">page1</property>
-                  </widget>
-                  <packing>
-                    <property name="type">tab</property>
-                  </packing>
-                </child>
               </widget>
             </child>
           </widget>
