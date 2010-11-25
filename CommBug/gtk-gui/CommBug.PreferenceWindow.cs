@@ -10,6 +10,8 @@ namespace CommBug
 
 		private global::Gtk.VBox vboxLeft;
 
+		private global::Gtk.Label labelTest;
+
 		private global::Gtk.Notebook notebookRight;
 
 		private global::Gtk.Button buttonCancel;
@@ -45,11 +47,20 @@ namespace CommBug
 			this.vboxLeft = new global::Gtk.VBox ();
 			this.vboxLeft.Name = "vboxLeft";
 			this.vboxLeft.Spacing = 6;
+			// Container child vboxLeft.Gtk.Box+BoxChild
+			this.labelTest = new global::Gtk.Label ();
+			this.labelTest.Name = "labelTest";
+			this.labelTest.LabelProp = global::Mono.Unix.Catalog.GetString ("该功能测试中,不可用");
+			this.vboxLeft.Add (this.labelTest);
+			global::Gtk.Box.BoxChild w3 = ((global::Gtk.Box.BoxChild)(this.vboxLeft[this.labelTest]));
+			w3.Position = 0;
+			w3.Expand = false;
+			w3.Fill = false;
 			w2.Add (this.vboxLeft);
 			this.scrolledwindowLeft.Add (w2);
 			this.hpanedMain.Add (this.scrolledwindowLeft);
-			global::Gtk.Paned.PanedChild w5 = ((global::Gtk.Paned.PanedChild)(this.hpanedMain[this.scrolledwindowLeft]));
-			w5.Resize = false;
+			global::Gtk.Paned.PanedChild w6 = ((global::Gtk.Paned.PanedChild)(this.hpanedMain[this.scrolledwindowLeft]));
+			w6.Resize = false;
 			// Container child hpanedMain.Gtk.Paned+PanedChild
 			this.notebookRight = new global::Gtk.Notebook ();
 			this.notebookRight.CanFocus = true;
@@ -58,14 +69,14 @@ namespace CommBug
 			this.notebookRight.Scrollable = true;
 			this.hpanedMain.Add (this.notebookRight);
 			w1.Add (this.hpanedMain);
-			global::Gtk.Box.BoxChild w7 = ((global::Gtk.Box.BoxChild)(w1[this.hpanedMain]));
-			w7.Position = 0;
+			global::Gtk.Box.BoxChild w8 = ((global::Gtk.Box.BoxChild)(w1[this.hpanedMain]));
+			w8.Position = 0;
 			// Internal child CommBug.PreferenceWindow.ActionArea
-			global::Gtk.HButtonBox w8 = this.ActionArea;
-			w8.Name = "PreferenceWindow_ActionArea";
-			w8.Spacing = 10;
-			w8.BorderWidth = ((uint)(5));
-			w8.LayoutStyle = ((global::Gtk.ButtonBoxStyle)(4));
+			global::Gtk.HButtonBox w9 = this.ActionArea;
+			w9.Name = "PreferenceWindow_ActionArea";
+			w9.Spacing = 10;
+			w9.BorderWidth = ((uint)(5));
+			w9.LayoutStyle = ((global::Gtk.ButtonBoxStyle)(4));
 			// Container child PreferenceWindow_ActionArea.Gtk.ButtonBox+ButtonBoxChild
 			this.buttonCancel = new global::Gtk.Button ();
 			this.buttonCancel.CanDefault = true;
@@ -75,9 +86,9 @@ namespace CommBug
 			this.buttonCancel.UseUnderline = true;
 			this.buttonCancel.Label = "gtk-cancel";
 			this.AddActionWidget (this.buttonCancel, -6);
-			global::Gtk.ButtonBox.ButtonBoxChild w9 = ((global::Gtk.ButtonBox.ButtonBoxChild)(w8[this.buttonCancel]));
-			w9.Expand = false;
-			w9.Fill = false;
+			global::Gtk.ButtonBox.ButtonBoxChild w10 = ((global::Gtk.ButtonBox.ButtonBoxChild)(w9[this.buttonCancel]));
+			w10.Expand = false;
+			w10.Fill = false;
 			// Container child PreferenceWindow_ActionArea.Gtk.ButtonBox+ButtonBoxChild
 			this.buttonOk = new global::Gtk.Button ();
 			this.buttonOk.CanDefault = true;
@@ -87,10 +98,10 @@ namespace CommBug
 			this.buttonOk.UseUnderline = true;
 			this.buttonOk.Label = "gtk-ok";
 			this.AddActionWidget (this.buttonOk, -5);
-			global::Gtk.ButtonBox.ButtonBoxChild w10 = ((global::Gtk.ButtonBox.ButtonBoxChild)(w8[this.buttonOk]));
-			w10.Position = 1;
-			w10.Expand = false;
-			w10.Fill = false;
+			global::Gtk.ButtonBox.ButtonBoxChild w11 = ((global::Gtk.ButtonBox.ButtonBoxChild)(w9[this.buttonOk]));
+			w11.Position = 1;
+			w11.Expand = false;
+			w11.Fill = false;
 			if ((this.Child != null)) {
 				this.Child.ShowAll ();
 			}

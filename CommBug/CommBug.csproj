@@ -90,6 +90,7 @@
     <Compile Include="gtk-gui\CommBug.PreferenceWindow.cs" />
     <Compile Include="TextViewUtils.cs" />
     <Compile Include="NumericalAnalysis.cs" />
+    <Compile Include="GtkMessages.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="app.desktop" />

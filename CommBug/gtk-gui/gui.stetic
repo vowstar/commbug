@@ -2560,7 +2560,7 @@ Public License instead of this License.  But first, please read
           <widget class="Gtk.HPaned" id="hpanedMain">
             <property name="MemberName" />
             <property name="CanFocus">True</property>
-            <property name="Position">199</property>
+            <property name="Position">294</property>
             <child>
               <widget class="Gtk.ScrolledWindow" id="scrolledwindowLeft">
                 <property name="MemberName" />
@@ -2575,7 +2575,16 @@ Public License instead of this License.  But first, please read
                         <property name="MemberName" />
                         <property name="Spacing">6</property>
                         <child>
-                          <placeholder />
+                          <widget class="Gtk.Label" id="labelTest">
+                            <property name="MemberName" />
+                            <property name="LabelProp" translatable="yes">该功能测试中,不可用.请关注下一个版本.</property>
+                          </widget>
+                          <packing>
+                            <property name="Position">0</property>
+                            <property name="AutoSize">True</property>
+                            <property name="Expand">False</property>
+                            <property name="Fill">False</property>
+                          </packing>
                         </child>
                         <child>
                           <placeholder />
