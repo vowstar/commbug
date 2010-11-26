@@ -1,17 +1,12 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Release|x86" ctype="Workspace" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="CommBug/MainWindow.cs" ctype="Workbench">
-    <Files>
-      <File FileName="CommBug/GtkMessages.cs" Line="3" Column="2" />
-      <File FileName="CommBug/StringConverts.cs" Line="19" Column="7" />
-      <File FileName="CommBug/MainWindow.cs" Line="30" Column="35" />
-    </Files>
+  <MonoDevelop.Ide.Workbench ctype="Workbench">
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True">
           <Node name="CommBug" expanded="True">
             <Node name="UserInterface" expanded="True" />
-            <Node name="MainWindow.cs" selected="True" />
+            <Node name="GtkMessages.cs" selected="True" />
           </Node>
         </State>
       </Pad>
