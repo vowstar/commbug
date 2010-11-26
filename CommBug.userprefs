@@ -4,7 +4,7 @@
     <Files>
       <File FileName="CommBug/GtkMessages.cs" Line="3" Column="2" />
       <File FileName="CommBug/StringConverts.cs" Line="19" Column="7" />
-      <File FileName="CommBug/MainWindow.cs" Line="8" Column="64" />
+      <File FileName="CommBug/MainWindow.cs" Line="30" Column="35" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
