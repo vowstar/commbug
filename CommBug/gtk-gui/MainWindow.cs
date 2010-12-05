@@ -19,6 +19,12 @@ public partial class MainWindow
 
 	private global::Gtk.Action preferencesAction;
 
+	private global::Gtk.Action TAction;
+
+	private global::Gtk.Action AAction;
+
+	private global::Gtk.Action GAction;
+
 	private global::Gtk.Table tableMain;
 
 	private global::Gtk.HPaned hpanedMain;
@@ -253,6 +259,15 @@ public partial class MainWindow
 		this.preferencesAction = new global::Gtk.Action ("preferencesAction", global::Mono.Unix.Catalog.GetString ("首选项(_P)"), null, "gtk-preferences");
 		this.preferencesAction.ShortLabel = global::Mono.Unix.Catalog.GetString ("首选项(_P)");
 		w1.Add (this.preferencesAction, null);
+		this.TAction = new global::Gtk.Action ("TAction", global::Mono.Unix.Catalog.GetString ("工具(_T)"), null, null);
+		this.TAction.ShortLabel = global::Mono.Unix.Catalog.GetString ("工具(_T)");
+		w1.Add (this.TAction, null);
+		this.AAction = new global::Gtk.Action ("AAction", global::Mono.Unix.Catalog.GetString ("分析(_A)"), null, null);
+		this.AAction.ShortLabel = global::Mono.Unix.Catalog.GetString ("分析(_A)");
+		w1.Add (this.AAction, null);
+		this.GAction = new global::Gtk.Action ("GAction", global::Mono.Unix.Catalog.GetString ("曲线拟合分析(_G)"), null, null);
+		this.GAction.ShortLabel = global::Mono.Unix.Catalog.GetString ("曲线拟合分析(_G)");
+		w1.Add (this.GAction, null);
 		this.UIManager.InsertActionGroup (w1, 0);
 		this.AddAccelGroup (this.UIManager.AccelGroup);
 		this.Name = "MainWindow";
@@ -1122,7 +1137,7 @@ public partial class MainWindow
 		w113.BottomAttach = ((uint)(2));
 		w113.XOptions = ((global::Gtk.AttachOptions)(4));
 		// Container child tableMain.Gtk.Table+TableChild
-		this.UIManager.AddUiFromString ("<ui><menubar name='menubarMain'><menu name='FAction' action='FAction'><menuitem name='quitAction' action='quitAction'/></menu><menu name='EAction' action='EAction'><menuitem name='preferencesAction' action='preferencesAction'/></menu><menu name='HAction' action='HAction'><menuitem name='aboutAction' action='aboutAction'/></menu></menubar></ui>");
+		this.UIManager.AddUiFromString ("<ui><menubar name='menubarMain'><menu name='FAction' action='FAction'><menuitem name='quitAction' action='quitAction'/></menu><menu name='EAction' action='EAction'><menuitem name='preferencesAction' action='preferencesAction'/></menu><menu name='TAction' action='TAction'><menu name='AAction' action='AAction'><menuitem name='GAction' action='GAction'/></menu></menu><menu name='HAction' action='HAction'><menuitem name='aboutAction' action='aboutAction'/></menu></menubar></ui>");
 		this.menubarMain = ((global::Gtk.MenuBar)(this.UIManager.GetWidget ("/menubarMain")));
 		this.menubarMain.Name = "menubarMain";
 		this.tableMain.Add (this.menubarMain);

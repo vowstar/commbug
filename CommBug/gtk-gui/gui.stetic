@@ -53,6 +53,21 @@
         <property name="StockId">gtk-preferences</property>
         <signal name="Activated" handler="OnPreferencesActionActivated" />
       </action>
+      <action id="TAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">工具(_T)</property>
+        <property name="ShortLabel" translatable="yes">工具(_T)</property>
+      </action>
+      <action id="AAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">分析(_A)</property>
+        <property name="ShortLabel" translatable="yes">分析(_A)</property>
+      </action>
+      <action id="GAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">曲线拟合分析(_G)</property>
+        <property name="ShortLabel" translatable="yes">曲线拟合分析(_G)</property>
+      </action>
     </action-group>
     <property name="MemberName" />
     <property name="Title" translatable="yes">串口调试助手</property>
@@ -822,6 +837,7 @@ Space</property>
                                                 <property name="MemberName" />
                                                 <property name="CanFocus">True</property>
                                                 <property name="Label" translatable="yes">10进制</property>
+                                                <property name="Active">True</property>
                                                 <property name="DrawIndicator">True</property>
                                                 <property name="HasLabel">True</property>
                                                 <property name="UseUnderline">True</property>
@@ -1466,6 +1482,11 @@ Space</property>
               </node>
               <node type="Menu" action="EAction">
                 <node type="Menuitem" action="preferencesAction" />
+              </node>
+              <node type="Menu" action="TAction">
+                <node type="Menu" action="AAction">
+                  <node type="Menuitem" action="GAction" />
+                </node>
               </node>
               <node type="Menu" action="HAction">
                 <node type="Menuitem" action="aboutAction" />
@@ -2724,7 +2745,7 @@ Public License instead of this License.  But first, please read
       </widget>
     </child>
   </widget>
-  <widget class="Gtk.Dialog" id="CommBug.NumericalDialog" design-size="400 300">
+  <widget class="Gtk.Dialog" id="CommBug.Numerical_ModelingDialog" design-size="400 300">
     <property name="MemberName" />
     <property name="Title" translatable="yes">dialog1</property>
     <property name="WindowPosition">CenterOnParent</property>

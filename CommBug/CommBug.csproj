@@ -87,12 +87,12 @@
     <Compile Include="TextViewUtils.cs" />
     <Compile Include="NumericalAnalysis.cs" />
     <Compile Include="GtkMessages.cs" />
-    <Compile Include="NumericalDialog.cs" />
-    <Compile Include="gtk-gui\CommBug.NumericalDialog.cs" />
     <Compile Include="AboutDialog.cs" />
     <Compile Include="gtk-gui\CommBug.AboutDialog.cs" />
     <Compile Include="PreferenceDialog.cs" />
     <Compile Include="gtk-gui\CommBug.PreferenceDialog.cs" />
+    <Compile Include="Numerical_ModelingDialog.cs" />
+    <Compile Include="gtk-gui\CommBug.Numerical_ModelingDialog.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="app.desktop" />
