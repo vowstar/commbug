@@ -215,6 +215,16 @@ public partial class MainWindow
 
 	private global::Gtk.Label labelPortStatus;
 
+	private global::Gtk.Label labelRx;
+
+	private global::Gtk.Label labelRxStatus;
+
+	private global::Gtk.VSeparator vseparatorStatus_1;
+
+	private global::Gtk.Label labelTx;
+
+	private global::Gtk.Label labelTxStatus;
+
 	protected virtual void Build ()
 	{
 		global::Stetic.Gui.Initialize (this);
@@ -682,7 +692,6 @@ public partial class MainWindow
 		global::Gtk.Alignment w38 = new global::Gtk.Alignment (0.5f, 0.5f, 0f, 0f);
 		// Container child GtkAlignment.Gtk.Container+ContainerChild
 		global::Gtk.HBox w39 = new global::Gtk.HBox ();
-		w39.Spacing = 2;
 		// Container child GtkHBox.Gtk.Container+ContainerChild
 		global::Gtk.Image w40 = new global::Gtk.Image ();
 		w40.Pixbuf = global::Gdk.Pixbuf.LoadFromResource ("CommBug.icons.send.send_24x24.png");
@@ -847,7 +856,6 @@ public partial class MainWindow
 		global::Gtk.Alignment w62 = new global::Gtk.Alignment (0.5f, 0.5f, 0f, 0f);
 		// Container child GtkAlignment.Gtk.Container+ContainerChild
 		global::Gtk.HBox w63 = new global::Gtk.HBox ();
-		w63.Spacing = 2;
 		// Container child GtkHBox.Gtk.Container+ContainerChild
 		global::Gtk.Image w64 = new global::Gtk.Image ();
 		w64.Pixbuf = global::Stetic.IconLoader.LoadIcon (this, "gtk-clear", global::Gtk.IconSize.Menu);
@@ -873,7 +881,6 @@ public partial class MainWindow
 		global::Gtk.Alignment w71 = new global::Gtk.Alignment (0.5f, 0.5f, 0f, 0f);
 		// Container child GtkAlignment.Gtk.Container+ContainerChild
 		global::Gtk.HBox w72 = new global::Gtk.HBox ();
-		w72.Spacing = 2;
 		// Container child GtkHBox.Gtk.Container+ContainerChild
 		global::Gtk.Image w73 = new global::Gtk.Image ();
 		w73.Pixbuf = global::Gdk.Pixbuf.LoadFromResource ("CommBug.icons.clear_receive.clear_receive_24x24.png");
@@ -899,7 +906,6 @@ public partial class MainWindow
 		global::Gtk.Alignment w80 = new global::Gtk.Alignment (0.5f, 0.5f, 0f, 0f);
 		// Container child GtkAlignment.Gtk.Container+ContainerChild
 		global::Gtk.HBox w81 = new global::Gtk.HBox ();
-		w81.Spacing = 2;
 		// Container child GtkHBox.Gtk.Container+ContainerChild
 		global::Gtk.Image w82 = new global::Gtk.Image ();
 		w82.Pixbuf = global::Gdk.Pixbuf.LoadFromResource ("CommBug.icons.clear_send.clear_send_24x24.png");
@@ -958,6 +964,7 @@ public partial class MainWindow
 		// Container child notebookSendArea.Gtk.Notebook+NotebookChild
 		this.hboxTextS = new global::Gtk.HBox ();
 		this.hboxTextS.Name = "hboxTextS";
+		this.hboxTextS.Spacing = 0;
 		// Container child hboxTextS.Gtk.Box+BoxChild
 		this.GtkScrolledWindowTextS = new global::Gtk.ScrolledWindow ();
 		this.GtkScrolledWindowTextS.Name = "GtkScrolledWindowTextS";
@@ -1110,12 +1117,14 @@ public partial class MainWindow
 		global::Gtk.Table.TableChild w113 = ((global::Gtk.Table.TableChild)(this.tableMain[this.hpanedMain]));
 		w113.TopAttach = ((uint)(1));
 		w113.BottomAttach = ((uint)(2));
+		w113.XOptions = ((global::Gtk.AttachOptions)(4));
 		// Container child tableMain.Gtk.Table+TableChild
 		this.UIManager.AddUiFromString ("<ui><menubar name='menubarMain'><menu name='FAction' action='FAction'><menuitem name='quitAction' action='quitAction'/></menu><menu name='EAction' action='EAction'><menuitem name='preferencesAction' action='preferencesAction'/></menu><menu name='HAction' action='HAction'><menuitem name='aboutAction' action='aboutAction'/></menu></menubar></ui>");
 		this.menubarMain = ((global::Gtk.MenuBar)(this.UIManager.GetWidget ("/menubarMain")));
 		this.menubarMain.Name = "menubarMain";
 		this.tableMain.Add (this.menubarMain);
 		global::Gtk.Table.TableChild w114 = ((global::Gtk.Table.TableChild)(this.tableMain[this.menubarMain]));
+		w114.XOptions = ((global::Gtk.AttachOptions)(4));
 		w114.YOptions = ((global::Gtk.AttachOptions)(4));
 		// Container child tableMain.Gtk.Table+TableChild
 		this.statusbarMain = new global::Gtk.Statusbar ();
@@ -1131,17 +1140,65 @@ public partial class MainWindow
 		w115.Position = 0;
 		w115.Expand = false;
 		w115.Fill = false;
+		// Container child statusbarMain.Gtk.Box+BoxChild
+		this.labelRx = new global::Gtk.Label ();
+		this.labelRx.Name = "labelRx";
+		this.labelRx.Xalign = 0f;
+		this.labelRx.LabelProp = global::Mono.Unix.Catalog.GetString ("Rx");
+		this.statusbarMain.Add (this.labelRx);
+		global::Gtk.Box.BoxChild w116 = ((global::Gtk.Box.BoxChild)(this.statusbarMain[this.labelRx]));
+		w116.Position = 1;
+		w116.Expand = false;
+		w116.Fill = false;
+		// Container child statusbarMain.Gtk.Box+BoxChild
+		this.labelRxStatus = new global::Gtk.Label ();
+		this.labelRxStatus.Name = "labelRxStatus";
+		this.labelRxStatus.Xalign = 0f;
+		this.labelRxStatus.LabelProp = global::Mono.Unix.Catalog.GetString ("0");
+		this.statusbarMain.Add (this.labelRxStatus);
+		global::Gtk.Box.BoxChild w117 = ((global::Gtk.Box.BoxChild)(this.statusbarMain[this.labelRxStatus]));
+		w117.Position = 2;
+		w117.Expand = false;
+		w117.Fill = false;
+		// Container child statusbarMain.Gtk.Box+BoxChild
+		this.vseparatorStatus_1 = new global::Gtk.VSeparator ();
+		this.vseparatorStatus_1.Name = "vseparatorStatus_1";
+		this.statusbarMain.Add (this.vseparatorStatus_1);
+		global::Gtk.Box.BoxChild w118 = ((global::Gtk.Box.BoxChild)(this.statusbarMain[this.vseparatorStatus_1]));
+		w118.Position = 3;
+		w118.Expand = false;
+		w118.Fill = false;
+		// Container child statusbarMain.Gtk.Box+BoxChild
+		this.labelTx = new global::Gtk.Label ();
+		this.labelTx.Name = "labelTx";
+		this.labelTx.Xalign = 0f;
+		this.labelTx.LabelProp = global::Mono.Unix.Catalog.GetString ("Tx");
+		this.statusbarMain.Add (this.labelTx);
+		global::Gtk.Box.BoxChild w119 = ((global::Gtk.Box.BoxChild)(this.statusbarMain[this.labelTx]));
+		w119.Position = 4;
+		w119.Expand = false;
+		w119.Fill = false;
+		// Container child statusbarMain.Gtk.Box+BoxChild
+		this.labelTxStatus = new global::Gtk.Label ();
+		this.labelTxStatus.Name = "labelTxStatus";
+		this.labelTxStatus.Xalign = 0f;
+		this.labelTxStatus.LabelProp = global::Mono.Unix.Catalog.GetString ("0");
+		this.statusbarMain.Add (this.labelTxStatus);
+		global::Gtk.Box.BoxChild w120 = ((global::Gtk.Box.BoxChild)(this.statusbarMain[this.labelTxStatus]));
+		w120.Position = 5;
+		w120.Expand = false;
+		w120.Fill = false;
 		this.tableMain.Add (this.statusbarMain);
-		global::Gtk.Table.TableChild w116 = ((global::Gtk.Table.TableChild)(this.tableMain[this.statusbarMain]));
-		w116.TopAttach = ((uint)(2));
-		w116.BottomAttach = ((uint)(3));
-		w116.YOptions = ((global::Gtk.AttachOptions)(4));
+		global::Gtk.Table.TableChild w121 = ((global::Gtk.Table.TableChild)(this.tableMain[this.statusbarMain]));
+		w121.TopAttach = ((uint)(2));
+		w121.BottomAttach = ((uint)(3));
+		w121.YOptions = ((global::Gtk.AttachOptions)(4));
 		this.Add (this.tableMain);
 		if ((this.Child != null)) {
 			this.Child.ShowAll ();
 		}
 		this.DefaultWidth = 840;
-		this.DefaultHeight = 463;
+		this.DefaultHeight = 495;
 		this.Show ();
 		this.DeleteEvent += new global::Gtk.DeleteEventHandler (this.OnDeleteEvent);
 		this.quitAction.Activated += new global::System.EventHandler (this.OnQuitActionActivated);

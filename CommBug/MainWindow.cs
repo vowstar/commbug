@@ -31,8 +31,10 @@ public partial class MainWindow : Gtk.Window
 	public ConvertMode SendMode = ConvertMode.Text;
 	public ConvertMode NowSendMode = ConvertMode.Text;
 	public SerialPortEx MyPort;
-	public System.IO.MemoryStream ReceiveStream=new System.IO.MemoryStream();
-	public System.IO.MemoryStream SendStream=new System.IO.MemoryStream();
+	public System.IO.MemoryStream ReceiveStream = new System.IO.MemoryStream ();
+	//Receive
+	public System.IO.MemoryStream SendStream = new System.IO.MemoryStream ();
+	//Transmit 
 	private System.Timers.Timer SendTimer;
 	private System.Timers.Timer PortNameTimer;
 	private string portName = "";
@@ -41,7 +43,7 @@ public partial class MainWindow : Gtk.Window
 	private int dataBits = 0;
 	private StopBits stopBits = StopBits.One;
 
-	
+
 	private int portCount = 0;
 	private ListStore portNameModel = new ListStore (typeof(string));
 
@@ -62,7 +64,7 @@ public partial class MainWindow : Gtk.Window
 		comboboxentryPortName.Model = portNameModel;
 		InitializationPortName ();
 		SettingsSynchronization ();
-	
+		
 		MyPort = new SerialPortEx (portName, baudRate, parity, dataBits, stopBits);
 		MyPort.DataReceived += new SerialDataReceivedEventHandler (HandleMyPortDataReceived);
 		Console.WriteLine ("Port initializated");
@@ -155,7 +157,8 @@ public partial class MainWindow : Gtk.Window
 	{
 		byte[] buffer = new byte[MyPort.BytesToRead];
 		MyPort.Read (buffer, 0, buffer.Length);
-		ReceiveStream.Write(buffer,0,buffer.Length);
+		ReceiveStream.Write (buffer, 0, buffer.Length);
+		labelRxStatus.Text = ReceiveStream.Length.ToString ();
 		Gdk.Threads.Enter ();
 		// 准备在线程中更新界面
 		TextIter iter;
@@ -332,7 +335,8 @@ public partial class MainWindow : Gtk.Window
 				break;
 			}
 			MyPort.Write (sendByte, 0, sendByte.Length);
-			SendStream.Write(sendByte,0,sendByte.Length);
+			SendStream.Write (sendByte, 0, sendByte.Length);
+			labelTxStatus.Text = SendStream.Length.ToString ();
 			TextIter iter;
 			iter = textviewTextS.Buffer.EndIter;
 			textviewTextS.Buffer.Insert (ref iter, StringConverts.BytesToString (sendByte));
@@ -341,28 +345,27 @@ public partial class MainWindow : Gtk.Window
 				// Console.WriteLine("Lower\t{0}",GtkScrolledWindowTextS.Vadjustment.Lower);
 				// Console.WriteLine("S\t{0}",GtkScrolledWindowTextS.Vadjustment.StepIncrement);
 				// Console.WriteLine("P\t{0}",GtkScrolledWindowTextS.Vadjustment.PageIncrement);
-				GtkScrolledWindowTextS.Vadjustment.Value = GtkScrolledWindowTextS.Vadjustment.Upper - GtkScrolledWindowTextS.Vadjustment.PageIncrement - GtkScrolledWindowTextS.Vadjustment.StepIncrement / 2;
-				// Console.WriteLine("Upper\t{0}",GtkScrolledWindowTextS.Vadjustment.Upper);
-				// textviewTextS.Buffer.CreateMark ("EndMark", iter, false);
-				// textviewTextS.ScrollToMark (textviewTextS.Buffer.CreateMark ("EndMark", iter, false), 0, false, 0, 0);
-				// textviewTextS.Buffer.DeleteMark ("EndMark");
+				// GtkScrolledWindowTextS.Vadjustment.Value = GtkScrolledWindowTextS.Vadjustment.Upper;
+				textviewTextS.Buffer.CreateMark ("EndMark", iter, false);
+				textviewTextS.ScrollToMark (textviewTextS.Buffer.CreateMark ("EndMark", iter, false), 0, false, 0, 0);
+				textviewTextS.Buffer.DeleteMark ("EndMark");
 			}
 			
 			iter = textviewHexS.Buffer.EndIter;
 			textviewHexS.Buffer.Insert (ref iter, StringConverts.BytesToHexString (sendByte));
 			if (checkbuttonAutoScrollSend.Active) {
-				GtkScrolledWindowHexS.Vadjustment.Value = GtkScrolledWindowHexS.Vadjustment.Upper - GtkScrolledWindowHexS.Vadjustment.PageIncrement - GtkScrolledWindowHexS.Vadjustment.StepIncrement / 2;
-				// textviewHexS.Buffer.CreateMark ("EndMark", iter, false);
-				// textviewHexS.ScrollToMark (textviewHexS.Buffer.CreateMark ("EndMark", iter, false), 0, false, 0, 0);
-				// textviewHexS.Buffer.DeleteMark ("EndMark");
+				// GtkScrolledWindowHexS.Vadjustment.Value = GtkScrolledWindowHexS.Vadjustment.Upper;
+				textviewHexS.Buffer.CreateMark ("EndMark", iter, false);
+				textviewHexS.ScrollToMark (textviewHexS.Buffer.CreateMark ("EndMark", iter, false), 0, false, 0, 0);
+				textviewHexS.Buffer.DeleteMark ("EndMark");
 			}
 			iter = textviewDecS.Buffer.EndIter;
 			textviewDecS.Buffer.Insert (ref iter, StringConverts.BytesToDecString (sendByte));
 			if (checkbuttonAutoScrollSend.Active) {
-				GtkScrolledWindowDecS.Vadjustment.Value = GtkScrolledWindowDecS.Vadjustment.Upper - GtkScrolledWindowDecS.Vadjustment.PageIncrement - GtkScrolledWindowDecS.Vadjustment.StepIncrement / 2;
-				// textviewDecS.Buffer.CreateMark ("EndMark", iter, false);
-				// textviewDecS.ScrollToMark (textviewDecS.Buffer.CreateMark ("EndMark", iter, false), 0, false, 0, 0);
-				// textviewDecS.Buffer.DeleteMark ("EndMark");
+				// GtkScrolledWindowDecS.Vadjustment.Value = GtkScrolledWindowDecS.Vadjustment.Upper;
+				textviewDecS.Buffer.CreateMark ("EndMark", iter, false);
+				textviewDecS.ScrollToMark (textviewDecS.Buffer.CreateMark ("EndMark", iter, false), 0, false, 0, 0);
+				textviewDecS.Buffer.DeleteMark ("EndMark");
 			}
 			// ---------------
 			// Generate Linenumber,copyright by vowstar@gmail.com,^-^
