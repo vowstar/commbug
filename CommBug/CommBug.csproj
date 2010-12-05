@@ -91,8 +91,8 @@
     <Compile Include="gtk-gui\CommBug.AboutDialog.cs" />
     <Compile Include="PreferenceDialog.cs" />
     <Compile Include="gtk-gui\CommBug.PreferenceDialog.cs" />
-    <Compile Include="Numerical_ModelingDialog.cs" />
-    <Compile Include="gtk-gui\CommBug.Numerical_ModelingDialog.cs" />
+    <Compile Include="NumericalModelingDialog.cs" />
+    <Compile Include="gtk-gui\CommBug.NumericalModelingDialog.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="app.desktop" />
