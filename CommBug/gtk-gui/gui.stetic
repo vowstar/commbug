@@ -822,7 +822,6 @@ Space</property>
                                                 <property name="MemberName" />
                                                 <property name="CanFocus">True</property>
                                                 <property name="Label" translatable="yes">10进制</property>
-                                                <property name="Active">True</property>
                                                 <property name="DrawIndicator">True</property>
                                                 <property name="HasLabel">True</property>
                                                 <property name="UseUnderline">True</property>
@@ -1222,7 +1221,6 @@ Space</property>
                             <child>
                               <widget class="Gtk.HBox" id="hboxTextS">
                                 <property name="MemberName" />
-                                <property name="Spacing">0</property>
                                 <child>
                                   <widget class="Gtk.ScrolledWindow" id="GtkScrolledWindowTextS">
                                     <property name="MemberName" />
@@ -1583,7 +1581,7 @@ Space</property>
       </widget>
     </child>
   </widget>
-  <widget class="Gtk.Dialog" id="CommBug.AboutWindow" design-size="415 328">
+  <widget class="Gtk.Dialog" id="CommBug.AboutDialog" design-size="415 328">
     <property name="MemberName" />
     <property name="Title" translatable="yes">关于本程序</property>
     <property name="Icon">stock:gtk-about Menu</property>
@@ -1591,11 +1589,11 @@ Space</property>
     <property name="Buttons">1</property>
     <property name="HelpButton">False</property>
     <child internal-child="VBox">
-      <widget class="Gtk.VBox" id="AboutWindow_VBox">
+      <widget class="Gtk.VBox" id="AboutDialog_VBox">
         <property name="MemberName" />
         <property name="BorderWidth">2</property>
         <child>
-          <widget class="Gtk.Notebook" id="notebookAboutWindow">
+          <widget class="Gtk.Notebook" id="notebookAboutDialog">
             <property name="MemberName" />
             <property name="CanFocus">True</property>
             <property name="CurrentPage">0</property>
@@ -2584,7 +2582,7 @@ Public License instead of this License.  But first, please read
       </widget>
     </child>
     <child internal-child="ActionArea">
-      <widget class="Gtk.HButtonBox" id="AboutWindow_ActionArea">
+      <widget class="Gtk.HButtonBox" id="AboutDialog_ActionArea">
         <property name="MemberName" />
         <property name="Spacing">10</property>
         <property name="BorderWidth">5</property>
@@ -2611,7 +2609,7 @@ Public License instead of this License.  But first, please read
       </widget>
     </child>
   </widget>
-  <widget class="Gtk.Dialog" id="CommBug.PreferenceWindow" design-size="663 463">
+  <widget class="Gtk.Dialog" id="CommBug.PreferenceDialog" design-size="663 463">
     <property name="MemberName" />
     <property name="Title" translatable="yes">首选项</property>
     <property name="Icon">stock:gtk-preferences Menu</property>
@@ -2619,7 +2617,7 @@ Public License instead of this License.  But first, please read
     <property name="Buttons">2</property>
     <property name="HelpButton">False</property>
     <child internal-child="VBox">
-      <widget class="Gtk.VBox" id="PreferenceWindow_VBox">
+      <widget class="Gtk.VBox" id="PreferenceDialog_VBox">
         <property name="MemberName" />
         <property name="BorderWidth">2</property>
         <child>
@@ -2681,7 +2679,7 @@ Public License instead of this License.  But first, please read
       </widget>
     </child>
     <child internal-child="ActionArea">
-      <widget class="Gtk.HButtonBox" id="PreferenceWindow_ActionArea">
+      <widget class="Gtk.HButtonBox" id="PreferenceDialog_ActionArea">
         <property name="MemberName" />
         <property name="Spacing">10</property>
         <property name="BorderWidth">5</property>
@@ -2715,6 +2713,64 @@ Public License instead of this License.  But first, please read
             <property name="StockId">gtk-ok</property>
             <property name="ResponseId">-5</property>
             <signal name="Clicked" handler="OnButtonOkClicked" />
+            <property name="label">gtk-ok</property>
+          </widget>
+          <packing>
+            <property name="Position">1</property>
+            <property name="Expand">False</property>
+            <property name="Fill">False</property>
+          </packing>
+        </child>
+      </widget>
+    </child>
+  </widget>
+  <widget class="Gtk.Dialog" id="CommBug.NumericalDialog" design-size="400 300">
+    <property name="MemberName" />
+    <property name="Title" translatable="yes">dialog1</property>
+    <property name="WindowPosition">CenterOnParent</property>
+    <property name="Buttons">2</property>
+    <property name="HelpButton">False</property>
+    <child internal-child="VBox">
+      <widget class="Gtk.VBox" id="dialog1_VBox">
+        <property name="MemberName" />
+        <property name="BorderWidth">2</property>
+        <child>
+          <placeholder />
+        </child>
+      </widget>
+    </child>
+    <child internal-child="ActionArea">
+      <widget class="Gtk.HButtonBox" id="dialog1_ActionArea">
+        <property name="MemberName" />
+        <property name="Spacing">10</property>
+        <property name="BorderWidth">5</property>
+        <property name="Size">2</property>
+        <property name="LayoutStyle">End</property>
+        <child>
+          <widget class="Gtk.Button" id="buttonCancel">
+            <property name="MemberName" />
+            <property name="CanDefault">True</property>
+            <property name="CanFocus">True</property>
+            <property name="UseStock">True</property>
+            <property name="Type">StockItem</property>
+            <property name="StockId">gtk-cancel</property>
+            <property name="ResponseId">-6</property>
+            <property name="label">gtk-cancel</property>
+          </widget>
+          <packing>
+            <property name="Expand">False</property>
+            <property name="Fill">False</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Button" id="buttonOk">
+            <property name="MemberName" />
+            <property name="CanDefault">True</property>
+            <property name="CanFocus">True</property>
+            <property name="UseStock">True</property>
+            <property name="Type">StockItem</property>
+            <property name="StockId">gtk-ok</property>
+            <property name="ResponseId">-5</property>
             <property name="label">gtk-ok</property>
           </widget>
           <packing>

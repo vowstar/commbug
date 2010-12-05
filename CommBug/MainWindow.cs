@@ -17,8 +17,8 @@ using Gtk;
 public partial class MainWindow : Gtk.Window
 {
 	#region Sub windows
-	private CommBug.AboutWindow aboutWindow;
-	private CommBug.PreferenceWindow preferenceWindow;
+	private CommBug.AboutDialog AboutDialog;
+	private CommBug.PreferenceDialog preferenceDialog;
 	#endregion
 	#region 变量与类定义
 	public enum ConvertMode
@@ -477,20 +477,20 @@ public partial class MainWindow : Gtk.Window
 
 	protected virtual void OnPreferencesActionActivated (object sender, System.EventArgs e)
 	{
-		if (preferenceWindow == null) {
-			preferenceWindow = new CommBug.PreferenceWindow ();
+		if (preferenceDialog == null) {
+			preferenceDialog = new CommBug.PreferenceDialog ();
 		} else {
-			if (!preferenceWindow.Visible)
-				preferenceWindow = new CommBug.PreferenceWindow ();
+			if (!preferenceDialog.Visible)
+				preferenceDialog = new CommBug.PreferenceDialog ();
 		}
 	}
 	protected virtual void OnAboutActionActivated (object sender, System.EventArgs e)
 	{
-		if (aboutWindow == null) {
-			aboutWindow = new CommBug.AboutWindow ();
+		if (AboutDialog == null) {
+			AboutDialog = new CommBug.AboutDialog ();
 		} else {
-			if (!aboutWindow.Visible)
-				aboutWindow = new CommBug.AboutWindow ();
+			if (!AboutDialog.Visible)
+				AboutDialog = new CommBug.AboutDialog ();
 		}
 	}
 
