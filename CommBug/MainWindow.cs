@@ -17,8 +17,9 @@ using Gtk;
 public partial class MainWindow : Gtk.Window
 {
 	#region Sub windows
-	private CommBug.AboutDialog AboutDialog;
+	private CommBug.AboutDialog aboutDialog;
 	private CommBug.PreferenceDialog preferenceDialog;
+	private CommBug.NumericalModelingDialog numericalModelingDialog;
 	#endregion
 	#region 变量与类定义
 	public enum ConvertMode
@@ -484,15 +485,31 @@ public partial class MainWindow : Gtk.Window
 				preferenceDialog = new CommBug.PreferenceDialog ();
 		}
 	}
+
+
 	protected virtual void OnAboutActionActivated (object sender, System.EventArgs e)
 	{
-		if (AboutDialog == null) {
-			AboutDialog = new CommBug.AboutDialog ();
+		if (aboutDialog == null) {
+			aboutDialog = new CommBug.AboutDialog ();
 		} else {
-			if (!AboutDialog.Visible)
-				AboutDialog = new CommBug.AboutDialog ();
+			if (!aboutDialog.Visible)
+				aboutDialog = new CommBug.AboutDialog ();
 		}
 	}
+	protected virtual void OnNumericalModelingActionActivated (object sender, System.EventArgs e)
+	{
+		
+		if (numericalModelingDialog == null) {
+			numericalModelingDialog = new CommBug.NumericalModelingDialog ();
+		} else {
+			if (!numericalModelingDialog.Visible)
+				numericalModelingDialog = new CommBug.NumericalModelingDialog ();
+		}
+		
+		
+		
+	}
+
 
 	protected virtual void OnComboboxentryBaudRateChanged (object sender, System.EventArgs e)
 	{
@@ -542,6 +559,14 @@ public partial class MainWindow : Gtk.Window
 	{
 		SettingsSafeUpdate ();
 	}
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 }

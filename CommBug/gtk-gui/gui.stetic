@@ -63,10 +63,11 @@
         <property name="Label" translatable="yes">分析(_A)</property>
         <property name="ShortLabel" translatable="yes">分析(_A)</property>
       </action>
-      <action id="GAction">
+      <action id="NumericalModelingAction">
         <property name="Type">Action</property>
         <property name="Label" translatable="yes">曲线拟合分析(_G)</property>
         <property name="ShortLabel" translatable="yes">曲线拟合分析(_G)</property>
+        <signal name="Activated" handler="OnNumericalModelingActionActivated" />
       </action>
     </action-group>
     <property name="MemberName" />
@@ -1485,7 +1486,7 @@ Space</property>
               </node>
               <node type="Menu" action="TAction">
                 <node type="Menu" action="AAction">
-                  <node type="Menuitem" action="GAction" />
+                  <node type="Menuitem" action="NumericalModelingAction" />
                 </node>
               </node>
               <node type="Menu" action="HAction">
