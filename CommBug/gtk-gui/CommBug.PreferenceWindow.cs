@@ -34,7 +34,7 @@ namespace CommBug
 			this.hpanedMain = new global::Gtk.HPaned ();
 			this.hpanedMain.CanFocus = true;
 			this.hpanedMain.Name = "hpanedMain";
-			this.hpanedMain.Position = 199;
+			this.hpanedMain.Position = 294;
 			// Container child hpanedMain.Gtk.Paned+PanedChild
 			this.scrolledwindowLeft = new global::Gtk.ScrolledWindow ();
 			this.scrolledwindowLeft.CanFocus = true;
@@ -50,7 +50,7 @@ namespace CommBug
 			// Container child vboxLeft.Gtk.Box+BoxChild
 			this.labelTest = new global::Gtk.Label ();
 			this.labelTest.Name = "labelTest";
-			this.labelTest.LabelProp = global::Mono.Unix.Catalog.GetString ("该功能测试中,不可用");
+			this.labelTest.LabelProp = global::Mono.Unix.Catalog.GetString ("该功能测试中,不可用.请关注下一个版本.");
 			this.vboxLeft.Add (this.labelTest);
 			global::Gtk.Box.BoxChild w3 = ((global::Gtk.Box.BoxChild)(this.vboxLeft[this.labelTest]));
 			w3.Position = 0;

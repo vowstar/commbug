@@ -31,6 +31,8 @@ public partial class MainWindow : Gtk.Window
 	public ConvertMode SendMode = ConvertMode.Text;
 	public ConvertMode NowSendMode = ConvertMode.Text;
 	public SerialPortEx MyPort;
+	public System.IO.MemoryStream ReceiveStream=new System.IO.MemoryStream();
+	public System.IO.MemoryStream SendStream=new System.IO.MemoryStream();
 	private System.Timers.Timer SendTimer;
 	private System.Timers.Timer PortNameTimer;
 	private string portName = "";
@@ -39,6 +41,7 @@ public partial class MainWindow : Gtk.Window
 	private int dataBits = 0;
 	private StopBits stopBits = StopBits.One;
 
+	
 	private int portCount = 0;
 	private ListStore portNameModel = new ListStore (typeof(string));
 
@@ -59,6 +62,7 @@ public partial class MainWindow : Gtk.Window
 		comboboxentryPortName.Model = portNameModel;
 		InitializationPortName ();
 		SettingsSynchronization ();
+	
 		MyPort = new SerialPortEx (portName, baudRate, parity, dataBits, stopBits);
 		MyPort.DataReceived += new SerialDataReceivedEventHandler (HandleMyPortDataReceived);
 		Console.WriteLine ("Port initializated");
@@ -151,6 +155,7 @@ public partial class MainWindow : Gtk.Window
 	{
 		byte[] buffer = new byte[MyPort.BytesToRead];
 		MyPort.Read (buffer, 0, buffer.Length);
+		ReceiveStream.Write(buffer,0,buffer.Length);
 		Gdk.Threads.Enter ();
 		// 准备在线程中更新界面
 		TextIter iter;
@@ -275,7 +280,7 @@ public partial class MainWindow : Gtk.Window
 			MyPort.Open ();
 			if (MyPort.IsOpen) {
 				togglebuttonPortSwitch.Label = "关闭串口(_C)";
-				labelPortState.Text = "串口开";
+				labelPortStatus.Text = "串口开";
 				imagePortState.Pixbuf = global::Gdk.Pixbuf.LoadFromResource ("CommBug.icons.port_state.port_state-on_24x24.png");
 			} else {
 				Console.WriteLine ("Can't open this port.");
@@ -292,7 +297,7 @@ public partial class MainWindow : Gtk.Window
 			}
 			MyPort.Close ();
 			togglebuttonPortSwitch.Label = "打开串口(_O)";
-			labelPortState.Text = "串口关";
+			labelPortStatus.Text = "串口关";
 			imagePortState.Pixbuf = global::Gdk.Pixbuf.LoadFromResource ("CommBug.icons.port_state.port_state-off_24x24.png");
 			togglebuttonPortSwitch.Active = false;
 		}
@@ -327,6 +332,7 @@ public partial class MainWindow : Gtk.Window
 				break;
 			}
 			MyPort.Write (sendByte, 0, sendByte.Length);
+			SendStream.Write(sendByte,0,sendByte.Length);
 			TextIter iter;
 			iter = textviewTextS.Buffer.EndIter;
 			textviewTextS.Buffer.Insert (ref iter, StringConverts.BytesToString (sendByte));
