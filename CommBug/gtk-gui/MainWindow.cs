@@ -692,6 +692,7 @@ public partial class MainWindow
 		global::Gtk.Alignment w38 = new global::Gtk.Alignment (0.5f, 0.5f, 0f, 0f);
 		// Container child GtkAlignment.Gtk.Container+ContainerChild
 		global::Gtk.HBox w39 = new global::Gtk.HBox ();
+		w39.Spacing = 2;
 		// Container child GtkHBox.Gtk.Container+ContainerChild
 		global::Gtk.Image w40 = new global::Gtk.Image ();
 		w40.Pixbuf = global::Gdk.Pixbuf.LoadFromResource ("CommBug.icons.send.send_24x24.png");
@@ -856,6 +857,7 @@ public partial class MainWindow
 		global::Gtk.Alignment w62 = new global::Gtk.Alignment (0.5f, 0.5f, 0f, 0f);
 		// Container child GtkAlignment.Gtk.Container+ContainerChild
 		global::Gtk.HBox w63 = new global::Gtk.HBox ();
+		w63.Spacing = 2;
 		// Container child GtkHBox.Gtk.Container+ContainerChild
 		global::Gtk.Image w64 = new global::Gtk.Image ();
 		w64.Pixbuf = global::Stetic.IconLoader.LoadIcon (this, "gtk-clear", global::Gtk.IconSize.Menu);
@@ -881,6 +883,7 @@ public partial class MainWindow
 		global::Gtk.Alignment w71 = new global::Gtk.Alignment (0.5f, 0.5f, 0f, 0f);
 		// Container child GtkAlignment.Gtk.Container+ContainerChild
 		global::Gtk.HBox w72 = new global::Gtk.HBox ();
+		w72.Spacing = 2;
 		// Container child GtkHBox.Gtk.Container+ContainerChild
 		global::Gtk.Image w73 = new global::Gtk.Image ();
 		w73.Pixbuf = global::Gdk.Pixbuf.LoadFromResource ("CommBug.icons.clear_receive.clear_receive_24x24.png");
@@ -906,6 +909,7 @@ public partial class MainWindow
 		global::Gtk.Alignment w80 = new global::Gtk.Alignment (0.5f, 0.5f, 0f, 0f);
 		// Container child GtkAlignment.Gtk.Container+ContainerChild
 		global::Gtk.HBox w81 = new global::Gtk.HBox ();
+		w81.Spacing = 2;
 		// Container child GtkHBox.Gtk.Container+ContainerChild
 		global::Gtk.Image w82 = new global::Gtk.Image ();
 		w82.Pixbuf = global::Gdk.Pixbuf.LoadFromResource ("CommBug.icons.clear_send.clear_send_24x24.png");
@@ -964,7 +968,6 @@ public partial class MainWindow
 		// Container child notebookSendArea.Gtk.Notebook+NotebookChild
 		this.hboxTextS = new global::Gtk.HBox ();
 		this.hboxTextS.Name = "hboxTextS";
-		this.hboxTextS.Spacing = 0;
 		// Container child hboxTextS.Gtk.Box+BoxChild
 		this.GtkScrolledWindowTextS = new global::Gtk.ScrolledWindow ();
 		this.GtkScrolledWindowTextS.Name = "GtkScrolledWindowTextS";

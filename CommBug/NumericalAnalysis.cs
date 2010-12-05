@@ -10,30 +10,33 @@
 // --------------------------------------------------------------------------------------
 
 using System;
-public class NumericalElement
+namespace NumericalAnalysis
 {
-	public double x=0;
-	public double f=0;
-	public double omega=1;
-	public NumericalElement (double x,double f,double omega)
+	public class Element
 	{
-		this.x=x;
-		this.f=f;
-		this.omega=omega;
+		public double x = 0;
+		public double f = 0;
+		public double omega = 1;
+		public Element (double x, double f, double omega)
+		{
+			this.x = x;
+			this.f = f;
+			this.omega = omega;
+		}
+		public Element (double x, double f)
+		{
+			this.x = x;
+			this.f = f;
+		}
+		public Element ()
+		{
+		}
 	}
-	public NumericalElement (double x,double f)
-	{
-		this.x=x;
-		this.f=f;
-	}
-	public NumericalElement ()
-	{		
-	}
-}
 
-public class NumericalAnalysis
-{
-	public NumericalAnalysis ()
+	public class Analysis
 	{
+		public Analysis ()
+		{
+		}
 	}
 }
