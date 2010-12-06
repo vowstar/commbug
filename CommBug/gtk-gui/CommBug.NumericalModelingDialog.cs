@@ -4,6 +4,12 @@ namespace CommBug
 {
 	public partial class NumericalModelingDialog
 	{
+		private global::Gtk.Table tableMain;
+
+		private global::Gtk.Image imageMain;
+
+		private global::Gtk.Table tableRange;
+
 		private global::Gtk.Button buttonOk;
 
 		protected virtual void Build ()
@@ -15,14 +21,36 @@ namespace CommBug
 			this.WindowPosition = ((global::Gtk.WindowPosition)(4));
 			// Internal child CommBug.NumericalModelingDialog.VBox
 			global::Gtk.VBox w1 = this.VBox;
-			w1.Name = "dialog1_VBox";
+			w1.Name = "NumericalModelingDialog_VBox";
 			w1.BorderWidth = ((uint)(2));
+			// Container child NumericalModelingDialog_VBox.Gtk.Box+BoxChild
+			this.tableMain = new global::Gtk.Table (((uint)(2)), ((uint)(1)), false);
+			this.tableMain.Name = "tableMain";
+			this.tableMain.RowSpacing = ((uint)(6));
+			this.tableMain.ColumnSpacing = ((uint)(6));
+			// Container child tableMain.Gtk.Table+TableChild
+			this.imageMain = new global::Gtk.Image ();
+			this.imageMain.Name = "imageMain";
+			this.tableMain.Add (this.imageMain);
+			// Container child tableMain.Gtk.Table+TableChild
+			this.tableRange = new global::Gtk.Table (((uint)(1)), ((uint)(4)), false);
+			this.tableRange.Name = "tableRange";
+			this.tableRange.RowSpacing = ((uint)(6));
+			this.tableRange.ColumnSpacing = ((uint)(6));
+			this.tableMain.Add (this.tableRange);
+			global::Gtk.Table.TableChild w3 = ((global::Gtk.Table.TableChild)(this.tableMain[this.tableRange]));
+			w3.TopAttach = ((uint)(1));
+			w3.BottomAttach = ((uint)(2));
+			w3.XOptions = ((global::Gtk.AttachOptions)(4));
+			w1.Add (this.tableMain);
+			global::Gtk.Box.BoxChild w4 = ((global::Gtk.Box.BoxChild)(w1[this.tableMain]));
+			w4.Position = 0;
 			// Internal child CommBug.NumericalModelingDialog.ActionArea
-			global::Gtk.HButtonBox w2 = this.ActionArea;
-			w2.Name = "NumericalModelingDialog_ActionArea";
-			w2.Spacing = 10;
-			w2.BorderWidth = ((uint)(5));
-			w2.LayoutStyle = ((global::Gtk.ButtonBoxStyle)(4));
+			global::Gtk.HButtonBox w5 = this.ActionArea;
+			w5.Name = "NumericalModelingDialog_ActionArea";
+			w5.Spacing = 10;
+			w5.BorderWidth = ((uint)(5));
+			w5.LayoutStyle = ((global::Gtk.ButtonBoxStyle)(4));
 			// Container child NumericalModelingDialog_ActionArea.Gtk.ButtonBox+ButtonBoxChild
 			this.buttonOk = new global::Gtk.Button ();
 			this.buttonOk.CanDefault = true;
@@ -32,14 +60,14 @@ namespace CommBug
 			this.buttonOk.UseUnderline = true;
 			this.buttonOk.Label = "gtk-ok";
 			this.AddActionWidget (this.buttonOk, -5);
-			global::Gtk.ButtonBox.ButtonBoxChild w3 = ((global::Gtk.ButtonBox.ButtonBoxChild)(w2[this.buttonOk]));
-			w3.Expand = false;
-			w3.Fill = false;
+			global::Gtk.ButtonBox.ButtonBoxChild w6 = ((global::Gtk.ButtonBox.ButtonBoxChild)(w5[this.buttonOk]));
+			w6.Expand = false;
+			w6.Fill = false;
 			if ((this.Child != null)) {
 				this.Child.ShowAll ();
 			}
-			this.DefaultWidth = 400;
-			this.DefaultHeight = 300;
+			this.DefaultWidth = 533;
+			this.DefaultHeight = 422;
 			this.Show ();
 			this.buttonOk.Clicked += new global::System.EventHandler (this.OnButtonOkClicked);
 		}

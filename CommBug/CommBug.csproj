@@ -58,6 +58,7 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\usr\lib\monodevelop\AddIns\MonoDevelop.GtkCore\libstetic.dll</HintPath>
     </Reference>
+    <Reference Include="System.Drawing" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="gtk-gui\gui.stetic">
@@ -93,6 +94,7 @@
     <Compile Include="gtk-gui\CommBug.PreferenceDialog.cs" />
     <Compile Include="NumericalModelingDialog.cs" />
     <Compile Include="gtk-gui\CommBug.NumericalModelingDialog.cs" />
+    <Compile Include="GtkLoaders.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="app.desktop" />

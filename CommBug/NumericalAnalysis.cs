@@ -10,6 +10,9 @@
 // --------------------------------------------------------------------------------------
 
 using System;
+using System.Drawing;
+using System.Drawing.Imaging;
+
 namespace NumericalAnalysis
 {
 	public class Element
@@ -37,6 +40,24 @@ namespace NumericalAnalysis
 	{
 		public Analysis ()
 		{
+		}
+	}
+	namespace Graphic
+	{
+		public class Coordinate
+		{
+			public Bitmap CoordinateBitmap;
+			private double X_Start;
+			private double X_End;
+			private double Y_Min;
+			private double Y_Max;
+			public Coordinate(double[] Data)
+			{
+				X_Start=0;
+				X_End=Data.Length-1;
+				CoordinateBitmap=new Bitmap(500,500);
+				Graphics g= new Graphics();
+			}			
 		}
 	}
 }

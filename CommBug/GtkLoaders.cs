@@ -22,14 +22,31 @@ namespace Gtk
 		{
 			public static void LoadImage (Gtk.Image GtkImage, Bitmap SourceBitmap)
 			{
+				GtkImage.Pixbuf = LoadImage (SourceBitmap);
+			}
+			public static Gdk.Pixbuf LoadImage (Bitmap SourceBitmap)
+			{
+				Gdk.Pixbuf Result;
 				using (MemoryStream imgstream = new MemoryStream ()) {
 					imgstream.Position = 0;
 					SourceBitmap.Save (imgstream, ImageFormat.Bmp);
 					imgstream.Position = 0;
-					GtkImage.Pixbuf = new global::Gdk.Pixbuf (imgstream);
+					Result = new global::Gdk.Pixbuf (imgstream);
 					imgstream.Close ();
 				}
+				return Result;
+				
 			}
+			public static Bitmap LoadBitmap (byte[][] BitmapBytes)
+			{
+				int i, j, Width = BitmapBytes[0].Length, Height = BitmapBytes.Length;
+				Bitmap Result = new Bitmap (Width, Height);
+				for (i = 0; i < Width; i++)
+					for (j = 0; j < Height; j++)						
+						Result.SetPixel (i, j, System.Drawing.Color.FromArgb (BitmapBytes[i][j]));
+				return Result;
+			}
+			
 		}
 		
 	}
