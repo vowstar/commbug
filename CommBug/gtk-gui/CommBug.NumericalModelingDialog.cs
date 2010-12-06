@@ -10,6 +10,10 @@ namespace CommBug
 
 		private global::Gtk.Table tableRange;
 
+		private global::Gtk.Label labelEndArea;
+
+		private global::Gtk.Label labelStartArea;
+
 		private global::Gtk.Button buttonOk;
 
 		protected virtual void Build ()
@@ -24,7 +28,7 @@ namespace CommBug
 			w1.Name = "NumericalModelingDialog_VBox";
 			w1.BorderWidth = ((uint)(2));
 			// Container child NumericalModelingDialog_VBox.Gtk.Box+BoxChild
-			this.tableMain = new global::Gtk.Table (((uint)(2)), ((uint)(1)), false);
+			this.tableMain = new global::Gtk.Table (((uint)(1)), ((uint)(2)), false);
 			this.tableMain.Name = "tableMain";
 			this.tableMain.RowSpacing = ((uint)(6));
 			this.tableMain.ColumnSpacing = ((uint)(6));
@@ -37,20 +41,40 @@ namespace CommBug
 			this.tableRange.Name = "tableRange";
 			this.tableRange.RowSpacing = ((uint)(6));
 			this.tableRange.ColumnSpacing = ((uint)(6));
-			this.tableMain.Add (this.tableRange);
-			global::Gtk.Table.TableChild w3 = ((global::Gtk.Table.TableChild)(this.tableMain[this.tableRange]));
-			w3.TopAttach = ((uint)(1));
-			w3.BottomAttach = ((uint)(2));
+			// Container child tableRange.Gtk.Table+TableChild
+			this.labelEndArea = new global::Gtk.Label ();
+			this.labelEndArea.Name = "labelEndArea";
+			this.labelEndArea.LabelProp = global::Mono.Unix.Catalog.GetString ("终止域");
+			this.tableRange.Add (this.labelEndArea);
+			global::Gtk.Table.TableChild w3 = ((global::Gtk.Table.TableChild)(this.tableRange[this.labelEndArea]));
+			w3.LeftAttach = ((uint)(2));
+			w3.RightAttach = ((uint)(3));
 			w3.XOptions = ((global::Gtk.AttachOptions)(4));
+			w3.YOptions = ((global::Gtk.AttachOptions)(4));
+			// Container child tableRange.Gtk.Table+TableChild
+			this.labelStartArea = new global::Gtk.Label ();
+			this.labelStartArea.Name = "labelStartArea";
+			this.labelStartArea.LabelProp = global::Mono.Unix.Catalog.GetString ("起始域");
+			this.tableRange.Add (this.labelStartArea);
+			global::Gtk.Table.TableChild w4 = ((global::Gtk.Table.TableChild)(this.tableRange[this.labelStartArea]));
+			w4.XOptions = ((global::Gtk.AttachOptions)(4));
+			w4.YOptions = ((global::Gtk.AttachOptions)(4));
+			this.tableMain.Add (this.tableRange);
+			global::Gtk.Table.TableChild w5 = ((global::Gtk.Table.TableChild)(this.tableMain[this.tableRange]));
+			w5.LeftAttach = ((uint)(1));
+			w5.RightAttach = ((uint)(2));
+			w5.YOptions = ((global::Gtk.AttachOptions)(4));
 			w1.Add (this.tableMain);
-			global::Gtk.Box.BoxChild w4 = ((global::Gtk.Box.BoxChild)(w1[this.tableMain]));
-			w4.Position = 0;
+			global::Gtk.Box.BoxChild w6 = ((global::Gtk.Box.BoxChild)(w1[this.tableMain]));
+			w6.Position = 0;
+			w6.Expand = false;
+			w6.Fill = false;
 			// Internal child CommBug.NumericalModelingDialog.ActionArea
-			global::Gtk.HButtonBox w5 = this.ActionArea;
-			w5.Name = "NumericalModelingDialog_ActionArea";
-			w5.Spacing = 10;
-			w5.BorderWidth = ((uint)(5));
-			w5.LayoutStyle = ((global::Gtk.ButtonBoxStyle)(4));
+			global::Gtk.HButtonBox w7 = this.ActionArea;
+			w7.Name = "NumericalModelingDialog_ActionArea";
+			w7.Spacing = 10;
+			w7.BorderWidth = ((uint)(5));
+			w7.LayoutStyle = ((global::Gtk.ButtonBoxStyle)(4));
 			// Container child NumericalModelingDialog_ActionArea.Gtk.ButtonBox+ButtonBoxChild
 			this.buttonOk = new global::Gtk.Button ();
 			this.buttonOk.CanDefault = true;
@@ -60,14 +84,14 @@ namespace CommBug
 			this.buttonOk.UseUnderline = true;
 			this.buttonOk.Label = "gtk-ok";
 			this.AddActionWidget (this.buttonOk, -5);
-			global::Gtk.ButtonBox.ButtonBoxChild w6 = ((global::Gtk.ButtonBox.ButtonBoxChild)(w5[this.buttonOk]));
-			w6.Expand = false;
-			w6.Fill = false;
+			global::Gtk.ButtonBox.ButtonBoxChild w8 = ((global::Gtk.ButtonBox.ButtonBoxChild)(w7[this.buttonOk]));
+			w8.Expand = false;
+			w8.Fill = false;
 			if ((this.Child != null)) {
 				this.Child.ShowAll ();
 			}
 			this.DefaultWidth = 533;
-			this.DefaultHeight = 422;
+			this.DefaultHeight = 299;
 			this.Show ();
 			this.buttonOk.Clicked += new global::System.EventHandler (this.OnButtonOkClicked);
 		}

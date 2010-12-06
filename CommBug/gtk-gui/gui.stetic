@@ -2746,7 +2746,7 @@ Public License instead of this License.  But first, please read
       </widget>
     </child>
   </widget>
-  <widget class="Gtk.Dialog" id="CommBug.NumericalModelingDialog" design-size="533 422">
+  <widget class="Gtk.Dialog" id="CommBug.NumericalModelingDialog" design-size="533 299">
     <property name="MemberName" />
     <property name="Title" translatable="yes">曲线拟合分析</property>
     <property name="WindowPosition">CenterOnParent</property>
@@ -2759,7 +2759,7 @@ Public License instead of this License.  But first, please read
         <child>
           <widget class="Gtk.Table" id="tableMain">
             <property name="MemberName" />
-            <property name="NRows">2</property>
+            <property name="NColumns">2</property>
             <property name="RowSpacing">6</property>
             <property name="ColumnSpacing">6</property>
             <child>
@@ -2789,21 +2789,51 @@ Public License instead of this License.  But first, please read
                   <placeholder />
                 </child>
                 <child>
-                  <placeholder />
+                  <widget class="Gtk.Label" id="labelEndArea">
+                    <property name="MemberName" />
+                    <property name="LabelProp" translatable="yes">终止域</property>
+                  </widget>
+                  <packing>
+                    <property name="LeftAttach">2</property>
+                    <property name="RightAttach">3</property>
+                    <property name="AutoSize">True</property>
+                    <property name="XOptions">Fill</property>
+                    <property name="YOptions">Fill</property>
+                    <property name="XExpand">False</property>
+                    <property name="XFill">True</property>
+                    <property name="XShrink">False</property>
+                    <property name="YExpand">False</property>
+                    <property name="YFill">True</property>
+                    <property name="YShrink">False</property>
+                  </packing>
                 </child>
                 <child>
-                  <placeholder />
+                  <widget class="Gtk.Label" id="labelStartArea">
+                    <property name="MemberName" />
+                    <property name="LabelProp" translatable="yes">起始域</property>
+                  </widget>
+                  <packing>
+                    <property name="AutoSize">True</property>
+                    <property name="XOptions">Fill</property>
+                    <property name="YOptions">Fill</property>
+                    <property name="XExpand">False</property>
+                    <property name="XFill">True</property>
+                    <property name="XShrink">False</property>
+                    <property name="YExpand">False</property>
+                    <property name="YFill">True</property>
+                    <property name="YShrink">False</property>
+                  </packing>
                 </child>
               </widget>
               <packing>
-                <property name="TopAttach">1</property>
-                <property name="BottomAttach">2</property>
+                <property name="LeftAttach">1</property>
+                <property name="RightAttach">2</property>
                 <property name="AutoSize">True</property>
-                <property name="XOptions">Fill</property>
-                <property name="XExpand">False</property>
+                <property name="YOptions">Fill</property>
+                <property name="XExpand">True</property>
                 <property name="XFill">True</property>
                 <property name="XShrink">False</property>
-                <property name="YExpand">True</property>
+                <property name="YExpand">False</property>
                 <property name="YFill">True</property>
                 <property name="YShrink">False</property>
               </packing>
@@ -2812,6 +2842,8 @@ Public License instead of this License.  But first, please read
           <packing>
             <property name="Position">0</property>
             <property name="AutoSize">True</property>
+            <property name="Expand">False</property>
+            <property name="Fill">False</property>
           </packing>
         </child>
       </widget>

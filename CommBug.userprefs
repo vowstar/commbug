@@ -2,8 +2,8 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Release|x86" ctype="Workspace" />
   <MonoDevelop.Ide.Workbench ActiveDocument="CommBug/NumericalModelingDialog.cs" ctype="Workbench">
     <Files>
-      <File FileName="CommBug/NumericalAnalysis.cs" Line="14" Column="2" />
-      <File FileName="CommBug/NumericalModelingDialog.cs" Line="16" Column="3" />
+      <File FileName="CommBug/NumericalAnalysis.cs" Line="63" Column="6" />
+      <File FileName="CommBug/NumericalModelingDialog.cs" Line="16" Column="2" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">

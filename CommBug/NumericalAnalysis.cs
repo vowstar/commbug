@@ -51,12 +51,16 @@ namespace NumericalAnalysis
 			private double X_End;
 			private double Y_Min;
 			private double Y_Max;
-			public Coordinate(double[] Data)
+			public Coordinate(double[] Data,int Start,int End,int Width,int Height)
 			{
-				X_Start=0;
-				X_End=Data.Length-1;
-				CoordinateBitmap=new Bitmap(500,500);
-				Graphics g= new Graphics();
+				X_Start=Start;
+				X_End=End;
+				CoordinateBitmap= new Bitmap(Width,Height);
+				using(Graphics g= Graphics.FromImage(CoordinateBitmap))
+				{
+					g.Clear(Color.White);
+					g.DrawLine(new Pen(Color.Red, 2),new Point(0,Height/2),new Point(Width,Height/2));
+				}
 			}			
 		}
 	}

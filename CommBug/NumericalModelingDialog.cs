@@ -10,13 +10,28 @@
 // --------------------------------------------------------------------------------------
 
 using System;
+using System.Drawing;
+using System.Drawing.Imaging;
 namespace CommBug
 {
 	public partial class NumericalModelingDialog : Gtk.Dialog
 	{
+		
+		const int ImgWidth=500;
+		const int ImgHeight=375;
 		public NumericalModelingDialog ()
 		{
 			this.Build ();
+			using(Bitmap CoordinateBitmap=new Bitmap(ImgWidth,ImgHeight))
+			{
+				using(Graphics g= Graphics.FromImage(CoordinateBitmap))
+				{
+					g.Clear(Color.White);
+					g.DrawLine(new Pen(Color.Red, 2),new Point(0,ImgHeight/2),new Point(ImgWidth,ImgHeight/2));
+				}
+				imageMain.Pixbuf=Gtk.Loaders.ImageLoader.LoadImage(CoordinateBitmap);
+			}	
+			
 		}
 
 		protected virtual void OnButtonOkClicked (object sender, System.EventArgs e)
