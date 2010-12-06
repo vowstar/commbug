@@ -47,21 +47,39 @@ namespace NumericalAnalysis
 		public class Coordinate
 		{
 			public Bitmap CoordinateBitmap;
-			private double X_Start;
-			private double X_End;
 			private double Y_Min;
 			private double Y_Max;
-			public Coordinate(double[] Data,double Start,double End,int Width,int Height)
+			public Coordinate (double[] Data, double Start, double End, int Width, int Height)
 			{
-				X_Start=Start;
-				X_End=End;
-				CoordinateBitmap= new Bitmap(Width,Height);
-				using(Graphics g= Graphics.FromImage(CoordinateBitmap))
-				{
-					g.Clear(Color.White);
-					g.DrawLine(new Pen(Color.Red, 2),new Point(0,Height/2),new Point(Width,Height/2));
+				CoordinateBitmap = new Bitmap (Width, Height);
+				using (Graphics g = Graphics.FromImage (CoordinateBitmap)) {
+					g.Clear (Color.White);
+					g.DrawLine (new Pen (Color.Black, 2), new Point (0, Height / 2), new Point (Width, Height / 2));
+					g.DrawLine (new Pen (Color.Black, 2), new Point (Width / 2, 0), new Point (Width / 2, Height));
+					int i = 0;
+					Y_Min=Data[0];
+					Y_Max=Data[0];
+					for (i = 0; i < Data.Length; i++) {
+						if(Y_Max<Data[i])
+							Y_Max=Data[i];
+						if(Y_Min>Data[i])
+							Y_Min=Data[i];
+					}
+					int x1 = 0, y1 = 0, x2 = 0, y2 = 0;
+					x2 = (int)(i * Width / Data.Length);
+					y2 = (int)(Height - Height * (Data[i] - Y_Min) / (Y_Max - Y_Min));
+					for (i = 1; i < Data.Length; i++) {
+						
+						x1 = x2;
+						y1 = y2;
+						x2 = (int)(i * Width / Data.Length);
+						y2 = (int)(Height - Height * (Data[i] - Y_Min) / (Y_Max - Y_Min));
+						g.DrawLine (new Pen (Color.Blue, 2), new Point (x1, y1), new Point (x2, y2));
+						
+						
+					}
 				}
-			}			
+			}
 		}
 	}
 }

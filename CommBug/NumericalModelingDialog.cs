@@ -40,9 +40,7 @@ namespace CommBug
 		public virtual void ProceedModeling(MemoryStream ReceiveStream)
 		{
 			byte[] Rx=ReceiveStream.GetBuffer();
-			Console.WriteLine("{0}:{1}",this.ToString(),Rx.Length);
-			
-			
+			Console.WriteLine("{0}:{1}",this.ToString(),Rx.Length);				
 		}
 		protected virtual void OnButtonOkClicked (object sender, System.EventArgs e)
 		{
