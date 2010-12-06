@@ -10,10 +10,12 @@
 // --------------------------------------------------------------------------------------
 
 using System;
+using System.IO;
 using System.Drawing;
 using System.Drawing.Imaging;
 namespace CommBug
 {
+	
 	public partial class NumericalModelingDialog : Gtk.Dialog
 	{
 
@@ -27,7 +29,7 @@ namespace CommBug
 					g.Clear (Color.White);
 					using (Font theFont = new Font ("Arial", 10, FontStyle.Bold, GraphicsUnit.Millimeter)) {
 						using (SolidBrush theBrush = new SolidBrush (Color.Black)) {
-							g.DrawString ("Waiting...", theFont, theBrush, 0, ImgHeight / 2);
+							g.DrawString ("   No DATA...", theFont, theBrush, 0, ImgHeight / 2);
 						}
 					}
 				}
@@ -35,7 +37,13 @@ namespace CommBug
 			}
 			
 		}
-
+		public virtual void ProceedModeling(MemoryStream ReceiveStream)
+		{
+			byte[] Rx=ReceiveStream.GetBuffer();
+			Console.WriteLine("{0}:{1}",this.ToString(),Rx.Length);
+			
+			
+		}
 		protected virtual void OnButtonOkClicked (object sender, System.EventArgs e)
 		{
 			this.Destroy ();

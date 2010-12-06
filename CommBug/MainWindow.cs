@@ -505,8 +505,7 @@ public partial class MainWindow : Gtk.Window
 			if (!numericalModelingDialog.Visible)
 				numericalModelingDialog = new CommBug.NumericalModelingDialog ();
 		}
-		
-		
+		numericalModelingDialog.ProceedModeling(this.ReceiveStream);	
 		
 	}
 
