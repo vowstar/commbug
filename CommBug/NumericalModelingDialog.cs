@@ -16,21 +16,23 @@ namespace CommBug
 {
 	public partial class NumericalModelingDialog : Gtk.Dialog
 	{
-		
-		const int ImgWidth=500;
-		const int ImgHeight=375;
+
+		const int ImgWidth = 500;
+		const int ImgHeight = 375;
 		public NumericalModelingDialog ()
 		{
 			this.Build ();
-			using(Bitmap CoordinateBitmap=new Bitmap(ImgWidth,ImgHeight))
-			{
-				using(Graphics g= Graphics.FromImage(CoordinateBitmap))
-				{
-					g.Clear(Color.White);
-					g.DrawLine(new Pen(Color.Red, 2),new Point(0,ImgHeight/2),new Point(ImgWidth,ImgHeight/2));
+			using (Bitmap CoordinateBitmap = new Bitmap (ImgWidth, ImgHeight)) {
+				using (Graphics g = Graphics.FromImage (CoordinateBitmap)) {
+					g.Clear (Color.White);
+					using (Font theFont = new Font ("Arial", 10, FontStyle.Bold, GraphicsUnit.Millimeter)) {
+						using (SolidBrush theBrush = new SolidBrush (Color.Black)) {
+							g.DrawString ("Waiting...", theFont, theBrush, 0, ImgHeight / 2);
+						}
+					}
 				}
-				imageMain.Pixbuf=Gtk.Loaders.ImageLoader.LoadImage(CoordinateBitmap);
-			}	
+				imageMain.Pixbuf = Gtk.Loaders.ImageLoader.LoadImage (CoordinateBitmap);
+			}
 			
 		}
 

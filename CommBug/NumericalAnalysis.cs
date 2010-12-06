@@ -51,7 +51,7 @@ namespace NumericalAnalysis
 			private double X_End;
 			private double Y_Min;
 			private double Y_Max;
-			public Coordinate(double[] Data,int Start,int End,int Width,int Height)
+			public Coordinate(double[] Data,double Start,double End,int Width,int Height)
 			{
 				X_Start=Start;
 				X_End=End;
