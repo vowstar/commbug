@@ -10,20 +10,27 @@
 // --------------------------------------------------------------------------------------
 
 using System;
-namespace CommBug
+using Gtk;
+using System.Drawing;
+using System.Drawing.Imaging;
+using System.IO;
+namespace Gtk
 {
-	public partial class NumericalModelingDialog : Gtk.Dialog
+	namespace Loaders
 	{
-		public NumericalModelingDialog ()
+		public static class ImageLoader
 		{
-			this.Build ();
-		}
-
-		protected virtual void OnButtonOkClicked (object sender, System.EventArgs e)
-		{
-			this.Destroy ();
+			public static void LoadImage (Gtk.Image GtkImage, Bitmap SourceBitmap)
+			{
+				using (MemoryStream imgstream = new MemoryStream ()) {
+					imgstream.Position = 0;
+					SourceBitmap.Save (imgstream, ImageFormat.Bmp);
+					imgstream.Position = 0;
+					GtkImage.Pixbuf = new global::Gdk.Pixbuf (imgstream);
+					imgstream.Close ();
+				}
+			}
 		}
 		
 	}
 }
-
