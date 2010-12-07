@@ -36,11 +36,22 @@ namespace NumericalAnalysis
 		}
 	}
 
-	public class Analysis
+	namespace  Analysis
 	{
-		public Analysis ()
+		public class Liner
 		{
+			public Liner()
+			{
+				
+			}
 		}
+		public class Solve
+		{
+			public Solve()
+			{
+			}
+			
+		}	
 	}
 	namespace Graphic
 	{
@@ -65,7 +76,9 @@ namespace NumericalAnalysis
 						if(Y_Min>Data[i])
 							Y_Min=Data[i];
 					}
+					Console.WriteLine ("{0}>>Y Range:{1}~{2}", this.ToString (), Y_Max,Y_Min);
 					int x1 = 0, y1 = 0, x2 = 0, y2 = 0;
+					i=0;
 					x2 = (int)(i * Width / Data.Length);
 					y2 = (int)(Height - Height * (Data[i] - Y_Min) / (Y_Max - Y_Min));
 					for (i = 1; i < Data.Length; i++) {
@@ -75,11 +88,16 @@ namespace NumericalAnalysis
 						x2 = (int)(i * Width / Data.Length);
 						y2 = (int)(Height - Height * (Data[i] - Y_Min) / (Y_Max - Y_Min));
 						g.DrawLine (new Pen (Color.Blue, 2), new Point (x1, y1), new Point (x2, y2));
-						
-						
+												
 					}
 				}
 			}
+			private void Draw()
+			{
+				
+				
+			}
+			
 		}
 	}
 }

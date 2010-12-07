@@ -15,12 +15,13 @@ using System.Drawing;
 using System.Drawing.Imaging;
 namespace CommBug
 {
-	
+
 	public partial class NumericalModelingDialog : Gtk.Dialog
 	{
 
 		const int ImgWidth = 500;
 		const int ImgHeight = 375;
+		private byte[] Rx;
 		public NumericalModelingDialog ()
 		{
 			this.Build ();
@@ -37,15 +38,45 @@ namespace CommBug
 			}
 			
 		}
-		public virtual void ProceedModeling(MemoryStream ReceiveStream)
+		public virtual void ProceedModeling (MemoryStream ReceiveStream)
 		{
-			byte[] Rx=ReceiveStream.GetBuffer();
-			Console.WriteLine("{0}:{1}",this.ToString(),Rx.Length);				
+			Rx = ReceiveStream.GetBuffer ();
+			this.ProceedModeling ();
+			
+		}
+		protected virtual void ProceedModeling ()
+		{
+			long Start = Convert.ToInt32 (spinbuttonStart.Text);
+			long End = Convert.ToInt32 (spinbuttonEnd.Text);
+			if (End > Rx.Length)
+				End = Rx.Length;
+			Console.WriteLine ("{0}>>Total data length:{1}", this.ToString (), Rx.Length);
+			Console.WriteLine ("{0}>>Range:{1}~{2}", this.ToString (), Start, End);
+			
+			if (Rx != null) {
+				if (Rx.Length > 0 && End - Start > 1 && End - Start + 1 < Rx.Length) {
+					double[] A=new double[End - Start + 1];
+					int i;
+					for(i=0;i<End - Start + 1;i++)
+						A[i]=Rx[Start+i];
+					NumericalAnalysis.Graphic.Coordinate coordinate;
+					coordinate = new NumericalAnalysis.Graphic.Coordinate (A, 0, 500, ImgWidth, ImgHeight);
+					imageMain.Pixbuf=Gtk.Loaders.ImageLoader.LoadImage (coordinate.CoordinateBitmap);
+				}
+			} else
+				Console.WriteLine ("{0}>>Initialization needed.", this.ToString ());
+			
 		}
 		protected virtual void OnButtonOkClicked (object sender, System.EventArgs e)
 		{
 			this.Destroy ();
 		}
+
+		protected virtual void OnButtonAnalysisClicked (object sender, System.EventArgs e)
+		{
+			this.ProceedModeling ();
+		}
+		
 		
 	}
 }

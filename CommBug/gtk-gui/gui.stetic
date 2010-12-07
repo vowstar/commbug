@@ -2792,6 +2792,7 @@ Public License instead of this License.  But first, please read
                     <property name="Type">TextOnly</property>
                     <property name="Label" translatable="yes">取样并且分析</property>
                     <property name="UseUnderline">True</property>
+                    <signal name="Clicked" handler="OnButtonAnalysisClicked" />
                   </widget>
                   <packing>
                     <property name="TopAttach">1</property>

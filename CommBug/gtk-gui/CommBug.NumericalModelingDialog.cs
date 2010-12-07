@@ -148,6 +148,7 @@ namespace CommBug
 			this.DefaultWidth = 533;
 			this.DefaultHeight = 299;
 			this.Show ();
+			this.buttonAnalysis.Clicked += new global::System.EventHandler (this.OnButtonAnalysisClicked);
 			this.buttonOk.Clicked += new global::System.EventHandler (this.OnButtonOkClicked);
 		}
 	}
