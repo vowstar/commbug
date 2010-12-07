@@ -52,7 +52,9 @@ namespace NumericalAnalysis
 			{
 				int i;
 				m=Data.Length;
-				for(i=0;i<=m;i++)
+				Console.WriteLine("Begin liner.");
+				Console.WriteLine("Begin sigma.");
+				for(i=0;i<m;i++)
 				{
 					Sigma_Omega+=Data[i].omega;
 					Sigma_Omega_x+=Data[i].omega*Data[i].x;
@@ -60,6 +62,7 @@ namespace NumericalAnalysis
 					Sigma_Omega_f+=Data[i].omega*Data[i].f;
 					Sigma_Omega_x_f+=Data[i].omega*Data[i].x*Data[i].f;
 				}	
+				Console.WriteLine("Begin solve.");
 				Analysis.Solve.SolveLiner(Sigma_Omega,Sigma_Omega_x,Sigma_Omega_f,Sigma_Omega_x,Sigma_Omega_x2,Sigma_Omega_x_f,out a0,out a1);
 			}
 			public double f(double x)

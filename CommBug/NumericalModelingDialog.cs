@@ -22,6 +22,9 @@ namespace CommBug
 		const int ImgWidth = 500;
 		const int ImgHeight = 375;
 		private byte[] Rx;
+		long Start = 0;
+		long End = 0;
+		NumericalAnalysis.Element[] StoreData;
 		public NumericalModelingDialog ()
 		{
 			this.Build ();
@@ -46,8 +49,8 @@ namespace CommBug
 		}
 		protected virtual void ProceedModeling ()
 		{
-			long Start = Convert.ToInt32 (spinbuttonStart.Text);
-			long End = Convert.ToInt32 (spinbuttonEnd.Text);
+			Start = Convert.ToInt32 (spinbuttonStart.Text);
+			End = Convert.ToInt32 (spinbuttonEnd.Text);
 			if (End > Rx.Length)
 				End = Rx.Length;
 			Console.WriteLine ("{0}>>Total data length:{1}", this.ToString (), Rx.Length);
@@ -55,13 +58,17 @@ namespace CommBug
 			
 			if (Rx != null) {
 				if (Rx.Length > 0 && End - Start > 1 && End - Start + 1 < Rx.Length) {
-					double[] A=new double[End - Start + 1];
+					double[] A = new double[End - Start + 1];
+					StoreData = new NumericalAnalysis.Element[End - Start + 1];
 					int i;
-					for(i=0;i<End - Start + 1;i++)
-						A[i]=Rx[Start+i];
+					for (i = 0; i < End - Start + 1; i++) {
+						A[i] = Rx[Start + i];
+						StoreData[i] = new NumericalAnalysis.Element (i, A[i], 1);
+					}
+					
 					NumericalAnalysis.Graphic.Coordinate coordinate;
 					coordinate = new NumericalAnalysis.Graphic.Coordinate (A, 0, 500, ImgWidth, ImgHeight);
-					imageMain.Pixbuf=Gtk.Loaders.ImageLoader.LoadImage (coordinate.CoordinateBitmap);
+					imageMain.Pixbuf = Gtk.Loaders.ImageLoader.LoadImage (coordinate.CoordinateBitmap);
 				}
 			} else
 				Console.WriteLine ("{0}>>Initialization needed.", this.ToString ());
@@ -72,12 +79,31 @@ namespace CommBug
 			this.Destroy ();
 		}
 
-		protected virtual void OnButtonAnalysisClicked (object sender, System.EventArgs e)
+		protected virtual void OnButtonGetDataClicked (object sender, System.EventArgs e)
 		{
 			this.ProceedModeling ();
 		}
-		
-		
+
+		protected virtual void OnButtonModelingClicked (object sender, System.EventArgs e)
+		{
+			if (StoreData != null)
+				if (StoreData.Length > 0 && End - Start > 1 && End - Start + 1 < Rx.Length) {
+					int i;
+					Console.WriteLine ("{0}>> NumericalAnalysis.Analysis.", this.ToString ());
+
+					NumericalAnalysis.Analysis.Liner liner = new NumericalAnalysis.Analysis.Liner (StoreData);
+					
+					double[] A = new double[End - Start + 1];
+					
+					for (i = 0; i < End - Start + 1; i++) {
+						A[i] = liner.f (i);
+					}
+					NumericalAnalysis.Graphic.Coordinate coordinate;
+					
+					coordinate = new NumericalAnalysis.Graphic.Coordinate (A, 0, 500, ImgWidth, ImgHeight);
+					imageMain.Pixbuf = Gtk.Loaders.ImageLoader.LoadImage (coordinate.CoordinateBitmap);
+				}
+		}
 	}
 }
 
