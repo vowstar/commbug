@@ -40,17 +40,40 @@ namespace NumericalAnalysis
 	{
 		public class Liner
 		{
-			public Liner()
+			public double Sigma_Omega=0;
+			public double Sigma_Omega_x=0;
+			public double Sigma_Omega_x2=0;
+			public double Sigma_Omega_f=0;
+			public double Sigma_Omega_x_f=0;
+			public double a0=0;
+			public double a1=0;
+			public int m=0;
+			public Liner(Element[] Data)
 			{
-				
+				int i;
+				m=Data.Length;
+				for(i=0;i<=m;i++)
+				{
+					Sigma_Omega+=Data[i].omega;
+					Sigma_Omega_x+=Data[i].omega*Data[i].x;
+					Sigma_Omega_x2+=Data[i].omega*Data[i].x*Data[i].x;
+					Sigma_Omega_f+=Data[i].omega*Data[i].f;
+					Sigma_Omega_x_f+=Data[i].omega*Data[i].x*Data[i].f;
+				}	
+				Analysis.Solve.SolveLiner(Sigma_Omega,Sigma_Omega_x,Sigma_Omega_f,Sigma_Omega_x,Sigma_Omega_x2,Sigma_Omega_x_f,out a0,out a1);
+			}
+			public double f(double x)
+			{
+				return a0+a1*x;				
 			}
 		}
-		public class Solve
+		public static class Solve
 		{
-			public Solve()
+			public static void SolveLiner(double A,double B,double C,double D,double E,double F,out double X,out double Y)
 			{
-			}
-			
+				X=(F*B-E*C)/(B*D-E*A);
+				Y=(F*A-D*C)/(A*E-D*B);
+			}	
 		}	
 	}
 	namespace Graphic
