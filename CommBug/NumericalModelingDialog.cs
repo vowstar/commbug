@@ -84,19 +84,19 @@ namespace CommBug
 			this.ProceedModeling ();
 		}
 
-		protected virtual void OnButtonModelingClicked (object sender, System.EventArgs e)
+		protected virtual void OnButtonLinearClicked (object sender, System.EventArgs e)
 		{
 			if (StoreData != null)
 				if (StoreData.Length > 0 && End - Start > 1 && End - Start + 1 < Rx.Length) {
 					int i;
 					Console.WriteLine ("{0}>> NumericalAnalysis.Analysis.", this.ToString ());
-
-					NumericalAnalysis.Analysis.Liner liner = new NumericalAnalysis.Analysis.Liner (StoreData);
+					
+					NumericalAnalysis.Analysis.Linear Linear = new NumericalAnalysis.Analysis.Linear (StoreData);
 					
 					double[] A = new double[End - Start + 1];
 					
 					for (i = 0; i < End - Start + 1; i++) {
-						A[i] = liner.f (i);
+						A[i] = Linear.f (i);
 					}
 					NumericalAnalysis.Graphic.Coordinate coordinate;
 					
@@ -104,6 +104,50 @@ namespace CommBug
 					imageMain.Pixbuf = Gtk.Loaders.ImageLoader.LoadImage (coordinate.CoordinateBitmap);
 				}
 		}
+		protected virtual void OnButtonHyperbolicClicked (object sender, System.EventArgs e)
+		{
+			if (StoreData != null)
+				if (StoreData.Length > 0 && End - Start > 1 && End - Start + 1 < Rx.Length) {
+					int i;
+					Console.WriteLine ("{0}>> NumericalAnalysis.Analysis.", this.ToString ());
+					
+					NumericalAnalysis.Analysis.Hyperbolic Hyperbolic = new NumericalAnalysis.Analysis.Hyperbolic (StoreData);
+					
+					double[] A = new double[End - Start + 1];
+					
+					for (i = 0; i < End - Start + 1; i++) {
+						A[i] = Hyperbolic.f (i);
+					}
+					NumericalAnalysis.Graphic.Coordinate coordinate;
+					
+					coordinate = new NumericalAnalysis.Graphic.Coordinate (A, 0, 500, ImgWidth, ImgHeight);
+					imageMain.Pixbuf = Gtk.Loaders.ImageLoader.LoadImage (coordinate.CoordinateBitmap);
+				}
+		}
+
+		protected virtual void OnButtonExponentialClicked (object sender, System.EventArgs e)
+		{
+			if (StoreData != null)
+				if (StoreData.Length > 0 && End - Start > 1 && End - Start + 1 < Rx.Length) {
+					int i;
+					Console.WriteLine ("{0}>> NumericalAnalysis.Analysis.", this.ToString ());
+					
+					NumericalAnalysis.Analysis.Exponential Exponential = new NumericalAnalysis.Analysis.Exponential (StoreData);
+					
+					double[] A = new double[End - Start + 1];
+					
+					for (i = 0; i < End - Start + 1; i++) {
+						A[i] = Exponential.f (i);
+					}
+					NumericalAnalysis.Graphic.Coordinate coordinate;
+					
+					coordinate = new NumericalAnalysis.Graphic.Coordinate (A, 0, 500, ImgWidth, ImgHeight);
+					imageMain.Pixbuf = Gtk.Loaders.ImageLoader.LoadImage (coordinate.CoordinateBitmap);
+				}
+		}
+		
+		
+		
 	}
 }
 

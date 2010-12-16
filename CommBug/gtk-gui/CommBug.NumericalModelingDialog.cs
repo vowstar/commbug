@@ -10,9 +10,13 @@ namespace CommBug
 
 		private global::Gtk.Table tableFunction;
 
+		private global::Gtk.Button buttonExponential;
+
 		private global::Gtk.Button buttonGetData;
 
-		private global::Gtk.Button buttonModeling;
+		private global::Gtk.Button buttonHyperbolic;
+
+		private global::Gtk.Button buttonLinear;
 
 		private global::Gtk.Table tableRange;
 
@@ -47,10 +51,22 @@ namespace CommBug
 			this.imageMain.Name = "imageMain";
 			this.tableMain.Add (this.imageMain);
 			// Container child tableMain.Gtk.Table+TableChild
-			this.tableFunction = new global::Gtk.Table (((uint)(3)), ((uint)(1)), false);
+			this.tableFunction = new global::Gtk.Table (((uint)(5)), ((uint)(1)), false);
 			this.tableFunction.Name = "tableFunction";
 			this.tableFunction.RowSpacing = ((uint)(6));
 			this.tableFunction.ColumnSpacing = ((uint)(6));
+			// Container child tableFunction.Gtk.Table+TableChild
+			this.buttonExponential = new global::Gtk.Button ();
+			this.buttonExponential.CanFocus = true;
+			this.buttonExponential.Name = "buttonExponential";
+			this.buttonExponential.UseUnderline = true;
+			this.buttonExponential.Label = global::Mono.Unix.Catalog.GetString ("指数分析");
+			this.tableFunction.Add (this.buttonExponential);
+			global::Gtk.Table.TableChild w3 = ((global::Gtk.Table.TableChild)(this.tableFunction[this.buttonExponential]));
+			w3.TopAttach = ((uint)(4));
+			w3.BottomAttach = ((uint)(5));
+			w3.XOptions = ((global::Gtk.AttachOptions)(4));
+			w3.YOptions = ((global::Gtk.AttachOptions)(4));
 			// Container child tableFunction.Gtk.Table+TableChild
 			this.buttonGetData = new global::Gtk.Button ();
 			this.buttonGetData.CanFocus = true;
@@ -58,23 +74,35 @@ namespace CommBug
 			this.buttonGetData.UseUnderline = true;
 			this.buttonGetData.Label = global::Mono.Unix.Catalog.GetString ("取样");
 			this.tableFunction.Add (this.buttonGetData);
-			global::Gtk.Table.TableChild w3 = ((global::Gtk.Table.TableChild)(this.tableFunction[this.buttonGetData]));
-			w3.TopAttach = ((uint)(1));
-			w3.BottomAttach = ((uint)(2));
-			w3.XOptions = ((global::Gtk.AttachOptions)(4));
-			w3.YOptions = ((global::Gtk.AttachOptions)(4));
-			// Container child tableFunction.Gtk.Table+TableChild
-			this.buttonModeling = new global::Gtk.Button ();
-			this.buttonModeling.CanFocus = true;
-			this.buttonModeling.Name = "buttonModeling";
-			this.buttonModeling.UseUnderline = true;
-			this.buttonModeling.Label = global::Mono.Unix.Catalog.GetString ("分析");
-			this.tableFunction.Add (this.buttonModeling);
-			global::Gtk.Table.TableChild w4 = ((global::Gtk.Table.TableChild)(this.tableFunction[this.buttonModeling]));
-			w4.TopAttach = ((uint)(2));
-			w4.BottomAttach = ((uint)(3));
+			global::Gtk.Table.TableChild w4 = ((global::Gtk.Table.TableChild)(this.tableFunction[this.buttonGetData]));
+			w4.TopAttach = ((uint)(1));
+			w4.BottomAttach = ((uint)(2));
 			w4.XOptions = ((global::Gtk.AttachOptions)(4));
 			w4.YOptions = ((global::Gtk.AttachOptions)(4));
+			// Container child tableFunction.Gtk.Table+TableChild
+			this.buttonHyperbolic = new global::Gtk.Button ();
+			this.buttonHyperbolic.CanFocus = true;
+			this.buttonHyperbolic.Name = "buttonHyperbolic";
+			this.buttonHyperbolic.UseUnderline = true;
+			this.buttonHyperbolic.Label = global::Mono.Unix.Catalog.GetString ("双曲线分析");
+			this.tableFunction.Add (this.buttonHyperbolic);
+			global::Gtk.Table.TableChild w5 = ((global::Gtk.Table.TableChild)(this.tableFunction[this.buttonHyperbolic]));
+			w5.TopAttach = ((uint)(3));
+			w5.BottomAttach = ((uint)(4));
+			w5.XOptions = ((global::Gtk.AttachOptions)(4));
+			w5.YOptions = ((global::Gtk.AttachOptions)(4));
+			// Container child tableFunction.Gtk.Table+TableChild
+			this.buttonLinear = new global::Gtk.Button ();
+			this.buttonLinear.CanFocus = true;
+			this.buttonLinear.Name = "buttonLinear";
+			this.buttonLinear.UseUnderline = true;
+			this.buttonLinear.Label = global::Mono.Unix.Catalog.GetString ("线性分析");
+			this.tableFunction.Add (this.buttonLinear);
+			global::Gtk.Table.TableChild w6 = ((global::Gtk.Table.TableChild)(this.tableFunction[this.buttonLinear]));
+			w6.TopAttach = ((uint)(2));
+			w6.BottomAttach = ((uint)(3));
+			w6.XOptions = ((global::Gtk.AttachOptions)(4));
+			w6.YOptions = ((global::Gtk.AttachOptions)(4));
 			// Container child tableFunction.Gtk.Table+TableChild
 			this.tableRange = new global::Gtk.Table (((uint)(1)), ((uint)(4)), false);
 			this.tableRange.Name = "tableRange";
@@ -85,19 +113,19 @@ namespace CommBug
 			this.labelEndArea.Name = "labelEndArea";
 			this.labelEndArea.LabelProp = global::Mono.Unix.Catalog.GetString ("终止域");
 			this.tableRange.Add (this.labelEndArea);
-			global::Gtk.Table.TableChild w5 = ((global::Gtk.Table.TableChild)(this.tableRange[this.labelEndArea]));
-			w5.LeftAttach = ((uint)(2));
-			w5.RightAttach = ((uint)(3));
-			w5.XOptions = ((global::Gtk.AttachOptions)(4));
-			w5.YOptions = ((global::Gtk.AttachOptions)(4));
+			global::Gtk.Table.TableChild w7 = ((global::Gtk.Table.TableChild)(this.tableRange[this.labelEndArea]));
+			w7.LeftAttach = ((uint)(2));
+			w7.RightAttach = ((uint)(3));
+			w7.XOptions = ((global::Gtk.AttachOptions)(4));
+			w7.YOptions = ((global::Gtk.AttachOptions)(4));
 			// Container child tableRange.Gtk.Table+TableChild
 			this.labelStartArea = new global::Gtk.Label ();
 			this.labelStartArea.Name = "labelStartArea";
 			this.labelStartArea.LabelProp = global::Mono.Unix.Catalog.GetString ("起始域");
 			this.tableRange.Add (this.labelStartArea);
-			global::Gtk.Table.TableChild w6 = ((global::Gtk.Table.TableChild)(this.tableRange[this.labelStartArea]));
-			w6.XOptions = ((global::Gtk.AttachOptions)(4));
-			w6.YOptions = ((global::Gtk.AttachOptions)(4));
+			global::Gtk.Table.TableChild w8 = ((global::Gtk.Table.TableChild)(this.tableRange[this.labelStartArea]));
+			w8.XOptions = ((global::Gtk.AttachOptions)(4));
+			w8.YOptions = ((global::Gtk.AttachOptions)(4));
 			// Container child tableRange.Gtk.Table+TableChild
 			this.spinbuttonEnd = new global::Gtk.SpinButton (0, 1000, 1);
 			this.spinbuttonEnd.CanFocus = true;
@@ -107,11 +135,11 @@ namespace CommBug
 			this.spinbuttonEnd.Numeric = true;
 			this.spinbuttonEnd.Value = 100;
 			this.tableRange.Add (this.spinbuttonEnd);
-			global::Gtk.Table.TableChild w7 = ((global::Gtk.Table.TableChild)(this.tableRange[this.spinbuttonEnd]));
-			w7.LeftAttach = ((uint)(3));
-			w7.RightAttach = ((uint)(4));
-			w7.XOptions = ((global::Gtk.AttachOptions)(4));
-			w7.YOptions = ((global::Gtk.AttachOptions)(4));
+			global::Gtk.Table.TableChild w9 = ((global::Gtk.Table.TableChild)(this.tableRange[this.spinbuttonEnd]));
+			w9.LeftAttach = ((uint)(3));
+			w9.RightAttach = ((uint)(4));
+			w9.XOptions = ((global::Gtk.AttachOptions)(4));
+			w9.YOptions = ((global::Gtk.AttachOptions)(4));
 			// Container child tableRange.Gtk.Table+TableChild
 			this.spinbuttonStart = new global::Gtk.SpinButton (0, 1000, 1);
 			this.spinbuttonStart.CanFocus = true;
@@ -120,30 +148,30 @@ namespace CommBug
 			this.spinbuttonStart.ClimbRate = 1;
 			this.spinbuttonStart.Numeric = true;
 			this.tableRange.Add (this.spinbuttonStart);
-			global::Gtk.Table.TableChild w8 = ((global::Gtk.Table.TableChild)(this.tableRange[this.spinbuttonStart]));
-			w8.LeftAttach = ((uint)(1));
-			w8.RightAttach = ((uint)(2));
-			w8.XOptions = ((global::Gtk.AttachOptions)(4));
-			w8.YOptions = ((global::Gtk.AttachOptions)(4));
-			this.tableFunction.Add (this.tableRange);
-			global::Gtk.Table.TableChild w9 = ((global::Gtk.Table.TableChild)(this.tableFunction[this.tableRange]));
-			w9.XOptions = ((global::Gtk.AttachOptions)(4));
-			w9.YOptions = ((global::Gtk.AttachOptions)(4));
-			this.tableMain.Add (this.tableFunction);
-			global::Gtk.Table.TableChild w10 = ((global::Gtk.Table.TableChild)(this.tableMain[this.tableFunction]));
+			global::Gtk.Table.TableChild w10 = ((global::Gtk.Table.TableChild)(this.tableRange[this.spinbuttonStart]));
 			w10.LeftAttach = ((uint)(1));
 			w10.RightAttach = ((uint)(2));
 			w10.XOptions = ((global::Gtk.AttachOptions)(4));
 			w10.YOptions = ((global::Gtk.AttachOptions)(4));
+			this.tableFunction.Add (this.tableRange);
+			global::Gtk.Table.TableChild w11 = ((global::Gtk.Table.TableChild)(this.tableFunction[this.tableRange]));
+			w11.XOptions = ((global::Gtk.AttachOptions)(4));
+			w11.YOptions = ((global::Gtk.AttachOptions)(4));
+			this.tableMain.Add (this.tableFunction);
+			global::Gtk.Table.TableChild w12 = ((global::Gtk.Table.TableChild)(this.tableMain[this.tableFunction]));
+			w12.LeftAttach = ((uint)(1));
+			w12.RightAttach = ((uint)(2));
+			w12.XOptions = ((global::Gtk.AttachOptions)(4));
+			w12.YOptions = ((global::Gtk.AttachOptions)(4));
 			w1.Add (this.tableMain);
-			global::Gtk.Box.BoxChild w11 = ((global::Gtk.Box.BoxChild)(w1[this.tableMain]));
-			w11.Position = 0;
+			global::Gtk.Box.BoxChild w13 = ((global::Gtk.Box.BoxChild)(w1[this.tableMain]));
+			w13.Position = 0;
 			// Internal child CommBug.NumericalModelingDialog.ActionArea
-			global::Gtk.HButtonBox w12 = this.ActionArea;
-			w12.Name = "NumericalModelingDialog_ActionArea";
-			w12.Spacing = 10;
-			w12.BorderWidth = ((uint)(5));
-			w12.LayoutStyle = ((global::Gtk.ButtonBoxStyle)(4));
+			global::Gtk.HButtonBox w14 = this.ActionArea;
+			w14.Name = "NumericalModelingDialog_ActionArea";
+			w14.Spacing = 10;
+			w14.BorderWidth = ((uint)(5));
+			w14.LayoutStyle = ((global::Gtk.ButtonBoxStyle)(4));
 			// Container child NumericalModelingDialog_ActionArea.Gtk.ButtonBox+ButtonBoxChild
 			this.buttonOk = new global::Gtk.Button ();
 			this.buttonOk.CanDefault = true;
@@ -153,17 +181,19 @@ namespace CommBug
 			this.buttonOk.UseUnderline = true;
 			this.buttonOk.Label = "gtk-ok";
 			this.AddActionWidget (this.buttonOk, -5);
-			global::Gtk.ButtonBox.ButtonBoxChild w13 = ((global::Gtk.ButtonBox.ButtonBoxChild)(w12[this.buttonOk]));
-			w13.Expand = false;
-			w13.Fill = false;
+			global::Gtk.ButtonBox.ButtonBoxChild w15 = ((global::Gtk.ButtonBox.ButtonBoxChild)(w14[this.buttonOk]));
+			w15.Expand = false;
+			w15.Fill = false;
 			if ((this.Child != null)) {
 				this.Child.ShowAll ();
 			}
-			this.DefaultWidth = 533;
-			this.DefaultHeight = 299;
+			this.DefaultWidth = 640;
+			this.DefaultHeight = 416;
 			this.Show ();
-			this.buttonModeling.Clicked += new global::System.EventHandler (this.OnButtonModelingClicked);
+			this.buttonLinear.Clicked += new global::System.EventHandler (this.OnButtonLinearClicked);
+			this.buttonHyperbolic.Clicked += new global::System.EventHandler (this.OnButtonHyperbolicClicked);
 			this.buttonGetData.Clicked += new global::System.EventHandler (this.OnButtonGetDataClicked);
+			this.buttonExponential.Clicked += new global::System.EventHandler (this.OnButtonExponentialClicked);
 			this.buttonOk.Clicked += new global::System.EventHandler (this.OnButtonOkClicked);
 		}
 	}

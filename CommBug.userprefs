@@ -1,16 +1,15 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Release|x86" ctype="Workspace" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="CommBug/NumericalModelingDialog.cs" ctype="Workbench">
+  <MonoDevelop.Ide.Workbench ActiveDocument="CommBug/NumericalAnalysis.cs" ctype="Workbench">
     <Files>
-      <File FileName="CommBug/NumericalModelingDialog.cs" Line="106" Column="4" />
-      <File FileName="CommBug/NumericalAnalysis.cs" Line="59" Column="3" />
-      <File FileName="Assembly Browser" />
+      <File FileName="CommBug/NumericalModelingDialog.cs" Line="107" Column="3" />
+      <File FileName="CommBug/NumericalAnalysis.cs" Line="53" Column="11" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True">
           <Node name="CommBug" expanded="True">
-            <Node name="NumericalModelingDialog.cs" selected="True" />
+            <Node name="NumericalAnalysis.cs" selected="True" />
           </Node>
         </State>
       </Pad>

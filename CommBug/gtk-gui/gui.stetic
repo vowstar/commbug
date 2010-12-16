@@ -2746,7 +2746,7 @@ Public License instead of this License.  But first, please read
       </widget>
     </child>
   </widget>
-  <widget class="Gtk.Dialog" id="CommBug.NumericalModelingDialog" design-size="533 299">
+  <widget class="Gtk.Dialog" id="CommBug.NumericalModelingDialog" design-size="640 416">
     <property name="MemberName" />
     <property name="Title" translatable="yes">曲线拟合分析</property>
     <property name="WindowPosition">CenterOnParent</property>
@@ -2779,9 +2779,32 @@ Public License instead of this License.  But first, please read
             <child>
               <widget class="Gtk.Table" id="tableFunction">
                 <property name="MemberName" />
-                <property name="NRows">3</property>
+                <property name="NRows">5</property>
                 <property name="RowSpacing">6</property>
                 <property name="ColumnSpacing">6</property>
+                <child>
+                  <widget class="Gtk.Button" id="buttonExponential">
+                    <property name="MemberName" />
+                    <property name="CanFocus">True</property>
+                    <property name="Type">TextOnly</property>
+                    <property name="Label" translatable="yes">指数分析</property>
+                    <property name="UseUnderline">True</property>
+                    <signal name="Clicked" handler="OnButtonExponentialClicked" />
+                  </widget>
+                  <packing>
+                    <property name="TopAttach">4</property>
+                    <property name="BottomAttach">5</property>
+                    <property name="AutoSize">True</property>
+                    <property name="XOptions">Fill</property>
+                    <property name="YOptions">Fill</property>
+                    <property name="XExpand">False</property>
+                    <property name="XFill">True</property>
+                    <property name="XShrink">False</property>
+                    <property name="YExpand">False</property>
+                    <property name="YFill">True</property>
+                    <property name="YShrink">False</property>
+                  </packing>
+                </child>
                 <child>
                   <widget class="Gtk.Button" id="buttonGetData">
                     <property name="MemberName" />
@@ -2806,13 +2829,36 @@ Public License instead of this License.  But first, please read
                   </packing>
                 </child>
                 <child>
-                  <widget class="Gtk.Button" id="buttonModeling">
+                  <widget class="Gtk.Button" id="buttonHyperbolic">
                     <property name="MemberName" />
                     <property name="CanFocus">True</property>
                     <property name="Type">TextOnly</property>
-                    <property name="Label" translatable="yes">分析</property>
+                    <property name="Label" translatable="yes">双曲线分析</property>
                     <property name="UseUnderline">True</property>
-                    <signal name="Clicked" handler="OnButtonModelingClicked" />
+                    <signal name="Clicked" handler="OnButtonHyperbolicClicked" />
+                  </widget>
+                  <packing>
+                    <property name="TopAttach">3</property>
+                    <property name="BottomAttach">4</property>
+                    <property name="AutoSize">True</property>
+                    <property name="XOptions">Fill</property>
+                    <property name="YOptions">Fill</property>
+                    <property name="XExpand">False</property>
+                    <property name="XFill">True</property>
+                    <property name="XShrink">False</property>
+                    <property name="YExpand">False</property>
+                    <property name="YFill">True</property>
+                    <property name="YShrink">False</property>
+                  </packing>
+                </child>
+                <child>
+                  <widget class="Gtk.Button" id="buttonLinear">
+                    <property name="MemberName" />
+                    <property name="CanFocus">True</property>
+                    <property name="Type">TextOnly</property>
+                    <property name="Label" translatable="yes">线性分析</property>
+                    <property name="UseUnderline">True</property>
+                    <signal name="Clicked" handler="OnButtonLinearClicked" />
                   </widget>
                   <packing>
                     <property name="TopAttach">2</property>
