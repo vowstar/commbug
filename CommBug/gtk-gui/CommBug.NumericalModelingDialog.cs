@@ -5,31 +5,19 @@ namespace CommBug
 	public partial class NumericalModelingDialog
 	{
 		private global::Gtk.Table tableMain;
-
 		private global::Gtk.Image imageMain;
-
 		private global::Gtk.Table tableFunction;
-
 		private global::Gtk.Button buttonExponential;
-
 		private global::Gtk.Button buttonGetData;
-
 		private global::Gtk.Button buttonHyperbolic;
-
 		private global::Gtk.Button buttonLinear;
-
 		private global::Gtk.Table tableRange;
-
 		private global::Gtk.Label labelEndArea;
-
 		private global::Gtk.Label labelStartArea;
-
 		private global::Gtk.SpinButton spinbuttonEnd;
-
 		private global::Gtk.SpinButton spinbuttonStart;
-
 		private global::Gtk.Button buttonOk;
-
+		
 		protected virtual void Build ()
 		{
 			global::Stetic.Gui.Initialize (this);
@@ -62,7 +50,7 @@ namespace CommBug
 			this.buttonExponential.UseUnderline = true;
 			this.buttonExponential.Label = global::Mono.Unix.Catalog.GetString ("指数分析");
 			this.tableFunction.Add (this.buttonExponential);
-			global::Gtk.Table.TableChild w3 = ((global::Gtk.Table.TableChild)(this.tableFunction[this.buttonExponential]));
+			global::Gtk.Table.TableChild w3 = ((global::Gtk.Table.TableChild)(this.tableFunction [this.buttonExponential]));
 			w3.TopAttach = ((uint)(4));
 			w3.BottomAttach = ((uint)(5));
 			w3.XOptions = ((global::Gtk.AttachOptions)(4));
@@ -74,7 +62,7 @@ namespace CommBug
 			this.buttonGetData.UseUnderline = true;
 			this.buttonGetData.Label = global::Mono.Unix.Catalog.GetString ("取样");
 			this.tableFunction.Add (this.buttonGetData);
-			global::Gtk.Table.TableChild w4 = ((global::Gtk.Table.TableChild)(this.tableFunction[this.buttonGetData]));
+			global::Gtk.Table.TableChild w4 = ((global::Gtk.Table.TableChild)(this.tableFunction [this.buttonGetData]));
 			w4.TopAttach = ((uint)(1));
 			w4.BottomAttach = ((uint)(2));
 			w4.XOptions = ((global::Gtk.AttachOptions)(4));
@@ -86,7 +74,7 @@ namespace CommBug
 			this.buttonHyperbolic.UseUnderline = true;
 			this.buttonHyperbolic.Label = global::Mono.Unix.Catalog.GetString ("双曲线分析");
 			this.tableFunction.Add (this.buttonHyperbolic);
-			global::Gtk.Table.TableChild w5 = ((global::Gtk.Table.TableChild)(this.tableFunction[this.buttonHyperbolic]));
+			global::Gtk.Table.TableChild w5 = ((global::Gtk.Table.TableChild)(this.tableFunction [this.buttonHyperbolic]));
 			w5.TopAttach = ((uint)(3));
 			w5.BottomAttach = ((uint)(4));
 			w5.XOptions = ((global::Gtk.AttachOptions)(4));
@@ -98,7 +86,7 @@ namespace CommBug
 			this.buttonLinear.UseUnderline = true;
 			this.buttonLinear.Label = global::Mono.Unix.Catalog.GetString ("线性分析");
 			this.tableFunction.Add (this.buttonLinear);
-			global::Gtk.Table.TableChild w6 = ((global::Gtk.Table.TableChild)(this.tableFunction[this.buttonLinear]));
+			global::Gtk.Table.TableChild w6 = ((global::Gtk.Table.TableChild)(this.tableFunction [this.buttonLinear]));
 			w6.TopAttach = ((uint)(2));
 			w6.BottomAttach = ((uint)(3));
 			w6.XOptions = ((global::Gtk.AttachOptions)(4));
@@ -113,7 +101,7 @@ namespace CommBug
 			this.labelEndArea.Name = "labelEndArea";
 			this.labelEndArea.LabelProp = global::Mono.Unix.Catalog.GetString ("终止域");
 			this.tableRange.Add (this.labelEndArea);
-			global::Gtk.Table.TableChild w7 = ((global::Gtk.Table.TableChild)(this.tableRange[this.labelEndArea]));
+			global::Gtk.Table.TableChild w7 = ((global::Gtk.Table.TableChild)(this.tableRange [this.labelEndArea]));
 			w7.LeftAttach = ((uint)(2));
 			w7.RightAttach = ((uint)(3));
 			w7.XOptions = ((global::Gtk.AttachOptions)(4));
@@ -123,7 +111,7 @@ namespace CommBug
 			this.labelStartArea.Name = "labelStartArea";
 			this.labelStartArea.LabelProp = global::Mono.Unix.Catalog.GetString ("起始域");
 			this.tableRange.Add (this.labelStartArea);
-			global::Gtk.Table.TableChild w8 = ((global::Gtk.Table.TableChild)(this.tableRange[this.labelStartArea]));
+			global::Gtk.Table.TableChild w8 = ((global::Gtk.Table.TableChild)(this.tableRange [this.labelStartArea]));
 			w8.XOptions = ((global::Gtk.AttachOptions)(4));
 			w8.YOptions = ((global::Gtk.AttachOptions)(4));
 			// Container child tableRange.Gtk.Table+TableChild
@@ -135,7 +123,7 @@ namespace CommBug
 			this.spinbuttonEnd.Numeric = true;
 			this.spinbuttonEnd.Value = 100;
 			this.tableRange.Add (this.spinbuttonEnd);
-			global::Gtk.Table.TableChild w9 = ((global::Gtk.Table.TableChild)(this.tableRange[this.spinbuttonEnd]));
+			global::Gtk.Table.TableChild w9 = ((global::Gtk.Table.TableChild)(this.tableRange [this.spinbuttonEnd]));
 			w9.LeftAttach = ((uint)(3));
 			w9.RightAttach = ((uint)(4));
 			w9.XOptions = ((global::Gtk.AttachOptions)(4));
@@ -148,23 +136,23 @@ namespace CommBug
 			this.spinbuttonStart.ClimbRate = 1;
 			this.spinbuttonStart.Numeric = true;
 			this.tableRange.Add (this.spinbuttonStart);
-			global::Gtk.Table.TableChild w10 = ((global::Gtk.Table.TableChild)(this.tableRange[this.spinbuttonStart]));
+			global::Gtk.Table.TableChild w10 = ((global::Gtk.Table.TableChild)(this.tableRange [this.spinbuttonStart]));
 			w10.LeftAttach = ((uint)(1));
 			w10.RightAttach = ((uint)(2));
 			w10.XOptions = ((global::Gtk.AttachOptions)(4));
 			w10.YOptions = ((global::Gtk.AttachOptions)(4));
 			this.tableFunction.Add (this.tableRange);
-			global::Gtk.Table.TableChild w11 = ((global::Gtk.Table.TableChild)(this.tableFunction[this.tableRange]));
+			global::Gtk.Table.TableChild w11 = ((global::Gtk.Table.TableChild)(this.tableFunction [this.tableRange]));
 			w11.XOptions = ((global::Gtk.AttachOptions)(4));
 			w11.YOptions = ((global::Gtk.AttachOptions)(4));
 			this.tableMain.Add (this.tableFunction);
-			global::Gtk.Table.TableChild w12 = ((global::Gtk.Table.TableChild)(this.tableMain[this.tableFunction]));
+			global::Gtk.Table.TableChild w12 = ((global::Gtk.Table.TableChild)(this.tableMain [this.tableFunction]));
 			w12.LeftAttach = ((uint)(1));
 			w12.RightAttach = ((uint)(2));
 			w12.XOptions = ((global::Gtk.AttachOptions)(4));
 			w12.YOptions = ((global::Gtk.AttachOptions)(4));
 			w1.Add (this.tableMain);
-			global::Gtk.Box.BoxChild w13 = ((global::Gtk.Box.BoxChild)(w1[this.tableMain]));
+			global::Gtk.Box.BoxChild w13 = ((global::Gtk.Box.BoxChild)(w1 [this.tableMain]));
 			w13.Position = 0;
 			// Internal child CommBug.NumericalModelingDialog.ActionArea
 			global::Gtk.HButtonBox w14 = this.ActionArea;
@@ -181,7 +169,7 @@ namespace CommBug
 			this.buttonOk.UseUnderline = true;
 			this.buttonOk.Label = "gtk-ok";
 			this.AddActionWidget (this.buttonOk, -5);
-			global::Gtk.ButtonBox.ButtonBoxChild w15 = ((global::Gtk.ButtonBox.ButtonBoxChild)(w14[this.buttonOk]));
+			global::Gtk.ButtonBox.ButtonBoxChild w15 = ((global::Gtk.ButtonBox.ButtonBoxChild)(w14 [this.buttonOk]));
 			w15.Expand = false;
 			w15.Fill = false;
 			if ((this.Child != null)) {

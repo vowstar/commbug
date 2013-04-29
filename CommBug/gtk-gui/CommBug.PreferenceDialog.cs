@@ -5,19 +5,13 @@ namespace CommBug
 	public partial class PreferenceDialog
 	{
 		private global::Gtk.HPaned hpanedMain;
-
 		private global::Gtk.ScrolledWindow scrolledwindowLeft;
-
 		private global::Gtk.VBox vboxLeft;
-
 		private global::Gtk.Label labelTest;
-
 		private global::Gtk.Notebook notebookRight;
-
 		private global::Gtk.Button buttonCancel;
-
 		private global::Gtk.Button buttonOk;
-
+		
 		protected virtual void Build ()
 		{
 			global::Stetic.Gui.Initialize (this);
@@ -52,14 +46,14 @@ namespace CommBug
 			this.labelTest.Name = "labelTest";
 			this.labelTest.LabelProp = global::Mono.Unix.Catalog.GetString ("该功能测试中,不可用.请关注下一个版本.");
 			this.vboxLeft.Add (this.labelTest);
-			global::Gtk.Box.BoxChild w3 = ((global::Gtk.Box.BoxChild)(this.vboxLeft[this.labelTest]));
+			global::Gtk.Box.BoxChild w3 = ((global::Gtk.Box.BoxChild)(this.vboxLeft [this.labelTest]));
 			w3.Position = 0;
 			w3.Expand = false;
 			w3.Fill = false;
 			w2.Add (this.vboxLeft);
 			this.scrolledwindowLeft.Add (w2);
 			this.hpanedMain.Add (this.scrolledwindowLeft);
-			global::Gtk.Paned.PanedChild w6 = ((global::Gtk.Paned.PanedChild)(this.hpanedMain[this.scrolledwindowLeft]));
+			global::Gtk.Paned.PanedChild w6 = ((global::Gtk.Paned.PanedChild)(this.hpanedMain [this.scrolledwindowLeft]));
 			w6.Resize = false;
 			// Container child hpanedMain.Gtk.Paned+PanedChild
 			this.notebookRight = new global::Gtk.Notebook ();
@@ -69,7 +63,7 @@ namespace CommBug
 			this.notebookRight.Scrollable = true;
 			this.hpanedMain.Add (this.notebookRight);
 			w1.Add (this.hpanedMain);
-			global::Gtk.Box.BoxChild w8 = ((global::Gtk.Box.BoxChild)(w1[this.hpanedMain]));
+			global::Gtk.Box.BoxChild w8 = ((global::Gtk.Box.BoxChild)(w1 [this.hpanedMain]));
 			w8.Position = 0;
 			// Internal child CommBug.PreferenceDialog.ActionArea
 			global::Gtk.HButtonBox w9 = this.ActionArea;
@@ -86,7 +80,7 @@ namespace CommBug
 			this.buttonCancel.UseUnderline = true;
 			this.buttonCancel.Label = "gtk-cancel";
 			this.AddActionWidget (this.buttonCancel, -6);
-			global::Gtk.ButtonBox.ButtonBoxChild w10 = ((global::Gtk.ButtonBox.ButtonBoxChild)(w9[this.buttonCancel]));
+			global::Gtk.ButtonBox.ButtonBoxChild w10 = ((global::Gtk.ButtonBox.ButtonBoxChild)(w9 [this.buttonCancel]));
 			w10.Expand = false;
 			w10.Fill = false;
 			// Container child PreferenceDialog_ActionArea.Gtk.ButtonBox+ButtonBoxChild
@@ -98,7 +92,7 @@ namespace CommBug
 			this.buttonOk.UseUnderline = true;
 			this.buttonOk.Label = "gtk-ok";
 			this.AddActionWidget (this.buttonOk, -5);
-			global::Gtk.ButtonBox.ButtonBoxChild w11 = ((global::Gtk.ButtonBox.ButtonBoxChild)(w9[this.buttonOk]));
+			global::Gtk.ButtonBox.ButtonBoxChild w11 = ((global::Gtk.ButtonBox.ButtonBoxChild)(w9 [this.buttonOk]));
 			w11.Position = 1;
 			w11.Expand = false;
 			w11.Fill = false;

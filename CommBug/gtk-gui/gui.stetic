@@ -5,7 +5,7 @@
     <target-gtk-version>2.12</target-gtk-version>
   </configuration>
   <import>
-    <widget-library name="../../../../../../usr/lib/monodevelop/AddIns/MonoDevelop.GtkCore/libstetic.dll" />
+    <widget-library name="glade-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
     <widget-library name="../bin/Release/CommBug.exe" internal="true" />
   </import>
   <widget class="Gtk.Window" id="MainWindow" design-size="840 495">
@@ -63,7 +63,7 @@
         <property name="Label" translatable="yes">分析(_A)</property>
         <property name="ShortLabel" translatable="yes">分析(_A)</property>
       </action>
-      <action id="NumericalModelingAction">
+      <action id="GAction">
         <property name="Type">Action</property>
         <property name="Label" translatable="yes">曲线拟合分析(_G)</property>
         <property name="ShortLabel" translatable="yes">曲线拟合分析(_G)</property>
@@ -85,7 +85,7 @@
           <widget class="Gtk.HPaned" id="hpanedMain">
             <property name="MemberName" />
             <property name="CanFocus">True</property>
-            <property name="Position">235</property>
+            <property name="Position">255</property>
             <child>
               <widget class="Gtk.VBox" id="vboxLeft">
                 <property name="MemberName" />
@@ -153,7 +153,7 @@
                                     <child>
                                       <widget class="Gtk.ComboBoxEntry" id="comboboxentryPortName">
                                         <property name="MemberName" />
-                                        <property name="WidthRequest">139</property>
+                                        <property name="WidthRequest">140</property>
                                         <property name="IsTextCombo">True</property>
                                         <property name="Items" translatable="yes" />
                                         <signal name="Changed" handler="OnComboboxentryPortNameChanged" />
@@ -1486,7 +1486,7 @@ Space</property>
               </node>
               <node type="Menu" action="TAction">
                 <node type="Menu" action="AAction">
-                  <node type="Menuitem" action="NumericalModelingAction" />
+                  <node type="Menuitem" action="GAction" />
                 </node>
               </node>
               <node type="Menu" action="HAction">
