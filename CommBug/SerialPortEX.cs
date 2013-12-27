@@ -16,7 +16,11 @@ using System.Threading;
 // Author		:	HuangRui(vowstar@gmail.com),Lanzhou University
 // Date			:	2010-08-04
 // Description	:	Easy 2 control serialports under mono.net,designed 4 Chinese^-^
-// 					优化了对中文的处理
+// 该类优化了对中文的处理.该类使用线程接收数据，回避mono在一些操作系统与个别设备上无法使用事件接收数据的Bug.
+// 带来的副作用是接收数据时可能会产生延迟.
+// 如果您对实时有要求，一定要用事件接收数据，请使用以下方法：
+// TheSerialPort.DataReceived += new System.IO.Ports.SerialDataReceivedEventHandler(this.OnDataReceived);
+// private void OnDataReceived(object sender, SerialDataReceivedEventArgs e) {...}
 // --------------------------------------------------------------------------------------
 public class SerialPortEx : IDisposable
 {

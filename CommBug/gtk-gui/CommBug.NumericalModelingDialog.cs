@@ -17,7 +17,7 @@ namespace CommBug
 		private global::Gtk.SpinButton spinbuttonEnd;
 		private global::Gtk.SpinButton spinbuttonStart;
 		private global::Gtk.Button buttonOk;
-		
+
 		protected virtual void Build ()
 		{
 			global::Stetic.Gui.Initialize (this);
