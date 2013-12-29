@@ -101,6 +101,9 @@ public partial class MainWindow : Gtk.Window
 				moverText.TextView = textviewText;
 				moverHex.TextView = textviewHex;
 				moverDec.TextView = textviewDec;
+				moverTextS.TextView = textviewTextS;
+				moverHexS.TextView = textviewHexS;
+				moverDecS.TextView = textviewDecS;
 
 				GtkScrolledWindowText.Vadjustment.ValueChanged += delegate(object sender, EventArgs e) {
 //						Gtk.Adjustment adjustment = (Gtk.Adjustment)sender;
@@ -114,6 +117,15 @@ public partial class MainWindow : Gtk.Window
 						//						Gtk.Adjustment adjustment = (Gtk.Adjustment)sender;
 						processScrollEvent (ConvertMode.Dec, false);						
 				};
+				GtkScrolledWindowTextS.Vadjustment.ValueChanged += delegate(object sender, EventArgs e) {
+						processScrollEvent (ConvertMode.Text, true);						
+				};
+				GtkScrolledWindowHexS.Vadjustment.ValueChanged += delegate(object sender, EventArgs e) {
+						processScrollEvent (ConvertMode.Hex, true);						
+				};
+				GtkScrolledWindowDecS.Vadjustment.ValueChanged += delegate(object sender, EventArgs e) {
+						processScrollEvent (ConvertMode.Dec, true);						
+				};
 
 				scrolledTextViewTimer = new System.Timers.Timer ();
 				scrolledTextViewTimer.Elapsed += delegate(object sender, System.Timers.ElapsedEventArgs e) {
@@ -121,6 +133,9 @@ public partial class MainWindow : Gtk.Window
 						processScrollEvent (ConvertMode.Text, false);		
 						processScrollEvent (ConvertMode.Hex, false);	
 						processScrollEvent (ConvertMode.Dec, false);	
+						processScrollEvent (ConvertMode.Text, true);		
+						processScrollEvent (ConvertMode.Hex, true);	
+						processScrollEvent (ConvertMode.Dec, true);	
 						Gdk.Threads.Leave ();
 				};
 				scrolledTextViewTimer.Interval = 100;
@@ -384,37 +399,44 @@ public partial class MainWindow : Gtk.Window
 						}
 						MyPort.Write (sendByte, 0, sendByte.Length);
 						SendStream.Write (sendByte, 0, sendByte.Length);
+						moverTextS.Append (StringConverts.BytesToString (sendByte));
+						moverHexS.Append (StringConverts.BytesToHexString (sendByte));
+						moverDecS.Append (StringConverts.BytesToDecString (sendByte));
+						
 						labelTxStatus.Text = SendStream.Length.ToString ();
-						TextIter iter;
-						iter = textviewTextS.Buffer.EndIter;
-						textviewTextS.Buffer.Insert (ref iter, StringConverts.BytesToString (sendByte));
-						if (checkbuttonAutoScrollSend.Active) {
-								// Console.WriteLine("\nLast\t{0}",GtkScrolledWindowTextS.Vadjustment.Value);
-								// Console.WriteLine("Lower\t{0}",GtkScrolledWindowTextS.Vadjustment.Lower);
-								// Console.WriteLine("S\t{0}",GtkScrolledWindowTextS.Vadjustment.StepIncrement);
-								// Console.WriteLine("P\t{0}",GtkScrolledWindowTextS.Vadjustment.PageIncrement);
-								// GtkScrolledWindowTextS.Vadjustment.Value = GtkScrolledWindowTextS.Vadjustment.Upper;
-								textviewTextS.Buffer.CreateMark ("EndMark", iter, false);
-								textviewTextS.ScrollToMark (textviewTextS.Buffer.CreateMark ("EndMark", iter, false), 0, false, 0, 0);
-								textviewTextS.Buffer.DeleteMark ("EndMark");
-						}
-			
-						iter = textviewHexS.Buffer.EndIter;
-						textviewHexS.Buffer.Insert (ref iter, StringConverts.BytesToHexString (sendByte));
-						if (checkbuttonAutoScrollSend.Active) {
-								// GtkScrolledWindowHexS.Vadjustment.Value = GtkScrolledWindowHexS.Vadjustment.Upper;
-								textviewHexS.Buffer.CreateMark ("EndMark", iter, false);
-								textviewHexS.ScrollToMark (textviewHexS.Buffer.CreateMark ("EndMark", iter, false), 0, false, 0, 0);
-								textviewHexS.Buffer.DeleteMark ("EndMark");
-						}
-						iter = textviewDecS.Buffer.EndIter;
-						textviewDecS.Buffer.Insert (ref iter, StringConverts.BytesToDecString (sendByte));
-						if (checkbuttonAutoScrollSend.Active) {
-								// GtkScrolledWindowDecS.Vadjustment.Value = GtkScrolledWindowDecS.Vadjustment.Upper;
-								textviewDecS.Buffer.CreateMark ("EndMark", iter, false);
-								textviewDecS.ScrollToMark (textviewDecS.Buffer.CreateMark ("EndMark", iter, false), 0, false, 0, 0);
-								textviewDecS.Buffer.DeleteMark ("EndMark");
-						}
+						processScrollEvent (ConvertMode.Text, true);
+						processScrollEvent (ConvertMode.Hex, true);
+						processScrollEvent (ConvertMode.Dec, true);
+//						TextIter iter;
+//						iter = textviewTextS.Buffer.EndIter;
+//						textviewTextS.Buffer.Insert (ref iter, StringConverts.BytesToString (sendByte));
+//						if (checkbuttonAutoScrollSend.Active) {
+//								// Console.WriteLine("\nLast\t{0}",GtkScrolledWindowTextS.Vadjustment.Value);
+//								// Console.WriteLine("Lower\t{0}",GtkScrolledWindowTextS.Vadjustment.Lower);
+//								// Console.WriteLine("S\t{0}",GtkScrolledWindowTextS.Vadjustment.StepIncrement);
+//								// Console.WriteLine("P\t{0}",GtkScrolledWindowTextS.Vadjustment.PageIncrement);
+//								// GtkScrolledWindowTextS.Vadjustment.Value = GtkScrolledWindowTextS.Vadjustment.Upper;
+//								textviewTextS.Buffer.CreateMark ("EndMark", iter, false);
+//								textviewTextS.ScrollToMark (textviewTextS.Buffer.CreateMark ("EndMark", iter, false), 0, false, 0, 0);
+//								textviewTextS.Buffer.DeleteMark ("EndMark");
+//						}
+//			
+//						iter = textviewHexS.Buffer.EndIter;
+//						textviewHexS.Buffer.Insert (ref iter, StringConverts.BytesToHexString (sendByte));
+//						if (checkbuttonAutoScrollSend.Active) {
+//								// GtkScrolledWindowHexS.Vadjustment.Value = GtkScrolledWindowHexS.Vadjustment.Upper;
+//								textviewHexS.Buffer.CreateMark ("EndMark", iter, false);
+//								textviewHexS.ScrollToMark (textviewHexS.Buffer.CreateMark ("EndMark", iter, false), 0, false, 0, 0);
+//								textviewHexS.Buffer.DeleteMark ("EndMark");
+//						}
+//						iter = textviewDecS.Buffer.EndIter;
+//						textviewDecS.Buffer.Insert (ref iter, StringConverts.BytesToDecString (sendByte));
+//						if (checkbuttonAutoScrollSend.Active) {
+//								// GtkScrolledWindowDecS.Vadjustment.Value = GtkScrolledWindowDecS.Vadjustment.Upper;
+//								textviewDecS.Buffer.CreateMark ("EndMark", iter, false);
+//								textviewDecS.ScrollToMark (textviewDecS.Buffer.CreateMark ("EndMark", iter, false), 0, false, 0, 0);
+//								textviewDecS.Buffer.DeleteMark ("EndMark");
+//						}
 						// ---------------
 						// Generate Linenumber,copyright by vowstar@gmail.com,^-^
 						// TextViewUtils.GenerateLineNumber(textviewTextS,textviewTextSL,lineHeight);			
@@ -470,7 +492,16 @@ public partial class MainWindow : Gtk.Window
 
 		protected virtual void OnSpinbuttonIntervalValueChanged (object sender, System.EventArgs e)
 		{
-				SendTimer.Interval = Convert.ToDouble (spinbuttonInterval.Text);
+				double interval = Convert.ToDouble (spinbuttonInterval.Text);
+				if (interval <= 0) {
+						interval = 500;
+						spinbuttonInterval.Text = interval.ToString ();
+						
+				}
+				if (interval < 50) {
+						GtkMessages.ShowMessage ("时间设置太短，有可能导致软件无法响应。");
+				}
+				SendTimer.Interval = interval;
 		}
 
 		protected virtual void OnCheckbuttonAutoSendClicked (object sender, System.EventArgs e)
@@ -499,7 +530,7 @@ public partial class MainWindow : Gtk.Window
 				moverDec.Clear ();
 
 				ReceiveStream.SetLength (0);
-
+				labelRx.Text = ReceiveStream.Length.ToString ();
 //				textviewTextString = "";
 //				textviewHexString = "";
 //				textviewDecString = "";
@@ -511,9 +542,15 @@ public partial class MainWindow : Gtk.Window
 
 		protected virtual void OnButtonClearSendAreaClicked (object sender, System.EventArgs e)
 		{
-				textviewTextS.Buffer.Clear ();
-				textviewHexS.Buffer.Clear ();
-				textviewDecS.Buffer.Clear ();
+//				textviewTextS.Buffer.Clear ();
+//				textviewHexS.Buffer.Clear ();
+//				textviewDecS.Buffer.Clear ();
+				moverTextS.Clear ();
+				moverHexS.Clear ();
+				moverDecS.Clear ();
+
+				SendStream.SetLength (0);
+				labelTx.Text  = ReceiveStream.Length.ToString ();
 		}
 
 		protected virtual void OnButtonClearAllClicked (object sender, System.EventArgs e)
@@ -560,7 +597,7 @@ public partial class MainWindow : Gtk.Window
 
 		protected virtual void OnNumericalModelingActionActivated (object sender, System.EventArgs e)
 		{
-		
+				GtkMessages.ShowMessage ("该功能还不完善，有可能会发生不可预料的情况。");
 				if (numericalModelingDialog == null) {
 						numericalModelingDialog = new CommBug.NumericalModelingDialog ();
 				} else {

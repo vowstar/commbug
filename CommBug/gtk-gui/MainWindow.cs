@@ -614,6 +614,7 @@ public partial class MainWindow
 		this.radiobuttonDec = new global::Gtk.RadioButton (global::Mono.Unix.Catalog.GetString ("10进制"));
 		this.radiobuttonDec.CanFocus = true;
 		this.radiobuttonDec.Name = "radiobuttonDec";
+		this.radiobuttonDec.Active = true;
 		this.radiobuttonDec.DrawIndicator = true;
 		this.radiobuttonDec.UseUnderline = true;
 		this.radiobuttonDec.Group = new global::GLib.SList (global::System.IntPtr.Zero);
@@ -713,8 +714,8 @@ public partial class MainWindow
 		this.checkbuttonAutoScrollReceive.UseUnderline = true;
 		this.tableScrollSet.Add (this.checkbuttonAutoScrollReceive);
 		global::Gtk.Table.TableChild w58 = ((global::Gtk.Table.TableChild)(this.tableScrollSet [this.checkbuttonAutoScrollReceive]));
-		w58.LeftAttach = ((uint)(1));
-		w58.RightAttach = ((uint)(2));
+		w58.LeftAttach = ((uint)(2));
+		w58.RightAttach = ((uint)(3));
 		w58.YOptions = ((global::Gtk.AttachOptions)(4));
 		// Container child tableScrollSet.Gtk.Table+TableChild
 		this.checkbuttonAutoScrollSend = new global::Gtk.CheckButton ();
@@ -726,8 +727,8 @@ public partial class MainWindow
 		this.checkbuttonAutoScrollSend.UseUnderline = true;
 		this.tableScrollSet.Add (this.checkbuttonAutoScrollSend);
 		global::Gtk.Table.TableChild w59 = ((global::Gtk.Table.TableChild)(this.tableScrollSet [this.checkbuttonAutoScrollSend]));
-		w59.LeftAttach = ((uint)(2));
-		w59.RightAttach = ((uint)(3));
+		w59.LeftAttach = ((uint)(1));
+		w59.RightAttach = ((uint)(2));
 		w59.YOptions = ((global::Gtk.AttachOptions)(4));
 		// Container child tableScrollSet.Gtk.Table+TableChild
 		this.imageAutoScroll = new global::Gtk.Image ();

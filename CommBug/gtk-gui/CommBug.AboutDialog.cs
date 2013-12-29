@@ -75,7 +75,7 @@ namespace CommBug
 			// Container child GtkViewport.Gtk.Container+ContainerChild
 			this.labelInfo = new global::Gtk.Label ();
 			this.labelInfo.Name = "labelInfo";
-			this.labelInfo.LabelProp = global::Mono.Unix.Catalog.GetString ("<span font_desc='32'>串口调试助手</span>\n<span font_desc='16'>版本: {VERSION}</span>\n兰州大学\n黄锐(vowstar@gmail.com)\n©2010年8月-{YEAR}年{MONTH}月 vowstar@gmail.com");
+			this.labelInfo.LabelProp = global::Mono.Unix.Catalog.GetString ("<span font_desc='32'>串口调试助手</span>\n<span font_desc='16'>版本: {VERSION}</span>\n兰州大学\n黄锐(vowstar@gmail.com)\n纪亚萍(jyp1817@gmail.com)\n©2010年8月-{YEAR}年{MONTH}月 Commbug Group");
 			this.labelInfo.Selectable = true;
 			w3.Add (this.labelInfo);
 			this.scrolledwindowInfo.Add (w3);
@@ -120,7 +120,7 @@ namespace CommBug
 			// Container child GtkViewport1.Gtk.Container+ContainerChild
 			this.labelAuthor = new global::Gtk.Label ();
 			this.labelAuthor.Name = "labelAuthor";
-			this.labelAuthor.LabelProp = global::Mono.Unix.Catalog.GetString ("<span font_desc='16'>编程</span>\n黄锐(vowstar@gmail.com)\n\n<span font_desc='16'>美工</span>\n黄锐(vowstar@gmail.com)");
+			this.labelAuthor.LabelProp = global::Mono.Unix.Catalog.GetString ("<span font_desc='16'>编程</span>\n黄锐(vowstar@gmail.com)\n纪亚萍(jyp1817@gmail.com)\n\n<span font_desc='16'>美工</span>\n黄锐(vowstar@gmail.com)");
 			this.labelAuthor.Selectable = true;
 			w10.Add (this.labelAuthor);
 			this.scrolledwindowAuthor.Add (w10);

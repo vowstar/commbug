@@ -1016,8 +1016,8 @@ Space</property>
                                     <property name="UseUnderline">True</property>
                                   </widget>
                                   <packing>
-                                    <property name="LeftAttach">1</property>
-                                    <property name="RightAttach">2</property>
+                                    <property name="LeftAttach">2</property>
+                                    <property name="RightAttach">3</property>
                                     <property name="AutoSize">True</property>
                                     <property name="YOptions">Fill</property>
                                     <property name="XExpand">True</property>
@@ -1039,8 +1039,8 @@ Space</property>
                                     <property name="UseUnderline">True</property>
                                   </widget>
                                   <packing>
-                                    <property name="LeftAttach">2</property>
-                                    <property name="RightAttach">3</property>
+                                    <property name="LeftAttach">1</property>
+                                    <property name="RightAttach">2</property>
                                     <property name="AutoSize">True</property>
                                     <property name="YOptions">Fill</property>
                                     <property name="XExpand">True</property>
@@ -1672,7 +1672,8 @@ Space</property>
 &lt;span font_desc='16'&gt;版本: {VERSION}&lt;/span&gt;
 兰州大学
 黄锐(vowstar@gmail.com)
-©2010年8月-{YEAR}年{MONTH}月 vowstar@gmail.com</property>
+纪亚萍(jyp1817@gmail.com)
+©2010年8月-{YEAR}年{MONTH}月 Commbug Group</property>
                                 <property name="Selectable">True</property>
                               </widget>
                             </child>
@@ -1746,6 +1747,7 @@ Space</property>
                                 <property name="MemberName" />
                                 <property name="LabelProp" translatable="yes">&lt;span font_desc='16'&gt;编程&lt;/span&gt;
 黄锐(vowstar@gmail.com)
+纪亚萍(jyp1817@gmail.com)
 
 &lt;span font_desc='16'&gt;美工&lt;/span&gt;
 黄锐(vowstar@gmail.com)</property>

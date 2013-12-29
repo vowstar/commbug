@@ -140,6 +140,9 @@ public partial class MainWindow : Gtk.Window
 		private ScrolledTextViewMover moverText = new ScrolledTextViewMover ();
 		private ScrolledTextViewMover moverHex = new ScrolledTextViewMover ();
 		private ScrolledTextViewMover moverDec = new ScrolledTextViewMover ();
+		private ScrolledTextViewMover moverTextS = new ScrolledTextViewMover ();
+		private ScrolledTextViewMover moverHexS = new ScrolledTextViewMover ();
+		private ScrolledTextViewMover moverDecS = new ScrolledTextViewMover ();
 		private System.Timers.Timer scrolledTextViewTimer;
 
 		private void processScrollEvent (ConvertMode convertMode, Boolean isSend)
@@ -154,14 +157,17 @@ public partial class MainWindow : Gtk.Window
 						case ConvertMode.Text:
 								scrolledWindow = GtkScrolledWindowTextS;
 								textView = textviewTextS;
+								mover = moverTextS;
 								break;
 						case ConvertMode.Hex:
 								scrolledWindow = GtkScrolledWindowHexS;
 								textView = textviewHexS;
+								mover = moverHexS;
 								break;
 						case ConvertMode.Dec:
 								scrolledWindow = GtkScrolledWindowDecS;
 								textView = textviewDecS;
+								mover = moverDecS;
 								break;
 						}
 				} else {
@@ -273,8 +279,13 @@ public partial class MainWindow : Gtk.Window
 //								break;
 //						}
 //				}
-
-				if (checkbuttonAutoScrollReceive.Active) {
+				bool isAutoScroll = false;
+				if (isSend) {
+						isAutoScroll = checkbuttonAutoScrollSend.Active;
+				} else {
+						isAutoScroll = checkbuttonAutoScrollReceive.Active;
+				}
+				if (isAutoScroll) {
 						if (scrolledWindow.VScrollbar.Visible == false || vadjustmentPosition > 0.98) {
 								if (mover != null) {
 										mover.StepSize = mover.WindowSize / 10;

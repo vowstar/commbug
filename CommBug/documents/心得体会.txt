@@ -13,6 +13,20 @@ textviewSend.Buffer.TagTable.Add(tag);
 tag.Dispose();
 textviewSend.Buffer.ApplyTag("bluestyle",textviewSend.Buffer.StartIter,textviewSend.Buffer.EndIter);
 ==========================================================
+弹出对话框的方法	
+==========================================================	
+MessageDialog md = new MessageDialog (parent_window, 
+                                      DialogFlags.DestroyWithParent,
+	                              MessageType.Question, 
+                                      ButtonsType.YesNo, "Are you sure you want to quit?");
+	
+ResponseType result = (ResponseType)md.Run ();
+
+if (result == ResponseType.Yes)
+	Application.Quit();
+else
+	md.Destroy();
+==========================================================
 把大于255的数分隔的算法
 ==========================================================
 				string test="";

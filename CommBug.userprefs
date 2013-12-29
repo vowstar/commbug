@@ -1,15 +1,11 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="CommBug/MainWindowScrolledWindows.cs">
-    <Files>
-      <File FileName="CommBug/MainWindowScrolledWindows.cs" Line="188" Column="26" />
-      <File FileName="CommBug/MainWindow.cs" Line="103" Column="36" />
-    </Files>
+  <MonoDevelop.Ide.Workbench>
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True">
           <Node name="CommBug" expanded="True">
-            <Node name="MainWindowScrolledWindows.cs" selected="True" />
+            <Node name="MainWindow.cs" selected="True" />
           </Node>
         </State>
       </Pad>
