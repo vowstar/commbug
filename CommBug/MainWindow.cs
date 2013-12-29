@@ -17,18 +17,19 @@ using Gtk;
 /// </summary>
 public partial class MainWindow : Gtk.Window
 {
-	#region Sub windows
+		#region Sub windows
 		private CommBug.AboutDialog aboutDialog;
 		private CommBug.PreferenceDialog preferenceDialog;
 		private CommBug.NumericalModelingDialog numericalModelingDialog;
-	#endregion
-	#region 变量与类定义
+		#endregion
+		#region 变量与类定义
 		public enum ConvertMode
 		{
 				Text,
 				Hex,
 				Dec
 		}
+
 		public string SplitString = "\t";
 		public ConvertMode SendMode = ConvertMode.Text;
 		public ConvertMode NowSendMode = ConvertMode.Text;
@@ -46,8 +47,7 @@ public partial class MainWindow : Gtk.Window
 		private StopBits stopBits = StopBits.One;
 		private int portCount = 0;
 		private ListStore portNameModel = new ListStore (typeof(string));
-
-	#endregion
+		#endregion
 		public MainWindow () : base(Gtk.WindowType.Toplevel)
 		{
 				Build ();
@@ -97,7 +97,35 @@ public partial class MainWindow : Gtk.Window
 				PortNameTimer.Enabled = true;
 				// 自动复位定时器，一直能触发
 				#endregion
-		
+
+				moverText.TextView = textviewText;
+				moverHex.TextView = textviewHex;
+				moverDec.TextView = textviewDec;
+
+				GtkScrolledWindowText.Vadjustment.ValueChanged += delegate(object sender, EventArgs e) {
+//						Gtk.Adjustment adjustment = (Gtk.Adjustment)sender;
+						processScrollEvent (ConvertMode.Text, false);						
+				};
+				GtkScrolledWindowHex.Vadjustment.ValueChanged += delegate(object sender, EventArgs e) {
+						//						Gtk.Adjustment adjustment = (Gtk.Adjustment)sender;
+						processScrollEvent (ConvertMode.Hex, false);						
+				};
+				GtkScrolledWindowDec.Vadjustment.ValueChanged += delegate(object sender, EventArgs e) {
+						//						Gtk.Adjustment adjustment = (Gtk.Adjustment)sender;
+						processScrollEvent (ConvertMode.Dec, false);						
+				};
+
+				scrolledTextViewTimer = new System.Timers.Timer ();
+				scrolledTextViewTimer.Elapsed += delegate(object sender, System.Timers.ElapsedEventArgs e) {
+						Gdk.Threads.Enter ();
+						processScrollEvent (ConvertMode.Text, false);		
+						processScrollEvent (ConvertMode.Hex, false);	
+						processScrollEvent (ConvertMode.Dec, false);	
+						Gdk.Threads.Leave ();
+				};
+				scrolledTextViewTimer.Interval = 100;
+				scrolledTextViewTimer.AutoReset = true;
+				scrolledTextViewTimer.Enabled = true;
 		}
 
 		protected void OnDeleteEvent (object sender, DeleteEventArgs a)
@@ -106,6 +134,8 @@ public partial class MainWindow : Gtk.Window
 				PortNameTimer.Dispose ();
 				SendTimer.Enabled = false;
 				SendTimer.Dispose ();
+				scrolledTextViewTimer.Enabled = false;
+				scrolledTextViewTimer.Dispose ();
 				MyPort.Dispose ();
 				//System.Diagnostics.Process.GetCurrentProcess().Kill();
 				Application.Quit ();
@@ -138,8 +168,7 @@ public partial class MainWindow : Gtk.Window
 						textviewSend.Buffer.Changed += HandleTextviewSendBufferChanged;
 				}
 		}
-
-	#region In Threading Envent
+		#region In Threading Envent
 		void HandleSendTimerElapsed (object sender, System.Timers.ElapsedEventArgs e)
 		{
 				Gdk.Threads.Enter ();
@@ -159,36 +188,51 @@ public partial class MainWindow : Gtk.Window
 				byte[] buffer = new byte[MyPort.BytesToRead];
 				MyPort.Read (buffer, 0, buffer.Length);
 				ReceiveStream.Write (buffer, 0, buffer.Length);
-				labelRxStatus.Text = ReceiveStream.Length.ToString ();
+//				textviewTextString += StringConverts.BytesToString (buffer);
+//				textviewHexString += StringConverts.BytesToHexString (buffer);
+//				textviewDecString += StringConverts.BytesToDecString (buffer);
+				moverText.Append (StringConverts.BytesToString (buffer));
+				moverHex.Append (StringConverts.BytesToHexString (buffer));
+				moverDec.Append (StringConverts.BytesToDecString (buffer));
 				Gdk.Threads.Enter ();
 				// 准备在线程中更新界面
-				TextIter iter;
-				iter = textviewText.Buffer.EndIter;
-				textviewText.Buffer.Insert (ref iter, StringConverts.BytesToString (buffer));
-				if (checkbuttonAutoScrollReceive.Active) {
-						textviewText.Buffer.CreateMark ("EndMark", iter, false);
-						textviewText.ScrollToMark (textviewText.Buffer.CreateMark ("EndMark", iter, false), 0, false, 0, 0);
-						textviewText.Buffer.DeleteMark ("EndMark");
-				}
-				iter = textviewHex.Buffer.EndIter;
-				textviewHex.Buffer.Insert (ref iter, StringConverts.BytesToHexString (buffer));
-				if (checkbuttonAutoScrollReceive.Active) {
-						textviewHex.Buffer.CreateMark ("EndMark", iter, false);
-						textviewHex.ScrollToMark (textviewHex.Buffer.CreateMark ("EndMark", iter, false), 0, false, 0, 0);
-						textviewHex.Buffer.DeleteMark ("EndMark");
-				}
-				iter = textviewDec.Buffer.EndIter;
-				textviewDec.Buffer.Insert (ref iter, StringConverts.BytesToDecString (buffer));
-				if (checkbuttonAutoScrollReceive.Active) {
-						textviewDec.Buffer.CreateMark ("EndMark", iter, false);
-						textviewDec.ScrollToMark (textviewDec.Buffer.CreateMark ("EndMark", iter, false), 0, false, 0, 0);
-						textviewDec.Buffer.DeleteMark ("EndMark");
-				}
+				labelRxStatus.Text = ReceiveStream.Length.ToString ();
+				processScrollEvent (ConvertMode.Text, false);
+				processScrollEvent (ConvertMode.Hex, false);
+				processScrollEvent (ConvertMode.Dec, false);
+//				TextIter iter;
+//				iter = textviewText.Buffer.EndIter;
+//				textviewText.Buffer.Insert (ref iter, StringConverts.BytesToString (buffer));
+//				if (textviewText.Buffer.CharCount > textViewDataBytesMaxCount) {
+//						TextIter iterStart = textviewText.Buffer.StartIter;
+//						TextIter iterEnd = textviewText.Buffer.StartIter;
+//						if (iterEnd.ForwardChars (textviewText.Buffer.CharCount - textViewDataBytesMaxCount)) {
+//								textviewText.Buffer.Delete (ref iterStart, ref iterEnd);
+//						}
+//				}
+//				if (checkbuttonAutoScrollReceive.Active) {
+//						iter = textviewText.Buffer.EndIter;
+//						textviewText.Buffer.CreateMark ("EndMark", iter, false);
+//						textviewText.ScrollToMark (textviewText.Buffer.CreateMark ("EndMark", iter, false), 0, false, 0, 0);
+//						textviewText.Buffer.DeleteMark ("EndMark");
+//				}
+//				iter = textviewHex.Buffer.EndIter;
+//				textviewHex.Buffer.Insert (ref iter, StringConverts.BytesToHexString (buffer));
+//				if (checkbuttonAutoScrollReceive.Active) {
+//						textviewHex.Buffer.CreateMark ("EndMark", iter, false);
+//						textviewHex.ScrollToMark (textviewHex.Buffer.CreateMark ("EndMark", iter, false), 0, false, 0, 0);
+//						textviewHex.Buffer.DeleteMark ("EndMark");
+//				}
+//				iter = textviewDec.Buffer.EndIter;
+//				textviewDec.Buffer.Insert (ref iter, StringConverts.BytesToDecString (buffer));
+//				if (checkbuttonAutoScrollReceive.Active) {
+//						textviewDec.Buffer.CreateMark ("EndMark", iter, false);
+//						textviewDec.ScrollToMark (textviewDec.Buffer.CreateMark ("EndMark", iter, false), 0, false, 0, 0);
+//						textviewDec.Buffer.DeleteMark ("EndMark");
+//				}
 				Gdk.Threads.Leave ();
 		}
-	#endregion
-
-
+		#endregion
 		private void InitializationPortName ()
 		{
 				if (System.IO.Ports.SerialPort.GetPortNames ().Length != portCount) {
@@ -445,9 +489,24 @@ public partial class MainWindow : Gtk.Window
 
 		protected virtual void OnButtonClearReceiveAreaClicked (object sender, System.EventArgs e)
 		{
-				textviewText.Buffer.Clear ();
-				textviewHex.Buffer.Clear ();
-				textviewDec.Buffer.Clear ();
+
+//				textviewText.Buffer.Clear ();				
+//				textviewHex.Buffer.Clear ();				
+//				textviewDec.Buffer.Clear ();
+				
+				moverText.Clear ();
+				moverHex.Clear ();
+				moverDec.Clear ();
+
+				ReceiveStream.SetLength (0);
+
+//				textviewTextString = "";
+//				textviewHexString = "";
+//				textviewDecString = "";
+//
+//				textviewHexOffset = 0;
+//				textviewTextOffset = 0;
+//				textviewDecOffset = 0;
 		}
 
 		protected virtual void OnButtonClearSendAreaClicked (object sender, System.EventArgs e)
@@ -462,7 +521,6 @@ public partial class MainWindow : Gtk.Window
 				OnButtonClearSendContentsClicked (this, null);
 				OnButtonClearReceiveAreaClicked (this, null);
 				OnButtonClearSendAreaClicked (this, null);
-		
 		}
 
 		protected virtual void OnTextviewSendBackspace (object sender, System.EventArgs e)
@@ -558,15 +616,5 @@ public partial class MainWindow : Gtk.Window
 		{
 				SettingsSafeUpdate ();
 		}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 }
 

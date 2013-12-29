@@ -1,15 +1,15 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="CommBug/MainWindow.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="CommBug/MainWindowScrolledWindows.cs">
     <Files>
-      <File FileName="CommBug/MainWindow.cs" Line="20" Column="21" />
-      <File FileName="CommBug/StringConverts.cs" Line="1" Column="1" />
+      <File FileName="CommBug/MainWindowScrolledWindows.cs" Line="188" Column="26" />
+      <File FileName="CommBug/MainWindow.cs" Line="103" Column="36" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True">
           <Node name="CommBug" expanded="True">
-            <Node name="MainWindow.cs" selected="True" />
+            <Node name="MainWindowScrolledWindows.cs" selected="True" />
           </Node>
         </State>
       </Pad>
@@ -22,5 +22,5 @@
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <AuthorInfo Name="vowstar" Email="vowstar@gmail.com" Copyright="vowstar@gmail.com" ctype="AuthorInformation" />
+  <AuthorInfo Name="vowstar" Email="vowstar@gmail.com" Copyright="vowstar@gmail.com" />
 </Properties>

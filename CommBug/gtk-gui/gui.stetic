@@ -6,9 +6,9 @@
   </configuration>
   <import>
     <widget-library name="glade-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
-    <widget-library name="../bin/Release/CommBug.exe" internal="true" />
+    <widget-library name="../bin/Debug/CommBug.exe" internal="true" />
   </import>
-  <widget class="Gtk.Window" id="MainWindow" design-size="800 480">
+  <widget class="Gtk.Window" id="MainWindow" design-size="800 510">
     <action-group name="Default">
       <action id="FAction">
         <property name="Type">Action</property>
@@ -274,6 +274,7 @@
                               <widget class="Gtk.Expander" id="expanderSetComm">
                                 <property name="MemberName" />
                                 <property name="CanFocus">True</property>
+                                <property name="Expanded">True</property>
                                 <child>
                                   <widget class="Gtk.Table" id="tableCommSet">
                                     <property name="MemberName" />
@@ -1222,7 +1223,7 @@ Space</property>
                   <widget class="Gtk.HPaned" id="hpanedRight">
                     <property name="MemberName" />
                     <property name="CanFocus">True</property>
-                    <property name="Position">248</property>
+                    <property name="Position">247</property>
                     <child>
                       <widget class="Gtk.Frame" id="frameSendArea">
                         <property name="MemberName" />

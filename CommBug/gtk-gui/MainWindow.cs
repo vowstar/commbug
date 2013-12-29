@@ -284,6 +284,7 @@ public partial class MainWindow
 		this.expanderSetComm = new global::Gtk.Expander (null);
 		this.expanderSetComm.CanFocus = true;
 		this.expanderSetComm.Name = "expanderSetComm";
+		this.expanderSetComm.Expanded = true;
 		// Container child expanderSetComm.Gtk.Container+ContainerChild
 		this.tableCommSet = new global::Gtk.Table (((uint)(1)), ((uint)(5)), false);
 		this.tableCommSet.Name = "tableCommSet";
@@ -854,7 +855,7 @@ public partial class MainWindow
 		this.hpanedRight = new global::Gtk.HPaned ();
 		this.hpanedRight.CanFocus = true;
 		this.hpanedRight.Name = "hpanedRight";
-		this.hpanedRight.Position = 248;
+		this.hpanedRight.Position = 247;
 		// Container child hpanedRight.Gtk.Paned+PanedChild
 		this.frameSendArea = new global::Gtk.Frame ();
 		this.frameSendArea.Name = "frameSendArea";
@@ -1110,7 +1111,7 @@ public partial class MainWindow
 			this.Child.ShowAll ();
 		}
 		this.DefaultWidth = 800;
-		this.DefaultHeight = 480;
+		this.DefaultHeight = 510;
 		this.Show ();
 		this.DeleteEvent += new global::Gtk.DeleteEventHandler (this.OnDeleteEvent);
 		this.quitAction.Activated += new global::System.EventHandler (this.OnQuitActionActivated);
