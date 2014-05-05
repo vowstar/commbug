@@ -1,14 +1,13 @@
-=串口调试助手=
+串口调试助手
+===================================
 
-*[http://code.google.com/p/commbug/wiki/Commbug 详细介绍:Commbug]*
-----
-License: [http://www.gnu.org/licenses/gpl.html GNU General Public License v3]
-----
+[详细介绍:Commbug](http://code.google.com/p/commbug/wiki/Commbug)
+-----------------------------------
+License: [GNU General Public License v3](http://www.gnu.org/licenses/gpl.html )
 公告:本项目已变更版本控制系统.原版本控制系统是Mercurial,新的版本控制系统是Git.
-
 <s>公告:本项目已变更版本控制系统.原版本控制系统是Subversion,新的版本控制系统是Mercurial.</s>
-----
-[http://i659.photobucket.com/albums/uu316/vowstar/screenshot_500.png]
+
+![commbug](http://i659.photobucket.com/albums/uu316/vowstar/screenshot_500.png)
 
 
 [http://i659.photobucket.com/albums/uu316/vowstar/screenshot7.png 先前版本截图]
